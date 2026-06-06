@@ -1,0 +1,3 @@
+git add .
+git commit -m "Add working contact form"
+git push
