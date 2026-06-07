@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Briefly — A professional website. Ready tomorrow.</title>
+<meta name="description" content="Choose what you need, answer a few questions, and receive your custom hand-coded website in one business day. No meetings. No complexity." />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* Brand palette */
+    --navy:#08275D;          /* Deep Navy */
+    --periwinkle:#E8EAFF;
+    --white:#FFFFFF;
+    --lime:#D9FF2F;          /* Lime Green */
+    --lime-deep:#aebf1c;     /* legible lime for small text */
+
+    --bg:#f2f3fc;
+    --band:#E8EAFF;
+    --ink:#08275D;
+    --body:#5a6a90;
+    --muted:#9aa6cc;
+    --line:#dfe2f4;
+    --line-2:#e9ebf8;
+    --card:#FFFFFF;
+
+    --radius:18px;
+    --radius-sm:14px;
+    --shadow-sm:0 1px 2px rgba(8,39,93,.05), 0 4px 16px rgba(8,39,93,.05);
+    --shadow-md:0 22px 48px -18px rgba(8,39,93,.26), 0 6px 18px rgba(8,39,93,.07);
+    --maxw:1140px;
+    --font:"Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:92px;}
+  body{
+    margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    font-size:16px;line-height:1.6;
+  }
+  h1,h2,h3,h4,p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .band{background:var(--band);}
+
+  /* Brand elements */
+  .sphere{
+    border-radius:50%;
+    background:radial-gradient(circle at 34% 28%, #4a6fb5 0%, #15407e 38%, var(--navy) 74%);
+    box-shadow:0 30px 60px -18px rgba(8,39,93,.5), inset -8px -10px 26px rgba(0,0,0,.28), inset 8px 8px 22px rgba(255,255,255,.14);
+  }
+  .beams{position:absolute;display:flex;gap:14px;z-index:0;pointer-events:none;filter:blur(.5px);}
+  .beam{width:3px;border-radius:3px;background:linear-gradient(to bottom, transparent, var(--lime) 45%, var(--lime) 60%, transparent);opacity:.55;}
+
+  /* Eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lime-deep);}
+
+  .section{padding:110px 0;position:relative;overflow:hidden;}
+  .section-head{max-width:680px;margin:0 auto 60px;text-align:center;position:relative;z-index:2;}
+  .section-head h2{font-size:clamp(31px,4.3vw,44px);font-weight:700;letter-spacing:-.025em;line-height:1.1;margin:18px 0 16px;text-wrap:balance;color:var(--navy);}
+  .section-head h2 .soft{color:var(--muted);}
+  .section-head p{color:var(--body);font-size:17.5px;text-wrap:pretty;}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--font);font-size:15px;font-weight:700;cursor:pointer;border:0;border-radius:999px;transition:transform .15s ease, background .2s ease, box-shadow .2s ease;white-space:nowrap;line-height:1;}
+  .btn:active{transform:translateY(1px);}
+  .btn .badge{width:30px;height:30px;border-radius:50%;background:var(--lime);display:grid;place-items:center;flex:none;transition:transform .2s ease;}
+  .btn .badge svg{width:14px;height:14px;color:var(--navy);}
+  .btn:hover .badge{transform:translateX(2px);}
+  .btn-primary{background:var(--navy);color:#fff;padding:7px 8px 7px 22px;box-shadow:var(--shadow-sm);}
+  .btn-primary:hover{background:#061f4c;box-shadow:var(--shadow-md);}
+  .btn-ghost{background:rgba(255,255,255,.7);color:var(--navy);border:1px solid var(--line);padding:13px 22px;}
+  .btn-ghost:hover{background:#fff;border-color:#c8cbe6;}
+  .btn-lime{background:var(--lime);color:var(--navy);padding:7px 8px 7px 22px;}
+  .btn-lime .badge{background:var(--navy);}
+  .btn-lime .badge svg{color:var(--lime);}
+  .btn-lime:hover{background:#cef01f;}
+  .btn-block{width:100%;justify-content:center;}
+
+  /* Icon badge (brand icon style: rounded navy disc) */
+  .ibadge{width:52px;height:52px;border-radius:15px;background:var(--navy);display:grid;place-items:center;flex:none;}
+  .ibadge svg{width:24px;height:24px;color:#fff;}
+  .ibadge .acc{color:var(--lime);}
+  /* small lime corner arrow */
+  .corner{width:34px;height:34px;border-radius:50%;background:var(--lime);display:grid;place-items:center;transition:transform .2s ease;}
+  .corner svg{width:15px;height:15px;color:var(--navy);}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(242,243,252,.82);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid transparent;transition:border-color .25s ease;}
+  header.scrolled{border-color:var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:inline-flex;align-items:center;}
+  .brand img{height:26px;width:auto;display:block;}
+  .foot-brand .brand img{filter:brightness(0) invert(1);}
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{font-size:14.5px;font-weight:500;color:var(--body);transition:color .18s ease;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px;color:var(--navy);}
+
+  /* Hero */
+  .hero{padding:120px 0 80px;text-align:left;position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url("assets/hero-bg.png");background-size:cover;background-position:center right;}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg, rgba(232,234,255,.97) 0%, rgba(232,234,255,.85) 28%, rgba(232,234,255,.3) 47%, rgba(232,234,255,0) 60%);}
+  .hero .inner{position:relative;z-index:3;}
+  .hero .eyebrow{background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 16px;box-shadow:var(--shadow-sm);}
+  .hero .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none;}
+  .hero h1{font-size:clamp(40px,5.4vw,62px);font-weight:700;letter-spacing:-.04em;line-height:1.04;margin:24px 0 22px;max-width:13ch;text-wrap:balance;color:var(--navy);}
+  .hero p.lead{font-size:18.5px;color:var(--body);max-width:50ch;margin:0 0 34px;text-wrap:pretty;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .trust{display:flex;gap:14px;flex-wrap:wrap;margin-top:46px;color:var(--body);font-size:14px;font-weight:500;}
+  .trust span{display:inline-flex;align-items:center;gap:9px;}
+  .trust span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(217,255,47,.25);}
+  .trust .sep{width:1px;height:15px;background:var(--line);align-self:center;}
+  .trust .sep::before{display:none;}
+
+  #whats-included{
+    background-image:url("assets/whats-included-bg.png");
+    background-size:cover;
+    background-position:center;
+    position:relative;
+  }
+  #whats-included::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:rgba(232,234,255,.10);
+  }
+  #whats-included .wrap{position:relative;z-index:1;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative;z-index:2;}
+  .step{background:var(--card);border:1px solid var(--line-2);border-radius:var(--radius);padding:32px 32px 32px;display:flex;flex-direction:column;position:relative;transition:transform .2s ease, box-shadow .2s ease;}
+  .step:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .step:hover .stepicon{transform:translateY(-3px) rotate(-2deg);}
+  .step:not(:last-child)::after{content:"";position:absolute;top:72px;right:-28px;width:28px;border-top:2px dashed var(--line);z-index:1;}
+  .step .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;min-height:96px;}
+  .step .stepicon{width:auto;height:auto;border-radius:0;background:transparent;display:grid;place-items:center;transition:transform .25s ease;}
+  .step .stepicon img{width:96px;height:96px;display:block;filter:drop-shadow(0 14px 22px rgba(8,39,93,.22));}
+  .step .num{font-size:40px;font-weight:900;line-height:1;letter-spacing:-.03em;color:var(--navy);position:relative;padding-bottom:6px;}
+  .step .num::after{content:"";position:absolute;left:2px;bottom:0;width:26px;height:4px;border-radius:3px;background:var(--lime);}
+  .step h3{font-size:21px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px;color:var(--navy);}
+  .step p{color:var(--body);font-size:15px;}
+
+  /* Lists */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:940px;margin:0 auto;position:relative;z-index:2;}
+  .panel{background:var(--card);border:1px solid var(--line-2);border-radius:var(--radius);padding:34px 32px;box-shadow:var(--shadow-sm);}
+  .panel h3{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:24px;color:var(--navy);}
+  .panel ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;}
+  .panel li{display:flex;gap:13px;align-items:flex-start;font-size:15px;color:#3a4a6e;line-height:1.5;}
+  .panel li .ico{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;margin-top:1px;}
+  .panel li .ico svg{width:12px;height:12px;}
+  .panel.yes li .ico{background:var(--navy);color:var(--lime);}
+  .panel.no li{color:var(--body);}
+  .panel.no li .ico{background:#e1e4f2;color:#9aa3c4;}
+
+  /* Pricing */
+  .price-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start;max-width:980px;margin:0 auto;position:relative;z-index:2;}
+  .price-main{background:var(--card);border:1px solid var(--line-2);border-radius:22px;padding:38px;box-shadow:var(--shadow-md);}
+  .price-tags{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;}
+  .pill{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;}
+  .pill.pop{background:var(--lime);color:var(--navy);}
+  .pill.pop::before{content:"★";font-size:10px;}
+  .pill.time{color:var(--body);font-weight:600;letter-spacing:.04em;}
+  .price-main h3{font-size:24px;font-weight:700;letter-spacing:-.02em;color:var(--navy);}
+  .price-main .sub{color:var(--body);font-size:14.5px;margin:6px 0 22px;}
+  .price-amt{display:flex;align-items:baseline;gap:8px;margin-bottom:26px;}
+  .price-amt .amt{font-size:48px;font-weight:700;letter-spacing:-.03em;color:var(--navy);}
+  .price-amt .per{color:var(--body);font-size:15px;}
+  .price-main ul{list-style:none;margin:0 0 30px;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .price-main li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#3a4a6e;}
+  .price-main li .ico{flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--lime);display:grid;place-items:center;}
+  .price-main li .ico svg{width:12px;height:12px;}
+  .addons{display:flex;flex-direction:column;gap:16px;}
+  .addon{background:var(--card);border:1px solid var(--line-2);border-radius:var(--radius);padding:22px 24px;transition:box-shadow .2s ease, transform .2s ease;}
+  .addon:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);}
+  .addon .label{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:100px;background:var(--lime);color:var(--navy);}
+  .addon-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:10px;}
+  .addon h4{font-size:16.5px;font-weight:700;letter-spacing:-.01em;color:var(--navy);}
+  .addon .plus{font-size:20px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;color:var(--navy);}
+  .addon .meta{color:var(--body);font-size:13px;margin-top:6px;}
+
+  /* Work */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:2;}
+  .work-card{border:1px solid var(--line-2);border-radius:var(--radius);overflow:hidden;background:var(--card);transition:transform .2s ease, box-shadow .2s ease;cursor:pointer;}
+  .work-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .work-thumb{aspect-ratio:4/3;position:relative;display:flex;flex-direction:column;padding:16px;gap:10px;overflow:hidden;}
+  .work-thumb.g1{background:linear-gradient(155deg,#3a5db5,#0d2f6e);}
+  .work-thumb.g2{background:linear-gradient(155deg,#2c4aa0,#08275D);}
+  .work-thumb.g3{background:linear-gradient(155deg,#1c3a82,#06183f);}
+  .work-thumb .tbeam{position:absolute;top:-10%;right:24%;width:3px;height:120%;background:linear-gradient(to bottom,transparent,var(--lime),transparent);opacity:.5;filter:blur(1px);}
+  .browser{background:#fff;border-radius:10px;flex:1;overflow:hidden;box-shadow:0 14px 30px rgba(0,0,0,.28);position:relative;z-index:1;}
+  .browser .bar{height:22px;background:#eef0f8;display:flex;align-items:center;gap:5px;padding:0 10px;border-bottom:1px solid #e3e6f2;}
+  .browser .bar i{width:7px;height:7px;border-radius:50%;display:block;}
+  .browser .bar i:nth-child(1){background:#ff5f57;}
+  .browser .bar i:nth-child(2){background:#febc2e;}
+  .browser .bar i:nth-child(3){background:#28c840;}
+  .browser .body{padding:14px;display:flex;flex-direction:column;gap:7px;}
+  .browser .body .l{height:8px;border-radius:4px;background:#e7eaf5;}
+  .browser .body .l.title{background:var(--navy);width:42%;height:11px;margin-bottom:4px;}
+  .browser .body .l.w70{width:70%;}
+  .browser .body .l.w50{width:50%;}
+  .browser .body .l.lime{background:var(--lime);width:30%;margin-top:6px;}
+  .work-meta{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;}
+  .work-meta .t{font-weight:700;font-size:16px;letter-spacing:-.01em;color:var(--navy);}
+  .work-meta .c{color:var(--body);font-size:13px;}
+  .work-meta .arr{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--navy);transition:transform .2s ease, background .2s ease, border-color .2s ease;}
+  .work-meta .arr svg{width:14px;height:14px;}
+  .work-card:hover .arr{background:var(--lime);border-color:var(--lime);transform:translateX(2px);}
+
+  /* Testimonials */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:2;}
+  .quote{background:var(--card);border:1px solid var(--line-2);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;gap:20px;box-shadow:var(--shadow-sm);}
+  .quote .qmark{font-size:42px;line-height:.6;color:var(--lime-deep);font-family:Georgia,serif;height:22px;}
+  .quote p{font-size:15.5px;line-height:1.6;color:#3a4a6e;flex:1;text-wrap:pretty;}
+  .quote .who{display:flex;align-items:center;gap:12px;}
+  .avatar{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 34% 28%, #4a6fb5, var(--navy));color:var(--lime);display:grid;place-items:center;font-weight:700;font-size:15px;}
+  .who .n{font-weight:700;font-size:14.5px;color:var(--navy);}
+  .who .r{color:var(--body);font-size:12.5px;}
+
+  /* Start / form */
+  .start-grid{display:block;max-width:640px;margin:0 auto;position:relative;z-index:2;}
+  .form-card{background:var(--card);border:1px solid var(--line-2);border-radius:22px;padding:38px;box-shadow:var(--shadow-md);}
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:8px;color:var(--navy);}
+  .field input,.field select,.field textarea{width:100%;font-family:var(--font);font-size:15px;color:var(--ink);padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:#fafbff;transition:border-color .18s ease, box-shadow .18s ease;}
+  .field textarea{resize:vertical;min-height:108px;}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(8,39,93,.1);background:#fff;}
+  .addon-chips{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .chip{display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none;border:1px solid var(--line);border-radius:100px;padding:8px 14px;font-size:14px;font-weight:500;line-height:1;transition:all .15s ease;background:#fff;color:#3a4a6e;}
+  .chip:hover{border-color:#c8cbe6;}
+  .chip input{display:none;}
+  .chip .dot{width:16px;height:16px;border-radius:50%;border:1.5px solid #c4c8e2;display:inline-flex;align-items:center;justify-content:center;flex:none;vertical-align:middle;transition:all .15s ease;}
+  .chip-label{margin-left:6px;}
+  .chip .dot svg{width:9px;height:9px;color:var(--navy);opacity:0;}
+  .chip.on{border-color:var(--navy);background:#f1f3fc;color:var(--navy);}
+  .chip.on .dot{background:var(--lime);border-color:var(--lime);}
+  .chip.on .dot svg{opacity:1;}
+  .form-card .btn{margin-top:8px;}
+  .form-note{text-align:center;color:var(--body);font-size:13px;margin-top:14px;}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  .form-error{display:none;text-align:center;color:#c0392b;font-size:13.5px;margin-top:12px;}
+  .btn[disabled]{opacity:.6;cursor:default;}
+  .form-success{display:none;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:34px 10px;}
+  .form-success .check{width:60px;height:60px;border-radius:50%;background:var(--navy);color:var(--lime);display:grid;place-items:center;}
+  .form-success .check svg{width:30px;height:30px;}
+  .form-success h3{font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--navy);}
+  .form-success p{color:var(--body);font-size:15px;max-width:38ch;}
+
+  /* CTA banner */
+  .cta-banner{position:relative;z-index:2;background:linear-gradient(120deg,#0c2f6e,var(--navy));color:#fff;border-radius:24px;padding:48px 52px;overflow:hidden;box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+  .cta-banner .cbeam{position:absolute;top:-15%;left:42%;width:3px;height:130%;background:linear-gradient(to bottom,transparent,var(--lime),transparent);opacity:.45;}
+  .cta-banner .csphere{position:absolute;width:200px;height:200px;border-radius:50%;top:50%;right:-70px;transform:translateY(-50%);background:radial-gradient(circle at 34% 28%, #4a6fb5, var(--navy));opacity:.6;}
+  .cta-banner .ctext{position:relative;max-width:560px;}
+  .cta-banner h3{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.025em;line-height:1.12;}
+  .cta-banner ul{list-style:none;margin:18px 0 0;padding:0;display:flex;gap:24px;flex-wrap:wrap;}
+  .cta-banner li{display:flex;align-items:center;gap:10px;font-size:15px;color:#cdd4ea;}
+  .cta-banner li .ico{width:22px;height:22px;border-radius:50%;background:var(--lime);color:var(--navy);display:grid;place-items:center;flex:none;}
+  .cta-banner li .ico svg{width:12px;height:12px;}
+  .cta-banner .cact{position:relative;flex:none;}
+
+  /* Footer */
+  footer{background:var(--navy);color:#fff;padding:66px 0 36px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:48px;}
+  .foot-brand .brand{color:#fff;}
+  .foot-brand p{color:#9aa6cc;font-size:14.5px;margin-top:16px;max-width:30ch;}
+  .foot-col h4{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:18px;}
+  .foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .foot-col a{color:#9aa6cc;font-size:14.5px;transition:color .15s ease;}
+  .foot-col a:hover{color:var(--lime);}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);color:#7e8ab0;font-size:13.5px;flex-wrap:wrap;gap:10px;}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+  @media (max-width:920px){
+    .steps,.work-grid,.testi-grid{grid-template-columns:1fr;}
+    .two-col,.price-grid{grid-template-columns:1fr;}
+    .cta-banner{padding:36px 30px;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  }
+  @media (max-width:1024px){
+    .nav-links{display:none;}
+    .section{padding:74px 0;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .trust .sep{display:none;}
+    .hero::after{background:rgba(230,231,255,.75);}
+  }
+  @media (max-width:720px){
+    .hero::after{background:rgba(230,231,255,.93);}
+  }
+  @media (min-width:720px){
+    .nav-links{display:flex;}
+    .hero::after{background:linear-gradient(90deg, rgba(230,231,255,.82) 0%, rgba(230,231,255,.6) 40%, rgba(230,231,255,.15) 65%, rgba(230,231,255,0) 100%);}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
+    <nav class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#whats-included">What's included</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#work">Work</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#start" class="btn btn-primary"><span>Start your project</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="wrap inner">
+    <span class="eyebrow" style="color: rgb(8, 39, 93)">Web design · Delivered in 24h</span>
+    <h1>A professional landing page. Ready tomorrow.</h1>
+    <p class="lead">Tell us about your project, answer a few questions, and receive a custom  website in one business day. No meetings. No complexity.</p>
+    <div class="hero-cta">
+      <a href="#start" class="btn btn-primary"><span>Start your project</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+    </div>
+    <div class="trust">
+      <span>Custom landing page</span><i class="sep"></i>
+      <span>Delivered in 24 hours</span><i class="sep"></i>
+      <span>Fixed price, no surprises</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">How it works</span>
+      <h2>Three steps. <span class="soft">One business day.</span></h2>
+      <p>No back-and-forth. No delays. Just a clear, simple process.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="top">
+          <span class="num">01</span>
+          <span class="stepicon"><img src="assets/icon-brief.png" alt="" /></span>
+        </div>
+        <h3>Fill the brief</h3>
+        <p>Choose your package, describe your project, and share any references. It takes less than 5 minutes.</p>
+      </div>
+      <div class="step reveal">
+        <div class="top">
+          <span class="num">02</span>
+          <span class="stepicon"><img src="assets/icon-build.png" alt="" /></span>
+        </div>
+        <h3>We build it</h3>
+        <p>Our team designs and codes your website by hand. No templates. No shortcuts. Pure craft.</p>
+      </div>
+      <div class="step reveal">
+        <div class="top">
+          <span class="num">03</span>
+          <span class="stepicon"><img src="assets/icon-launch.png" alt="" /></span>
+        </div>
+        <h3>You receive it</h3>
+        <p>Within one business day, you get a responsive, accessible, SEO-ready website — ready to publish.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section id="whats-included" class="section band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">What's included</span>
+      <h2>Everything you need. <span class="soft">Nothing you don't.</span></h2>
+    </div>
+    <div class="two-col">
+      <div class="panel yes reveal">
+        <h3>What's included</h3>
+        <ul>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Custom designed HTML file</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Responsive</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Accessible (WCAG AA)</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>SEO-ready</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Fast — optimized for Core Web Vitals</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>One revision round included</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Delivered as a clean, ready-to-publish file</li>
+        </ul>
+      </div>
+      <div class="panel no reveal">
+        <h3>What we don't do</h3>
+        <ul>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No templates or page builders</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No Webflow, Framer, or Squarespace</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No CMS or back-office</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No dynamic web apps</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No ongoing maintenance (unless subscribed)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">Pricing</span>
+      <h2>Clear pricing. <span class="soft">No surprises.</span></h2>
+      <p>Pay for what you need. Add what makes sense.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-main reveal">
+        <div class="price-tags">
+          <span class="pill pop">Most popular</span>
+        </div>
+        <h3>Landing page</h3>
+        <p class="sub">Custom hand-coded · Delivered in 24h</p>
+        <div class="price-amt"><span class="amt">€497</span><span class="per">/ one-time</span></div>
+        <ul>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Custom landing page</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Responsive &amp; accessible</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>SEO-ready</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>One revision round</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Delivered as a ready-to-publish file</li>
+        </ul>
+        <a href="#start" class="btn btn-primary btn-block"><span>Start your project</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <div class="addons">
+        <div class="addon reveal">
+          <span class="label">Add-on</span>
+          <div class="addon-row"><h4>Extra pages</h4><span class="plus">+€149</span></div>
+          <p class="meta">per page (up to 3) · +24h each</p>
+        </div>
+        <div class="addon reveal">
+          <span class="label">Add-on</span>
+          <div class="addon-row"><h4>Domain &amp; hosting setup</h4><span class="plus">+€89</span></div>
+          <p class="meta">one-time</p>
+        </div>
+        <div class="addon reveal">
+          <span class="label">Add-on</span>
+          <div class="addon-row"><h4>Monthly support</h4><span class="plus">€49</span></div>
+          <p class="meta">/month · updates &amp; tweaks</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="section band">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">Recent work</span>
+      <h2>A few examples of what we build.</h2>
+    </div>
+    <div class="work-grid">
+      <a href="#" class="work-card reveal">
+        <div class="work-thumb g1"><span class="tbeam"></span>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
+            <div class="body"><div class="l title"></div><div class="l w70"></div><div class="l w50"></div><div class="l lime"></div></div></div>
+        </div>
+        <div class="work-meta"><div><div class="t">Mira Studio</div><div class="c">Landing page</div></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+      <a href="#" class="work-card reveal">
+        <div class="work-thumb g2"><span class="tbeam"></span>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
+            <div class="body"><div class="l title"></div><div class="l w70"></div><div class="l w50"></div><div class="l lime"></div></div></div>
+        </div>
+        <div class="work-meta"><div><div class="t">Nordhaus</div><div class="c">Local business</div></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+      <a href="#" class="work-card reveal">
+        <div class="work-thumb g3"><span class="tbeam"></span>
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
+            <div class="body"><div class="l title"></div><div class="l w70"></div><div class="l w50"></div><div class="l lime"></div></div></div>
+        </div>
+        <div class="work-meta"><div><div class="t">Loop &amp; Co.</div><div class="c">Startup / MVP</div></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section" style="padding-top:64px;padding-bottom:0;">
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <span class="cbeam"></span><span class="csphere"></span>
+      <div class="ctext">
+        <h3>Ready to launch your website?</h3>
+        <ul>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Professional website</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Ready tomorrow</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>No meetings. No complexity.</li>
+        </ul>
+      </div>
+      <div class="cact">
+        <a href="#start" class="btn btn-lime"><span>Start your project</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">Testimonials</span>
+      <h2>What clients say.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="quote reveal">
+        <div class="qmark">&ldquo;</div>
+        <p>I needed a website fast for a product launch. Briefly delivered in under 24 hours — clean, professional, exactly what I described. Zero back-and-forth.</p>
+        <div class="who"><div class="avatar">A</div><div><div class="n">Ana S.</div><div class="r">Freelance Consultant</div></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="qmark">&ldquo;</div>
+        <p>As a startup, speed matters. We had a landing page for our MVP in one day. The quality was miles ahead of what we expected.</p>
+        <div class="who"><div class="avatar">R</div><div><div class="n">Ricardo M.</div><div class="r">Co-founder, Loop</div></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="qmark">&ldquo;</div>
+        <p>I was sceptical about the timeline, but they delivered. The site is fast, looks great on mobile, and my clients already commented on it.</p>
+        <div class="who"><div class="avatar">M</div><div><div class="n">Mariana F.</div><div class="r">Photographer</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- START / FORM -->
+<section id="start" class="section band">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:48px;">
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">Start your project</span>
+      <h2>Tell us about your project.</h2>
+      <p>Fill in the form and we'll get back to you within a few hours.</p>
+    </div>
+    <div class="start-grid">
+      <div class="form-card reveal">
+        <form id="briefForm">
+          <div class="field"><label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required /></div>
+          <div class="field hp" aria-hidden="true"><label for="company">Company</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" /></div>
+          <div class="field"><label for="email">Your email</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required /></div>
+          <div class="field"><label for="type">What do you need?</label>
+            <select id="type" name="type" required>
+              <option value="" disabled selected>Select a type…</option>
+              <option>Landing page</option>
+              <option>Startup / MVP page</option>
+              <option>Portfolio or personal website</option>
+              <option>Local business website</option>
+              <option>Product or campaign page</option>
+              <option>Short-term rental page</option>
+              <option>Other</option>
+            </select></div>
+          <div class="field"><label for="desc">Describe your project</label>
+            <textarea id="desc" name="desc" placeholder="Tell us what the website is for, who your audience is, and any references you have in mind…"></textarea></div>
+          <div class="field"><label>Any add-ons you're interested in?</label>
+            <div class="addon-chips">
+              <label class="chip"><input type="checkbox" value="Extra pages" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Extra pages</span></label>
+              <label class="chip"><input type="checkbox" value="Domain & hosting" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Domain &amp; hosting</span></label>
+              <label class="chip"><input type="checkbox" value="Monthly support" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Monthly support</span></label>
+            </div></div>
+          <button type="submit" class="btn btn-primary btn-block"><span>Send brief</span>
+            <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+          <p class="form-note">We reply within a few hours, Monday to Friday.</p>
+          <p class="form-error" id="formError"></p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>
+          <h3>Brief received!</h3>
+          <p>Thanks — we've got your project details and we'll be in touch within a few hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
+        <p>A professional website. Ready tomorrow.</p>
+      </div>
+      <div class="foot-col"><h4>Pages</h4>
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#whats-included">What's included</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#work">Recent work</a></li>
+          <li><a href="#start">Start a project</a></li>
+        </ul>
+      </div>
+      <div class="foot-col"><h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="foot-col"><h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@briefly.studio">hello@briefly.studio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Briefly. All rights reserved.</span>
+      <span>Hand-coded with care.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.chip input').forEach(input=>{
+    const chip = input.closest('.chip');
+    input.addEventListener('change', ()=> chip.classList.toggle('on', input.checked));
+  });
+
+  const form = document.getElementById('briefForm');
+  const WEB3FORMS_KEY = 'd1df6046-c42f-4bb0-b180-bda5770e41c5';
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const errEl = document.getElementById('formError');
+    const btn = form.querySelector('button[type="submit"]');
+    errEl.style.display = 'none';
+
+    // Honeypot — if the hidden "company" field is filled, it's a bot. Drop silently.
+    if (form.company.value) { form.reset(); return; }
+
+    const addons = [...form.querySelectorAll('.chip input:checked')].map(i=>i.value);
+    const payload = {
+      access_key: WEB3FORMS_KEY,
+      subject: `New brief from ${form.name.value.trim()} — ${form.type.value}`,
+      from_name: 'Briefly website',
+      replyto: form.email.value.trim(),
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      'Project type': form.type.value,
+      'Add-ons': addons.length ? addons.join(', ') : 'None',
+      'Description': form.desc.value.trim() || '—',
+    };
+
+    btn.disabled = true;
+    const label = btn.querySelector('span:not(.badge)');
+    const original = label ? label.textContent : '';
+    if (label) label.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(()=>({}));
+      if (!res.ok || !data.success) throw new Error(data.message || 'Something went wrong. Please try again.');
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'flex';
+    } catch (err) {
+      errEl.textContent = err.message;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      if (label) label.textContent = original;
+    }
+  });
+</script>
+</body>
+</html>
