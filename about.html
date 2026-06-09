@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Briefly</title>
+<meta name="description" content="Briefly is a personal project by David Cruz — a digital designer with 16 years of experience who got tired of the old way of building websites." />
+<link rel="canonical" href="https://briefly.pt/about.html" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="David Cruz" />
+<meta name="theme-color" content="#08275D" />
+<meta name="geo.region" content="PT" />
+<meta name="geo.placename" content="Loures, Portugal" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Briefly" />
+<meta property="og:locale" content="en" />
+<meta property="og:url" content="https://briefly.pt/about.html" />
+<meta property="og:title" content="About — Briefly" />
+<meta property="og:description" content="A personal project by David Cruz — a digital designer with 16 years of experience who got tired of the old way of building websites." />
+<meta property="og:image" content="https://briefly.pt/assets/share-thumb.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="About Briefly — One person. Sixteen years. Zero complexity." />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About — Briefly" />
+<meta name="twitter:description" content="A personal project by David Cruz — a digital designer who got tired of the old way of building websites." />
+<meta name="twitter:image" content="https://briefly.pt/assets/share-thumb.png" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#08275D;
+    --periwinkle:#E8EAFF;
+    --white:#FFFFFF;
+    --lime:#D9FF2F;
+    --lime-deep:#aebf1c;
+
+    --bg:#f2f3fc;
+    --band:#E8EAFF;
+    --ink:#08275D;
+    --body:#5a6a90;
+    --muted:#9aa6cc;
+    --line:#dfe2f4;
+    --line-2:#e9ebf8;
+    --card:#FFFFFF;
+
+    --radius:18px;
+    --radius-sm:14px;
+    --shadow-sm:0 1px 2px rgba(8,39,93,.05), 0 4px 16px rgba(8,39,93,.05);
+    --shadow-md:0 22px 48px -18px rgba(8,39,93,.26), 0 6px 18px rgba(8,39,93,.07);
+    --maxw:1140px;
+    --font:"Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:92px;}
+  body{
+    margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    font-size:16px;line-height:1.6;
+  }
+  h1,h2,h3,h4,p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .band{background:var(--band);}
+
+  /* Eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lime-deep);}
+
+  .section{padding:110px 0;position:relative;overflow:hidden;}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--font);font-size:15px;font-weight:700;cursor:pointer;border:0;border-radius:999px;transition:transform .15s ease, background .2s ease, box-shadow .2s ease;white-space:nowrap;line-height:1;}
+  .btn:active{transform:translateY(1px);}
+  .btn .badge{width:30px;height:30px;border-radius:50%;background:var(--lime);display:grid;place-items:center;flex:none;transition:transform .2s ease;}
+  .btn .badge svg{width:14px;height:14px;color:var(--navy);}
+  .btn:hover .badge{transform:translateX(2px);}
+  .btn-primary{background:var(--navy);color:#fff;padding:7px 8px 7px 22px;box-shadow:var(--shadow-sm);}
+  .btn-primary:hover{background:#061f4c;box-shadow:var(--shadow-md);}
+  .btn-lime{background:var(--lime);color:var(--navy);padding:7px 8px 7px 22px;}
+  .btn-lime .badge{background:var(--navy);}
+  .btn-lime .badge svg{color:var(--lime);}
+  .btn-lime:hover{background:#cef01f;}
+
+  /* small lime corner arrow */
+  .corner{width:34px;height:34px;border-radius:50%;background:var(--lime);display:grid;place-items:center;transition:transform .2s ease;flex:none;}
+  .corner svg{width:15px;height:15px;color:var(--navy);}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(242,243,252,.82);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid transparent;transition:border-color .25s ease;}
+  header.scrolled{border-color:var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:inline-flex;align-items:center;}
+  .brand img{height:26px;width:auto;display:block;}
+  .foot-brand .brand img{filter:brightness(0) invert(1);}
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{font-size:14.5px;font-weight:500;color:var(--body);transition:color .18s ease;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-links a.active{color:var(--navy);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px;color:var(--navy);}
+
+  /* About hero */
+  .about-hero{padding:120px 0;text-align:center;position:relative;overflow:hidden;background-image:url("assets/about-hero-bg.png");background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .about-hero::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 60% 70% at 50% 50%, rgba(232,234,255,.66) 0%, rgba(232,234,255,.28) 45%, rgba(232,234,255,0) 75%);pointer-events:none;}
+  .about-hero .deco{display:none;}
+  .about-hero .inner{position:relative;z-index:2;}
+  .about-hero .eyebrow{background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 16px;box-shadow:var(--shadow-sm);color:var(--navy);}
+  .about-hero .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none;}
+  .about-hero h1{font-size:clamp(40px,5.8vw,66px);font-weight:700;letter-spacing:-.04em;line-height:1.04;color:var(--navy);margin:24px auto 24px;max-width:17ch;text-wrap:balance;}
+  .about-hero p.lead{font-size:19px;color:var(--body);max-width:44ch;margin:0 auto;text-wrap:pretty;}
+
+  /* Prose reading block */
+  .prose{max-width:740px;margin:0 auto;position:relative;z-index:2;}
+  .prose .eyebrow{margin-bottom:20px;}
+  .prose h2{font-size:clamp(30px,4.1vw,44px);font-weight:700;letter-spacing:-.028em;line-height:1.1;color:var(--navy);margin-bottom:26px;text-wrap:balance;}
+  .prose p{font-size:18px;color:var(--body);line-height:1.68;text-wrap:pretty;}
+  .prose p + p{margin-top:20px;}
+  .more-link{display:inline-flex;align-items:center;gap:12px;margin-top:30px;font-weight:700;font-size:15px;color:var(--navy);}
+  .more-link:hover .corner{transform:translateX(3px);}
+
+  /* Dark (problem) section */
+  .section.dark{background:var(--navy);color:#fff;}
+  .section.dark .deco{position:absolute;width:680px;height:680px;border-radius:50%;top:50%;left:46%;transform:translate(-50%,-50%);z-index:0;background:radial-gradient(circle, rgba(74,111,181,.30), rgba(74,111,181,.08) 42%, rgba(8,39,93,0) 70%);pointer-events:none;filter:blur(6px);}
+  .section.dark .eyebrow{color:rgba(255,255,255,.55);}
+  .section.dark .prose h2{color:#fff;}
+  .section.dark .prose p{color:#b9c2e0;}
+  .section.dark .prose p strong{color:#fff;font-weight:700;}
+
+  /* Old way vs Briefly way */
+  .vs-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:940px;margin:0 auto;position:relative;z-index:2;}
+  .vs-badge{position:absolute;top:50%;left:50%;margin:-28px 0 0 -28px;z-index:4;width:56px;height:56px;border-radius:50%;background:var(--lime);color:var(--navy);display:grid;place-items:center;font-weight:900;font-style:italic;font-size:17px;letter-spacing:-.02em;box-shadow:0 12px 26px rgba(0,0,0,.32);}
+  .vs-panel{border-radius:var(--radius);padding:32px 30px;}
+  .vs-panel h3{display:flex;align-items:center;gap:11px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:24px;}
+  .vs-dot{width:9px;height:9px;border-radius:50%;flex:none;}
+  .vs-panel ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:15px;}
+  .vs-panel li{display:flex;gap:13px;align-items:flex-start;font-size:15.5px;line-height:1.5;}
+  .vs-panel li .ico{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;margin-top:1px;}
+  .vs-panel li .ico svg{width:12px;height:12px;}
+  .vs-old{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);}
+  .vs-old h3{color:rgba(255,255,255,.55);}
+  .vs-old .vs-dot{background:rgba(255,255,255,.3);}
+  .vs-old li{color:#8b97bd;}
+  .vs-old li .txt{text-decoration:line-through;text-decoration-color:rgba(255,255,255,.28);text-decoration-thickness:1.5px;}
+  .vs-old li .ico{background:rgba(255,255,255,.08);color:#8b97bd;}
+  .vs-new{background:#fff;box-shadow:var(--shadow-md);}
+  .vs-new h3{color:var(--navy);}
+  .vs-new .vs-dot{background:var(--lime);}
+  .vs-new li{color:#3a4a6e;}
+  .vs-new li .ico{background:var(--navy);color:var(--lime);}
+
+  /* About David — bio */
+  .bio{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start;max-width:940px;margin:0 auto;position:relative;z-index:2;}
+  .bio-photo{position:relative;}
+  .bio-photo img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;box-shadow:var(--shadow-md);}
+  .bio-photo .tag{position:absolute;left:18px;bottom:18px;background:rgba(8,39,93,.82);backdrop-filter:blur(6px);color:#fff;border-radius:100px;padding:8px 15px;font-size:12.5px;font-weight:600;letter-spacing:.01em;display:inline-flex;align-items:center;gap:8px;}
+  .bio-photo .tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);}
+  .bio-body .eyebrow{margin-bottom:18px;}
+  .bio-body h2{font-size:clamp(28px,3.6vw,40px);font-weight:700;letter-spacing:-.025em;line-height:1.12;color:var(--navy);margin-bottom:22px;text-wrap:balance;}
+  .bio-body p{font-size:17px;color:var(--body);line-height:1.66;text-wrap:pretty;}
+  .bio-body p + p{margin-top:16px;}
+
+  /* CTA banner */
+  .cta-banner{position:relative;z-index:2;background:linear-gradient(120deg,#0c2f6e,var(--navy));color:#fff;border-radius:24px;padding:54px 56px;overflow:hidden;box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+  .cta-banner .cbeam{position:absolute;top:-15%;left:42%;width:3px;height:130%;background:linear-gradient(to bottom,transparent,var(--lime),transparent);opacity:.45;}
+  .cta-banner .csphere{position:absolute;width:200px;height:200px;border-radius:50%;top:50%;right:-70px;transform:translateY(calc(-50% + var(--py,0px)));background:radial-gradient(circle at 34% 28%, #4a6fb5, var(--navy));opacity:.6;}
+  .cta-banner .ctext{position:relative;max-width:560px;}
+  .cta-banner h3{font-size:clamp(26px,3.2vw,34px);font-weight:700;letter-spacing:-.025em;line-height:1.12;}
+  .cta-banner p{position:relative;margin-top:14px;color:#cdd4ea;font-size:16px;}
+  .cta-banner .cact{position:relative;flex:none;}
+
+  /* Footer */
+  footer{background:var(--navy);color:#fff;padding:66px 0 36px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:48px;}
+  .foot-brand .brand{color:#fff;}
+  .foot-brand p{color:#9aa6cc;font-size:14.5px;margin-top:16px;max-width:30ch;}
+  .foot-col h4{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:18px;}
+  .foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .foot-col a{color:#9aa6cc;font-size:14.5px;transition:color .15s ease;}
+  .foot-col a:hover{color:var(--lime);}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);color:#7e8ab0;font-size:13.5px;flex-wrap:wrap;gap:10px;}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);transition-delay:var(--rd,0s);will-change:opacity,transform;}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal.rv-up{transform:translateY(30px) scale(.965);}
+  .reveal.rv-left{transform:translateX(-40px);}
+  .reveal.rv-right{transform:translateX(40px);}
+  .reveal.rv-up.in,.reveal.rv-left.in,.reveal.rv-right.in{transform:none;}
+
+  @media (prefers-reduced-motion:reduce){
+    .reveal,.reveal.rv-up,.reveal.rv-left,.reveal.rv-right{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:920px){
+    .vs-wrap{grid-template-columns:1fr;}
+    .vs-badge{display:none;}
+    .bio{grid-template-columns:1fr;gap:32px;max-width:560px;}
+    .bio-photo{max-width:300px;}
+    .cta-banner{padding:38px 30px;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  }
+  @media (max-width:1024px){
+    .nav-links{display:none;}
+    .section{padding:78px 0;}
+    .about-hero{padding:120px 0 72px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:1025px){
+    .nav-links{display:flex;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
+    <nav class="nav-links">
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#who-is-this-for">Who it's for</a>
+      <a href="index.html#whats-included">What's included</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#start" class="btn btn-primary"><span>Start your project</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="about-hero">
+  <span class="deco" aria-hidden="true"></span>
+  <div class="wrap inner">
+    <span class="eyebrow reveal">About Briefly</span>
+    <h1 class="reveal" style="--rd:.08s">One person.
+Zero complexity.</h1>
+    <p class="lead reveal" style="--rd:.16s">Briefly is a personal project by David Cruz — a digital designer with 16 years of experience who got tired of the old way of building websites.</p>
+  </div>
+</section>
+
+<!-- OLD WAY vs THE BRIEFLY WAY -->
+<section class="section dark">
+  <span class="deco" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="prose" style="text-align:center;margin-bottom:58px;">
+      <span class="eyebrow reveal">The old model</span>
+      <h2 class="reveal" style="--rd:.06s">The agency model is broken for most projects.</h2>
+      <p class="reveal" style="--rd:.12s">Too slow, too expensive, too many people for a job that doesn't need any of that. So I built the alternative.</p>
+    </div>
+    <div class="vs-wrap">
+      <span class="vs-badge reveal" aria-hidden="true">vs</span>
+      <div class="vs-panel vs-old reveal rv-left">
+        <h3><span class="vs-dot"></span>The old way</h3>
+        <ul data-stagger>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Three discovery calls</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Four weeks of waiting</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">A proposal at 2× your budget</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">A whole team for one page</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Meetings, handoffs, delays</span></li>
+        </ul>
+      </div>
+      <div class="vs-panel vs-new reveal rv-right">
+        <h3><span class="vs-dot"></span>The Briefly way</h3>
+        <ul data-stagger>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">One simple brief</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Built by one person — me</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Delivered the next business day</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Custom-built, never a template</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Fixed price. No meetings.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT DAVID -->
+<section class="section">
+  <div class="wrap">
+    <div class="bio">
+      <div class="bio-photo reveal rv-left">
+        <img src="assets/david-cruz.jpg" alt="David Cruz, digital designer and founder of Briefly" />
+        <span class="tag">David Cruz · Portugal</span>
+      </div>
+      <div class="bio-body reveal rv-right">
+        <span class="eyebrow" style="color: rgb(8, 39, 93)">Who's behind it</span>
+        <h2>Who's behind it.</h2>
+        <p>I'm David Cruz — digital designer based in Portugal, with 16 years of experience working on digital products and websites for clients ranging from early-stage startups to established brands.</p>
+        <p>Briefly started because I kept seeing the same problem: people needed a clean, professional landing page and had nowhere to go that was fast, affordable, and didn't involve three months and a junior account manager.</p>
+        <p>So I built a service that does exactly that.</p>
+        <a class="more-link" href="https://www.davidcruz.pt" target="_blank" rel="noopener">
+          <span>More of my work at davidcruz.pt</span>
+          <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT WORKS + CTA -->
+<section class="section band" style="padding-bottom:96px;">
+  <div class="wrap">
+    <div class="prose" style="margin-bottom:56px;">
+      <span class="eyebrow reveal" style="color: rgb(8, 39, 93)">One person. Full accountability.</span>
+      <h2 class="reveal" style="--rd:.06s">One person means accountability.</h2>
+      <p class="reveal" style="--rd:.12s">When you work with Briefly, you're working with me directly. I read your brief. I design your website. I build it. If something needs to change, you talk to me.</p>
+      <p class="reveal" style="--rd:.16s">No miscommunication. No version 7 of the brief. No surprises on delivery day.</p>
+    </div>
+    <div class="cta-banner reveal">
+      <span class="cbeam"></span><span class="csphere parallax" data-pspeed="0.12"></span>
+      <div class="ctext">
+        <h3>Ready to start?</h3>
+        <p>Fill the brief and I'll get back to you within a few hours.</p>
+      </div>
+      <div class="cact">
+        <a href="index.html#start" class="btn btn-lime"><span>Start your project</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
+        <p>A professional website. Ready tomorrow.</p>
+      </div>
+      <div class="foot-col"><h4>Pages</h4>
+        <ul>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#whats-included">What's included</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#work">Recent work</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#start">Start a project</a></li>
+        </ul>
+      </div>
+      <div class="foot-col"><h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="foot-col"><h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@briefly.pt">hello@briefly.pt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Briefly. All rights reserved.</span>
+      <span>Built with care.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+
+  // Cascade children of [data-stagger] groups
+  document.querySelectorAll('[data-stagger]').forEach(group=>{
+    [...group.children].forEach((child, i)=>{
+      if(!child.classList.contains('reveal')) child.classList.add('reveal');
+      child.style.setProperty('--rd', (i*0.07)+'s');
+    });
+  });
+
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Subtle scroll parallax (CTA sphere)
+  (function(){
+    const items = [...document.querySelectorAll('.parallax')].map(el=>({ el, speed: parseFloat(el.dataset.pspeed)||0.1 }));
+    if(!items.length || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    let ticking=false;
+    function update(){
+      const vh = window.innerHeight;
+      items.forEach(({el,speed})=>{
+        const r = el.getBoundingClientRect();
+        const mid = r.top + r.height/2;
+        const off = (mid - vh/2) * -speed;
+        el.style.setProperty('--py', off.toFixed(1)+'px');
+      });
+      ticking=false;
+    }
+    function onScrollP(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScrollP, {passive:true});
+    window.addEventListener('resize', onScrollP, {passive:true});
+    update();
+  })();
+</script>
+</body>
+</html>

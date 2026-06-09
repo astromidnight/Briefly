@@ -4,16 +4,73 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Briefly — A professional website. Ready tomorrow.</title>
+<meta name="description" content="Choose what you need, answer a few questions, and receive your custom-built website in one business day. No meetings. No complexity. Built in Portugal by David Cruz." />
+<link rel="canonical" href="https://briefly.pt/" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-<meta name="description" content="Choose what you need, answer a few questions, and receive your custom-built website in one business day. No meetings. No complexity." />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="author" content="David Cruz" />
+<meta name="theme-color" content="#08275D" />
 
-<!-- Social share image -->
-<meta property="og:image" content="assets/share-thumb.png" />
+<!-- Geo targeting -->
+<meta name="geo.region" content="PT" />
+<meta name="geo.placename" content="Loures, Portugal" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Briefly" />
+<meta property="og:locale" content="en" />
+<meta property="og:url" content="https://briefly.pt/" />
+<meta property="og:title" content="Briefly — A professional website. Ready tomorrow." />
+<meta property="og:description" content="Choose what you need, answer a few questions, and receive your custom-built website in one business day. No meetings. No complexity." />
+<meta property="og:image" content="https://briefly.pt/assets/share-thumb.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Briefly — A professional website. Ready tomorrow." />
+
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="assets/share-thumb.png" />
+<meta name="twitter:title" content="Briefly — A professional website. Ready tomorrow." />
+<meta name="twitter:description" content="Choose what you need, answer a few questions, and receive your custom-built website in one business day." />
+<meta name="twitter:image" content="https://briefly.pt/assets/share-thumb.png" />
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://briefly.pt/#business",
+      "name": "Briefly",
+      "url": "https://briefly.pt/",
+      "image": "https://briefly.pt/assets/share-thumb.png",
+      "logo": "https://briefly.pt/assets/briefly-logo.svg",
+      "description": "Productized web design service. Choose what you need, answer a few questions, and receive your custom-built website in one business day.",
+      "email": "hello@briefly.pt",
+      "priceRange": "€€",
+      "vatID": "PT205254128",
+      "founder": { "@type": "Person", "name": "David Cruz" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Aristides de Sousa Mendes N.º 16",
+        "postalCode": "2670-545",
+        "addressLocality": "Loures",
+        "addressCountry": "PT"
+      },
+      "areaServed": "Worldwide",
+      "serviceType": "Web design"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://briefly.pt/#website",
+      "url": "https://briefly.pt/",
+      "name": "Briefly",
+      "publisher": { "@id": "https://briefly.pt/#business" },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
 <style>
@@ -275,6 +332,9 @@
   .chip.on .dot svg{opacity:1;}
   .form-card .btn{margin-top:8px;}
   .form-note{text-align:center;color:var(--body);font-size:13px;margin-top:14px;}
+  .form-consent{text-align:center;color:var(--body);font-size:12px;opacity:.75;margin-top:8px;line-height:1.5;}
+  .form-consent a{color:inherit;text-decoration:underline;text-underline-offset:2px;}
+  .form-consent a:hover{color:var(--navy);}
   .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
   .form-error{display:none;text-align:center;color:#c0392b;font-size:13.5px;margin-top:12px;}
   .btn[disabled]{opacity:.6;cursor:default;}
@@ -307,6 +367,21 @@
   .foot-col a:hover{color:var(--lime);}
   .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);color:#7e8ab0;font-size:13.5px;flex-wrap:wrap;gap:10px;}
 
+  /* Cookie consent */
+  .cookie-card{position:fixed;right:24px;bottom:24px;z-index:200;width:340px;max-width:calc(100vw - 32px);background:var(--card);border:1px solid var(--line-2);border-radius:18px;box-shadow:var(--shadow-md);padding:22px 22px 20px;transform:translateY(18px);opacity:0;pointer-events:none;transition:opacity .4s ease, transform .45s cubic-bezier(.22,.61,.36,1);}
+  .cookie-card.show{opacity:1;transform:none;pointer-events:auto;}
+  .cookie-card h4{font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--navy);margin-bottom:9px;display:flex;align-items:center;gap:9px;}
+  .cookie-card h4::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none;box-shadow:0 0 0 3px rgba(217,255,47,.25);}
+  .cookie-card p{font-size:13.5px;color:var(--body);line-height:1.55;text-wrap:pretty;}
+  .cookie-actions{display:flex;gap:10px;margin-top:16px;}
+  .cookie-btn{flex:1;font-family:var(--font);font-size:13.5px;font-weight:700;cursor:pointer;border-radius:999px;padding:10px 14px;border:1px solid var(--line);transition:background .18s ease, border-color .18s ease, transform .15s ease;}
+  .cookie-btn:active{transform:translateY(1px);}
+  .cookie-btn.accept{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .cookie-btn.accept:hover{background:#061f4c;}
+  .cookie-btn.reject{background:#fff;color:var(--navy);}
+  .cookie-btn.reject:hover{border-color:#c8cbe6;}
+  @media (prefers-reduced-motion:reduce){.cookie-card{transition:opacity .3s ease;transform:none;}}
+
   /* Reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);transition-delay:var(--rd,0s);will-change:opacity,transform;}
   .reveal.in{opacity:1;transform:none;}
@@ -329,7 +404,7 @@
   .hero.enter .inner > *:nth-child(5){animation-delay:.49s;}
   .hero.shown .inner > *{opacity:1;}
 
-  /* Parallax (driven by JS via --py → translateY) */
+  /* Parallax (driven by JS via --pquantity → translateY) */
   .parallax{will-change:transform;}
 
   @media (prefers-reduced-motion:reduce){
@@ -395,7 +470,7 @@
   <div class="wrap inner">
     <span class="eyebrow" style="color: rgb(8, 39, 93)">Web design · Delivered in 24h</span>
     <h1>A professional landing page. Ready tomorrow.</h1>
-    <p class="lead">Tell us about your project, answer a few questions, and receive a custom  website in one business day. No meetings. No complexity.</p>
+    <p class="lead">Tell us about your project, answer a few questions, and receive a custom  website in one business day. No meetings. No complexity.</p>
     <div class="hero-cta">
       <a href="#start" class="btn btn-primary"><span>Start your project</span>
         <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
@@ -423,7 +498,7 @@
           <span class="num">01</span>
           <span class="stepicon"><img src="assets/icon-brief.png" alt="" /></span>
         </div>
-        <h3>Fill the brief</h3>
+        <h3>Send the brief</h3>
         <p>Choose your package, describe your project, and share any references. It takes less than 5 minutes.</p>
       </div>
       <div class="step reveal">
@@ -432,7 +507,7 @@
           <span class="stepicon"><img src="assets/icon-build.png" alt="" /></span>
         </div>
         <h3>We build it</h3>
-        <p>Our team designs and builds your website from scratch. No templates. No shortcuts. Pure craft.</p>
+        <p>We design and build your website from scratch based on your context. No templates. No shortcuts. Pure craft.</p>
       </div>
       <div class="step reveal">
         <div class="top">
@@ -553,12 +628,11 @@
       <h2>A few examples of what we build.</h2>
     </div>
     <div class="work-grid" data-stagger data-variant="rv-up">
-      <a href="#" class="work-card reveal">
-        <div class="work-thumb g1"><span class="tbeam"></span>
-          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
-            <div class="body"><div class="l title"></div><div class="l w70"></div><div class="l w50"></div><div class="l lime"></div></div></div>
+      <a href="https://astromidnight.pt/eclipse2026" target="_blank" rel="noopener" class="work-card reveal">
+        <div class="work-thumb" style="padding:0;">
+          <img src="assets/work-eclipse.png" alt="Astromidnight Eclipse Simulator" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
         </div>
-        <div class="work-meta"><div><div class="t">Mira Studio</div><div class="c">Landing page</div></div>
+        <div class="work-meta"><div><div class="t">Astromidnight Eclipse Simulator</div><div class="c">Webapp</div></div>
           <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
       </a>
       <a href="#" class="work-card reveal">
@@ -569,22 +643,15 @@
         <div class="work-meta"><div><div class="t">Nordhaus</div><div class="c">Local business</div></div>
           <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
       </a>
-      <a href="#" class="work-card reveal">
-        <div class="work-thumb g3"><span class="tbeam"></span>
-          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
-            <div class="body"><div class="l title"></div><div class="l w70"></div><div class="l w50"></div><div class="l lime"></div></div></div>
+      <a href="https://astromidnight.github.io/portia/" target="_blank" rel="noopener" class="work-card reveal">
+        <div class="work-thumb" style="padding:0;">
+          <img src="assets/work-portia.jpg" alt="Portia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
         </div>
-        <div class="work-meta"><div><div class="t">Loop &amp; Co.</div><div class="c">Startup / MVP</div></div>
+        <div class="work-meta"><div><div class="t">Portia</div><div class="c">Startup / MVP</div></div>
           <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
       </a>
     </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<section class="section" style="padding-top:64px;padding-bottom:0;">
-  <div class="wrap">
-    <div class="cta-banner reveal">
+    <div class="cta-banner reveal" style="margin-top:48px;">
       <span class="cbeam"></span><span class="csphere parallax" data-pspeed="0.12"></span>
       <div class="ctext">
         <h3>Ready to launch your website?</h3>
@@ -717,6 +784,7 @@
           <button type="submit" class="btn btn-primary btn-block"><span>Send brief</span>
             <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
           <p class="form-note">We reply within a few hours, Monday to Friday.</p>
+          <p class="form-consent">By submitting, you agree to your details being processed in line with our <a href="privacy.html">Privacy Policy</a>.</p>
           <p class="form-error" id="formError"></p>
         </form>
         <div class="form-success" id="formSuccess">
@@ -747,15 +815,16 @@
           <li><a href="#start">Start a project</a></li>
         </ul>
       </div>
-      <div class="foot-col"><h4>Legal</h4>
+      <div class="foot-col"><h4>Company</h4>
         <ul>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Terms of service</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
         </ul>
       </div>
       <div class="foot-col"><h4>Contact</h4>
         <ul>
-          <li><a href="mailto:hello@briefly.studio">hello@briefly.studio</a></li>
+          <li><a href="mailto:hello@briefly.pt">hello@briefly.pt</a></li>
         </ul>
       </div>
     </div>
@@ -765,6 +834,16 @@
     </div>
   </div>
 </footer>
+
+<!-- COOKIE CONSENT -->
+<div class="cookie-card" id="cookieCard" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <h4>Cookies</h4>
+  <p>We use cookies to improve your experience and analyse site traffic. You can accept or reject non-essential cookies.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn reject" id="cookieReject" type="button">Reject</button>
+    <button class="cookie-btn accept" id="cookieAccept" type="button">Accept</button>
+  </div>
+</div>
 
 <script>
   const header = document.getElementById('header');
@@ -970,6 +1049,22 @@
       if (label) label.textContent = original;
     }
   });
+
+  // ---- Cookie consent (landing only) ----
+  (function(){
+    const card = document.getElementById('cookieCard');
+    if(!card) return;
+    const KEY = 'briefly_cookie_consent';
+    let stored = null;
+    try { stored = localStorage.getItem(KEY); } catch(e){}
+    function decide(value){
+      try { localStorage.setItem(KEY, value); } catch(e){}
+      card.classList.remove('show');
+    }
+    if(!stored){ setTimeout(()=>card.classList.add('show'), 900); }
+    document.getElementById('cookieAccept').addEventListener('click', ()=>decide('accepted'));
+    document.getElementById('cookieReject').addEventListener('click', ()=>decide('rejected'));
+  })();
 </script>
 </body>
 </html>
