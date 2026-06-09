@@ -4,7 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Briefly — A professional website. Ready tomorrow.</title>
-<meta name="description" content="Choose what you need, answer a few questions, and receive your custom hand-coded website in one business day. No meetings. No complexity." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<meta name="description" content="Choose what you need, answer a few questions, and receive your custom-built website in one business day. No meetings. No complexity." />
+
+<!-- Social share image -->
+<meta property="og:image" content="assets/share-thumb.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Briefly — A professional website. Ready tomorrow." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="assets/share-thumb.png" />
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
 <style>
@@ -102,7 +111,7 @@
 
   /* Hero */
   .hero{padding:120px 0 80px;text-align:left;position:relative;overflow:hidden;}
-  .hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:url("assets/hero-bg.png");background-size:cover;background-position:center right;}
+  .hero-video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center right;pointer-events:none;}
   .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg, rgba(232,234,255,.97) 0%, rgba(232,234,255,.85) 28%, rgba(232,234,255,.3) 47%, rgba(232,234,255,0) 60%);}
   .hero .inner{position:relative;z-index:3;}
   .hero .eyebrow{background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 16px;box-shadow:var(--shadow-sm);}
@@ -139,6 +148,34 @@
   .step .num::after{content:"";position:absolute;left:2px;bottom:0;width:26px;height:4px;border-radius:3px;background:var(--lime);}
   .step h3{font-size:21px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px;color:var(--navy);}
   .step p{color:var(--body);font-size:15px;}
+
+  /* Who is this for — rotating target */
+  .who{background:var(--navy);color:#fff;position:relative;overflow:hidden;}
+  .who .wrap{position:relative;z-index:2;}
+  .who-deco{position:absolute;width:680px;height:680px;border-radius:50%;top:50%;left:42%;transform:translate(-50%,-50%);z-index:0;background:radial-gradient(circle, rgba(74,111,181,.30), rgba(74,111,181,.08) 42%, rgba(8,39,93,0) 70%);pointer-events:none;filter:blur(6px);}
+  .who .eyebrow{color:rgba(255,255,255,.55);}
+  .who-headline{font-size:clamp(46px,8.5vw,118px);font-weight:900;letter-spacing:-.035em;line-height:.98;margin:22px 0 0;color:#fff;}
+  .who-lead{display:block;}
+  .who-target{color:var(--lime);display:inline-block;will-change:opacity,transform;transition:opacity .42s cubic-bezier(.22,.61,.36,1), transform .42s cubic-bezier(.22,.61,.36,1);}
+  .who-dot{color:var(--lime);}
+  .who-sub{margin-top:26px;font-size:clamp(17px,2vw,21px);color:#b9c2e0;max-width:620px;min-height:2.8em;transition:opacity .42s ease;will-change:opacity;}
+  /* Verb marquee */
+  .who-marquee{position:relative;margin-top:clamp(48px,8vh,92px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);}
+  .mq-track{display:flex;align-items:center;gap:46px;width:max-content;white-space:nowrap;animation:mqScroll 26s linear infinite;}
+  .who-marquee .layer{position:relative;}
+  .who-marquee .bright{position:absolute;inset:0;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 14%,transparent 40%);mask-image:linear-gradient(90deg,#000 0%,#000 14%,transparent 40%);}
+  .mq-track .v{font-style:italic;font-weight:900;font-size:clamp(44px,8vw,104px);letter-spacing:-.03em;line-height:1;}
+  .layer.base .v{color:rgba(255,255,255,.09);}
+  .layer.bright .v{color:#fff;}
+  .mq-track .sep{width:11px;height:11px;border-radius:50%;flex:none;}
+  .layer.base .sep{background:rgba(255,255,255,.12);}
+  .layer.bright .sep{background:var(--lime);}
+  @keyframes mqScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion:reduce){
+    .who-target{transition:none;}
+    .who-sub{transition:none;}
+    .mq-track{animation:none;}
+  }
 
   /* Lists */
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:940px;margin:0 auto;position:relative;z-index:2;}
@@ -206,15 +243,17 @@
   .work-meta .arr svg{width:14px;height:14px;}
   .work-card:hover .arr{background:var(--lime);border-color:var(--lime);transform:translateX(2px);}
 
-  /* Testimonials */
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:2;}
-  .quote{background:var(--card);border:1px solid var(--line-2);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;gap:20px;box-shadow:var(--shadow-sm);}
-  .quote .qmark{font-size:42px;line-height:.6;color:var(--lime-deep);font-family:Georgia,serif;height:22px;}
-  .quote p{font-size:15.5px;line-height:1.6;color:#3a4a6e;flex:1;text-wrap:pretty;}
-  .quote .who{display:flex;align-items:center;gap:12px;}
-  .avatar{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 34% 28%, #4a6fb5, var(--navy));color:var(--lime);display:grid;place-items:center;font-weight:700;font-size:15px;}
-  .who .n{font-weight:700;font-size:14.5px;color:var(--navy);}
-  .who .r{color:var(--body);font-size:12.5px;}
+  /* FAQ */
+  .faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px;position:relative;z-index:2;}
+  .faq-item{background:var(--card);border:1px solid var(--line-2);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;transition:box-shadow .25s ease, border-color .25s ease;}
+  .faq-item.open{box-shadow:var(--shadow-md);border-color:#d3d8f0;}
+  .faq-q{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;text-align:left;background:none;border:0;cursor:pointer;font-family:var(--font);padding:23px 26px;font-size:17px;font-weight:700;letter-spacing:-.015em;color:var(--navy);line-height:1.35;}
+  .faq-icon{flex:none;width:34px;height:34px;border-radius:50%;background:#f1f3fc;display:grid;place-items:center;transition:background .25s ease;}
+  .faq-icon svg{width:16px;height:16px;color:var(--navy);transition:transform .3s cubic-bezier(.22,.61,.36,1);}
+  .faq-item.open .faq-icon{background:var(--lime);}
+  .faq-item.open .faq-icon svg{transform:rotate(45deg);}
+  .faq-a{overflow:hidden;height:0;transition:height .32s cubic-bezier(.22,.61,.36,1);}
+  .faq-a-inner{padding:0 26px 26px;color:var(--body);font-size:15.5px;line-height:1.65;text-wrap:pretty;max-width:66ch;}
 
   /* Start / form */
   .start-grid{display:block;max-width:640px;margin:0 auto;position:relative;z-index:2;}
@@ -248,7 +287,7 @@
   /* CTA banner */
   .cta-banner{position:relative;z-index:2;background:linear-gradient(120deg,#0c2f6e,var(--navy));color:#fff;border-radius:24px;padding:48px 52px;overflow:hidden;box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
   .cta-banner .cbeam{position:absolute;top:-15%;left:42%;width:3px;height:130%;background:linear-gradient(to bottom,transparent,var(--lime),transparent);opacity:.45;}
-  .cta-banner .csphere{position:absolute;width:200px;height:200px;border-radius:50%;top:50%;right:-70px;transform:translateY(-50%);background:radial-gradient(circle at 34% 28%, #4a6fb5, var(--navy));opacity:.6;}
+  .cta-banner .csphere{position:absolute;width:200px;height:200px;border-radius:50%;top:50%;right:-70px;transform:translateY(calc(-50% + var(--py,0px)));background:radial-gradient(circle at 34% 28%, #4a6fb5, var(--navy));opacity:.6;}
   .cta-banner .ctext{position:relative;max-width:560px;}
   .cta-banner h3{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.025em;line-height:1.12;}
   .cta-banner ul{list-style:none;margin:18px 0 0;padding:0;display:flex;gap:24px;flex-wrap:wrap;}
@@ -269,12 +308,40 @@
   .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);color:#7e8ab0;font-size:13.5px;flex-wrap:wrap;gap:10px;}
 
   /* Reveal */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);transition-delay:var(--rd,0s);will-change:opacity,transform;}
   .reveal.in{opacity:1;transform:none;}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+  /* Directional / scaled variants */
+  .reveal.rv-up{transform:translateY(30px) scale(.965);}
+  .reveal.rv-left{transform:translateX(-40px);}
+  .reveal.rv-right{transform:translateX(40px);}
+  .reveal.rv-blur{filter:blur(7px);transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1), filter .7s ease;transition-delay:var(--rd,0s);}
+  .reveal.rv-up.in,.reveal.rv-left.in,.reveal.rv-right.in{transform:none;}
+  .reveal.rv-blur.in{filter:none;}
+
+  /* Hero entrance (plays on load via keyframes — robust end-state) */
+  @keyframes heroIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+  .hero .inner > *{opacity:0;}
+  .hero.enter .inner > *{animation:heroIn .8s cubic-bezier(.22,.61,.36,1) both;}
+  .hero.enter .inner > *:nth-child(1){animation-delay:.05s;}
+  .hero.enter .inner > *:nth-child(2){animation-delay:.16s;}
+  .hero.enter .inner > *:nth-child(3){animation-delay:.27s;}
+  .hero.enter .inner > *:nth-child(4){animation-delay:.38s;}
+  .hero.enter .inner > *:nth-child(5){animation-delay:.49s;}
+  .hero.shown .inner > *{opacity:1;}
+
+  /* Parallax (driven by JS via --py → translateY) */
+  .parallax{will-change:transform;}
+
+  @media (prefers-reduced-motion:reduce){
+    .reveal,.reveal.rv-up,.reveal.rv-left,.reveal.rv-right,.reveal.rv-blur{opacity:1;transform:none;filter:none;transition:none;}
+    .hero .inner > *{opacity:1;}
+    .hero.enter .inner > *{animation:none;}
+    .parallax{transform:none !important;}
+  }
 
   @media (max-width:920px){
-    .steps,.work-grid,.testi-grid{grid-template-columns:1fr;}
+    .steps,.work-grid{grid-template-columns:1fr;}
+    .who-grid{grid-template-columns:1fr 1fr;}
     .two-col,.price-grid{grid-template-columns:1fr;}
     .cta-banner{padding:36px 30px;}
     .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
@@ -288,6 +355,7 @@
   }
   @media (max-width:720px){
     .hero::after{background:rgba(230,231,255,.93);}
+    .who-grid{grid-template-columns:1fr;}
   }
   @media (min-width:720px){
     .nav-links{display:flex;}
@@ -303,9 +371,11 @@
     <a href="#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
     <nav class="nav-links">
       <a href="#how-it-works">How it works</a>
+      <a href="#who-is-this-for">Who it's for</a>
       <a href="#whats-included">What's included</a>
       <a href="#pricing">Pricing</a>
       <a href="#work">Work</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
       <a href="#start" class="btn btn-primary"><span>Start your project</span>
@@ -319,10 +389,13 @@
 
 <!-- HERO -->
 <section id="hero" class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-bg.png">
+    <source src="assets/hero-bg.mp4" type="video/mp4" />
+  </video>
   <div class="wrap inner">
     <span class="eyebrow" style="color: rgb(8, 39, 93)">Web design · Delivered in 24h</span>
     <h1>A professional landing page. Ready tomorrow.</h1>
-    <p class="lead">Tell us about your project, answer a few questions, and receive a custom  website in one business day. No meetings. No complexity.</p>
+    <p class="lead">Tell us about your project, answer a few questions, and receive a custom  website in one business day. No meetings. No complexity.</p>
     <div class="hero-cta">
       <a href="#start" class="btn btn-primary"><span>Start your project</span>
         <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
@@ -344,7 +417,7 @@
       <h2>Three steps. <span class="soft">One business day.</span></h2>
       <p>No back-and-forth. No delays. Just a clear, simple process.</p>
     </div>
-    <div class="steps">
+    <div class="steps" data-stagger data-variant="rv-up">
       <div class="step reveal">
         <div class="top">
           <span class="num">01</span>
@@ -359,7 +432,7 @@
           <span class="stepicon"><img src="assets/icon-build.png" alt="" /></span>
         </div>
         <h3>We build it</h3>
-        <p>Our team designs and codes your website by hand. No templates. No shortcuts. Pure craft.</p>
+        <p>Our team designs and builds your website from scratch. No templates. No shortcuts. Pure craft.</p>
       </div>
       <div class="step reveal">
         <div class="top">
@@ -373,6 +446,24 @@
   </div>
 </section>
 
+<!-- WHO IS THIS FOR -->
+<section id="who-is-this-for" class="section who">
+  <span class="who-deco" aria-hidden="true"></span>
+  <div class="wrap">
+    <span class="eyebrow reveal">Who is this for</span>
+    <h2 class="who-headline reveal" style="--rd:.06s"><span class="who-lead">Built for</span><span class="who-target" id="whoTarget">Freelancers</span><span class="who-dot">.</span></h2>
+    <p class="who-sub reveal" id="whoSub" style="--rd:.12s">Land clients with a site that looks the part — without disappearing into a months-long build.</p>
+    <div class="who-marquee reveal" aria-hidden="true" style="--rd:.18s">
+      <div class="layer base">
+        <div class="mq-track" id="mqBase"></div>
+      </div>
+      <div class="layer bright">
+        <div class="mq-track" id="mqBright"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT'S INCLUDED -->
 <section id="whats-included" class="section band">
   <div class="wrap">
@@ -381,7 +472,7 @@
       <h2>Everything you need. <span class="soft">Nothing you don't.</span></h2>
     </div>
     <div class="two-col">
-      <div class="panel yes reveal">
+      <div class="panel yes reveal rv-left">
         <h3>What's included</h3>
         <ul>
           <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Custom designed HTML file</li>
@@ -393,7 +484,7 @@
           <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Delivered as a clean, ready-to-publish file</li>
         </ul>
       </div>
-      <div class="panel no reveal">
+      <div class="panel no reveal rv-right">
         <h3>What we don't do</h3>
         <ul>
           <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No templates or page builders</li>
@@ -421,7 +512,7 @@
           <span class="pill pop">Most popular</span>
         </div>
         <h3>Landing page</h3>
-        <p class="sub">Custom hand-coded · Delivered in 24h</p>
+        <p class="sub">Custom-built · Delivered in 24h</p>
         <div class="price-amt"><span class="amt">€497</span><span class="per">/ one-time</span></div>
         <ul>
           <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Custom landing page</li>
@@ -433,7 +524,7 @@
         <a href="#start" class="btn btn-primary btn-block"><span>Start your project</span>
           <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
-      <div class="addons">
+    <div class="addons" data-stagger data-variant="rv-up">
         <div class="addon reveal">
           <span class="label">Add-on</span>
           <div class="addon-row"><h4>Extra pages</h4><span class="plus">+€149</span></div>
@@ -461,7 +552,7 @@
       <span class="eyebrow" style="color: rgb(8, 39, 93)">Recent work</span>
       <h2>A few examples of what we build.</h2>
     </div>
-    <div class="work-grid">
+    <div class="work-grid" data-stagger data-variant="rv-up">
       <a href="#" class="work-card reveal">
         <div class="work-thumb g1"><span class="tbeam"></span>
           <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
@@ -494,7 +585,7 @@
 <section class="section" style="padding-top:64px;padding-bottom:0;">
   <div class="wrap">
     <div class="cta-banner reveal">
-      <span class="cbeam"></span><span class="csphere"></span>
+      <span class="cbeam"></span><span class="csphere parallax" data-pspeed="0.12"></span>
       <div class="ctext">
         <h3>Ready to launch your website?</h3>
         <ul>
@@ -511,28 +602,77 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section">
+<!-- FAQ -->
+<section id="faq" class="section">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" style="color: rgb(8, 39, 93)">Testimonials</span>
-      <h2>What clients say.</h2>
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">FAQ</span>
+      <h2>Questions, <span class="soft">answered.</span></h2>
+      <p>Everything you might want to know before sending your brief.</p>
     </div>
-    <div class="testi-grid">
-      <div class="quote reveal">
-        <div class="qmark">&ldquo;</div>
-        <p>I needed a website fast for a product launch. Briefly delivered in under 24 hours — clean, professional, exactly what I described. Zero back-and-forth.</p>
-        <div class="who"><div class="avatar">A</div><div><div class="n">Ana S.</div><div class="r">Freelance Consultant</div></div></div>
+    <div class="faq-list" data-stagger data-variant="rv-up">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can you deliver a website in just 24 hours?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Our process is AI-assisted from end to end. For simple, single-page websites we can design and build everything autonomously, with no large team, no scheduling bottlenecks, and no endless meetings. That lets us move far faster and keep the price fixed, while still hand-crafting every detail.</div></div>
       </div>
-      <div class="quote reveal">
-        <div class="qmark">&ldquo;</div>
-        <p>As a startup, speed matters. We had a landing page for our MVP in one day. The quality was miles ahead of what we expected.</p>
-        <div class="who"><div class="avatar">R</div><div><div class="n">Ricardo M.</div><div class="r">Co-founder, Loop</div></div></div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>What do you need from me to get started?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Just the brief, and the more context the better. Tell us what the site is for, who your audience is, your goals, plus any copy, logo, brand colours and references you like. The richer the brief, the higher the chance we nail it on the first try. And a round of feedback is always included, so we can adjust the design if needed.</div></div>
       </div>
-      <div class="quote reveal">
-        <div class="qmark">&ldquo;</div>
-        <p>I was sceptical about the timeline, but they delivered. The site is fast, looks great on mobile, and my clients already commented on it.</p>
-        <div class="who"><div class="avatar">M</div><div><div class="n">Mariana F.</div><div class="r">Photographer</div></div></div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>What if I don't like the result?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">The more context you give us up front, the more likely we are to hit the mark first time. Even so, every project includes one round of revisions, so we can fine-tune the design until it feels right.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>Do I really get the source file? Can I host it anywhere?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes, absolutely. You receive a clean, ready-to-publish HTML file that's yours to host anywhere. The code is hand-quality: responsive, accessible (WCAG AA), SEO-ready and optimised for Core Web Vitals. No proprietary platform, no lock-in.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's not included?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">To keep things fast and focused, we don't build on templates or page builders (no Webflow, Framer or Squarespace), and we don't do CMS back-offices, dynamic web apps, or ongoing maintenance, unless you add a monthly support plan.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>How does payment work?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Once your brief is validated, we'll reach out by email to arrange payment. As soon as the payment is confirmed, we start building, and your site is delivered within one business day.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>Can you build more than one page?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Extra pages are available as an add-on at €149 per page (up to 3), with each page adding roughly 24h to delivery.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>Do you offer ongoing support after delivery?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. If you'd like us to keep your site updated and make tweaks over time, you can add our monthly support plan for €49/month.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          <span>I don't have a domain or server — can you help?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Domain and hosting setup is available as an add-on, so you can go from brief to a live site without dealing with the technical setup yourself.</div></div>
       </div>
     </div>
   </div>
@@ -603,6 +743,7 @@
           <li><a href="#whats-included">What's included</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#work">Recent work</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#start">Start a project</a></li>
         </ul>
       </div>
@@ -620,7 +761,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2025 Briefly. All rights reserved.</span>
-      <span>Hand-coded with care.</span>
+      <span>Built with care.</span>
     </div>
   </div>
 </footer>
@@ -630,10 +771,153 @@
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
+  // ---- Scroll reveal: variants + staggered groups ----
+  // Assign directional/scaled variant + cascade delay to children of [data-stagger] groups
+  document.querySelectorAll('[data-stagger]').forEach(group=>{
+    const variant = group.dataset.variant;
+    [...group.children].forEach((child, i)=>{
+      if(!child.classList.contains('reveal')) child.classList.add('reveal');
+      if(variant) child.classList.add(variant);
+      child.style.setProperty('--rd', (i*0.09)+'s');
+    });
+  });
+
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---- Hero entrance on load ----
+  const heroEl = document.getElementById('hero');
+  if(heroEl){
+    heroEl.classList.add('enter');
+    // Safety net: guarantee the visible end-state even if animations are throttled
+    setTimeout(()=> heroEl.classList.add('shown'), 1500);
+  }
+
+  // ---- Subtle scroll parallax ----
+  (function(){
+    const items = [...document.querySelectorAll('.parallax')].map(el=>({
+      el, speed: parseFloat(el.dataset.pspeed)||0.1
+    }));
+    if(!items.length || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    let ticking=false;
+    function update(){
+      const vh = window.innerHeight;
+      items.forEach(({el,speed})=>{
+        const r = el.getBoundingClientRect();
+        const mid = r.top + r.height/2;
+        const off = (mid - vh/2) * -speed; // drift opposite to scroll
+        el.style.setProperty('--py', off.toFixed(1)+'px');
+      });
+      ticking=false;
+    }
+    function onScrollP(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScrollP, {passive:true});
+    window.addEventListener('resize', onScrollP, {passive:true});
+    update();
+  })();
+
+  // ---- Who is this for: rotating target + synced subline ----
+  (function(){
+    const target = document.getElementById('whoTarget');
+    const sub = document.getElementById('whoSub');
+    if(!target || !sub) return;
+    const items = [
+      {w:'Freelancers',      s:'Land clients with a site that looks the part — without disappearing into a months-long build.'},
+      {w:'Founders',         s:'Put a real landing page live tomorrow to validate, pitch, or launch — not next quarter.'},
+      {w:'Local businesses', s:'Look established online and get found — without page-builder bloat or agency budgets.'},
+      {w:'Creatives',        s:'Show your work on something as crafted as what you make — built to the last pixel.'},
+    ];
+    const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+    // Build the verb marquee (duplicated for a seamless -50% loop)
+    const verbs = ['Launch','Pitch','Sell','Grow','Showcase'];
+    function buildTrack(el){
+      const make = ()=> verbs.map(v=>`<span class="v">${v}</span><span class="sep"></span>`).join('');
+      el.innerHTML = make() + make(); // two copies → seamless loop
+    }
+    const mqBase = document.getElementById('mqBase');
+    const mqBright = document.getElementById('mqBright');
+    if(mqBase) buildTrack(mqBase);
+    if(mqBright) buildTrack(mqBright);
+
+    if(reduce) return; // leave first item shown, no rotation
+
+    // Lock the headline + subline heights to their tallest variant so the
+    // container never reflows as the words rotate. Re-measure on resize.
+    const headline = target.closest('.who-headline');
+    function lockHeights(){
+      // reset so measurements reflect natural height at current width
+      headline.style.minHeight = '';
+      sub.style.minHeight = '';
+      const origW = target.textContent, origS = sub.textContent;
+      let maxH = 0, maxS = 0;
+      items.forEach(it=>{
+        target.textContent = it.w;
+        sub.textContent = it.s;
+        maxH = Math.max(maxH, headline.offsetHeight);
+        maxS = Math.max(maxS, sub.offsetHeight);
+      });
+      target.textContent = origW; sub.textContent = origS;
+      headline.style.minHeight = maxH + 'px';
+      sub.style.minHeight = maxS + 'px';
+    }
+    lockHeights();
+    let rt = 0;
+    window.addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(lockHeights, 150); }, {passive:true});
+
+    let i = 0, timer = 0;
+    function rotate(){
+      i = (i+1) % items.length;
+      target.style.opacity = '0';
+      target.style.transform = 'translateY(14px)';
+      sub.style.opacity = '0';
+      setTimeout(()=>{
+        target.textContent = items[i].w;
+        sub.textContent = items[i].s;
+        target.style.opacity = '1';
+        target.style.transform = 'none';
+        sub.style.opacity = '1';
+      }, 380);
+    }
+    function start(){ if(!timer) timer = setInterval(rotate, 2600); }
+    function stop(){ if(timer){ clearInterval(timer); timer = 0; } }
+    // Run on load; pause only while the tab is hidden (saves battery)
+    start();
+    document.addEventListener('visibilitychange', ()=> document.hidden ? stop() : start());
+  })();
+
+  // ---- FAQ accordion (one open at a time, animated height) ----
+  (function(){
+    const items = [...document.querySelectorAll('.faq-item')];
+    items.forEach(item=>{
+      const q = item.querySelector('.faq-q');
+      const a = item.querySelector('.faq-a');
+      q.addEventListener('click', ()=>{
+        const willOpen = !item.classList.contains('open');
+        items.forEach(o=>{
+          if(o!==item && o.classList.contains('open')){
+            o.classList.remove('open');
+            o.querySelector('.faq-a').style.height = '0px';
+            o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+          }
+        });
+        if(willOpen){
+          item.classList.add('open');
+          a.style.height = a.scrollHeight + 'px';
+          q.setAttribute('aria-expanded','true');
+        } else {
+          item.classList.remove('open');
+          a.style.height = '0px';
+          q.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+    window.addEventListener('resize', ()=>{
+      document.querySelectorAll('.faq-item.open .faq-a').forEach(a=>{ a.style.height = a.scrollHeight + 'px'; });
+    }, {passive:true});
+  })();
 
   document.querySelectorAll('.chip input').forEach(input=>{
     const chip = input.closest('.chip');
