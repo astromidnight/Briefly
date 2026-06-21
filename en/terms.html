@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Terms of Service — Briefly</title>
+<meta name="description" content="The terms that govern Briefly's productized web design service — orders, delivery, revisions, pricing, intellectual property, and more." />
+<link rel="canonical" href="https://briefly.pt/en/terms.html" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="David Cruz" />
+<meta name="theme-color" content="#08275D" />
+<link rel="alternate" hreflang="pt-PT" href="https://briefly.pt/en/terms.html" />
+<link rel="alternate" hreflang="en" href="https://briefly.pt/en/terms.html" />
+<link rel="alternate" hreflang="x-default" href="https://briefly.pt/en/terms.html" />
+<meta name="geo.region" content="PT" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Briefly" />
+<meta property="og:locale" content="en" />
+<meta property="og:url" content="https://briefly.pt/en/terms.html" />
+<meta property="og:title" content="Terms of Service — Briefly" />
+<meta property="og:description" content="The terms that govern Briefly's productized web design service — orders, delivery, revisions, pricing, and intellectual property." />
+<meta property="og:image" content="https://briefly.pt/assets/share-thumb.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Terms of Service — Briefly" />
+<meta name="twitter:description" content="The terms that govern Briefly's productized web design service." />
+<meta name="twitter:image" content="https://briefly.pt/assets/share-thumb.png" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#08275D;
+    --periwinkle:#E8EAFF;
+    --white:#FFFFFF;
+    --lime:#D9FF2F;
+    --lime-deep:#aebf1c;
+
+    --bg:#f2f3fc;
+    --band:#E8EAFF;
+    --ink:#08275D;
+    --body:#5a6a90;
+    --muted:#9aa6cc;
+    --line:#dfe2f4;
+    --line-2:#e9ebf8;
+    --card:#FFFFFF;
+
+    --radius:18px;
+    --radius-sm:14px;
+    --shadow-sm:0 1px 2px rgba(8,39,93,.05), 0 4px 16px rgba(8,39,93,.05);
+    --shadow-md:0 22px 48px -18px rgba(8,39,93,.26), 0 6px 18px rgba(8,39,93,.07);
+    --maxw:1140px;
+    --font:"Satoshi", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:92px;}
+  body{
+    margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    font-size:16px;line-height:1.6;
+  }
+  h1,h2,h3,h4,p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .band{background:var(--band);}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lime-deep);}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--font);font-size:15px;font-weight:700;cursor:pointer;border:0;border-radius:999px;transition:transform .15s ease, background .2s ease, box-shadow .2s ease;white-space:nowrap;line-height:1;}
+  .btn:active{transform:translateY(1px);}
+  .btn .badge{width:30px;height:30px;border-radius:50%;background:var(--lime);display:grid;place-items:center;flex:none;transition:transform .2s ease;}
+  .btn .badge svg{width:14px;height:14px;color:var(--navy);}
+  .btn:hover .badge{transform:translateX(2px);}
+  .btn-primary{background:var(--navy);color:#fff;padding:7px 8px 7px 22px;box-shadow:var(--shadow-sm);}
+  .btn-primary:hover{background:#061f4c;box-shadow:var(--shadow-md);}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(242,243,252,.82);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid transparent;transition:border-color .25s ease;}
+  header.scrolled{border-color:var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:inline-flex;align-items:center;}
+  .brand img{height:26px;width:auto;display:block;}
+  .foot-brand .brand img{filter:brightness(0) invert(1);}
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{font-size:14.5px;font-weight:500;color:var(--body);transition:color .18s ease;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px;color:var(--navy);}
+
+  /* Legal hero */
+  .legal-hero{padding:128px 0 56px;position:relative;overflow:hidden;}
+  .legal-hero .eyebrow{background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 16px;box-shadow:var(--shadow-sm);color:var(--navy);}
+  .legal-hero .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);flex:none;}
+  .legal-hero h1{font-size:clamp(36px,5vw,56px);font-weight:700;letter-spacing:-.04em;line-height:1.04;color:var(--navy);margin:22px 0 16px;max-width:18ch;text-wrap:balance;}
+  .legal-hero .updated{font-size:14.5px;color:var(--muted);font-weight:500;}
+
+  /* Legal layout */
+  .legal-body{padding:8px 0 110px;}
+  .legal-grid{display:grid;grid-template-columns:248px 1fr;gap:56px;align-items:start;}
+
+  /* TOC */
+  .toc{position:sticky;top:104px;max-height:calc(100vh - 130px);overflow-y:auto;}
+  .toc h4{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .toc ol{list-style:none;margin:0;padding:0;counter-reset:toc;display:flex;flex-direction:column;gap:2px;}
+  .toc li{counter-increment:toc;}
+  .toc a{display:flex;gap:11px;align-items:baseline;font-size:14px;font-weight:500;color:var(--body);padding:7px 12px;border-radius:10px;line-height:1.35;transition:background .16s ease, color .16s ease;}
+  .toc a::before{content:counter(toc,decimal-leading-zero);font-size:11px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;flex:none;}
+  .toc a:hover{background:#fff;color:var(--navy);}
+  .toc a.active{background:var(--navy);color:#fff;}
+  .toc a.active::before{color:var(--lime);}
+
+  /* Prose */
+  .legal-content{max-width:740px;}
+  .legal-content > section{padding-top:14px;margin-bottom:42px;scroll-margin-top:104px;}
+  .legal-content h2{font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-.022em;line-height:1.2;color:var(--navy);margin-bottom:16px;display:flex;gap:14px;align-items:baseline;}
+  .legal-content h2 .n{font-size:14px;font-weight:700;color:var(--lime-deep);font-variant-numeric:tabular-nums;flex:none;transform:translateY(-2px);}
+  .legal-content h3{font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--navy);margin:26px 0 10px;}
+  .legal-content p{font-size:16px;color:var(--body);line-height:1.7;text-wrap:pretty;}
+  .legal-content p + p{margin-top:14px;}
+  .legal-content a.inline{color:var(--navy);font-weight:600;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;transition:text-decoration-color .18s ease;}
+  .legal-content a.inline:hover{text-decoration-color:var(--lime);}
+  .legal-content ul{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .legal-content ul li{position:relative;padding-left:26px;font-size:16px;color:var(--body);line-height:1.6;text-wrap:pretty;}
+  .legal-content ul li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--lime);}
+  .legal-content ul li strong{color:var(--navy);font-weight:700;}
+  .intro p{font-size:17.5px;color:#42527a;line-height:1.72;}
+
+  /* Pricing table */
+  .table-wrap{margin-top:20px;border:1px solid var(--line-2);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-sm);}
+  .legal-content table{width:100%;border-collapse:separate;border-spacing:0;font-size:14.5px;background:var(--card);}
+  .legal-content thead th{text-align:left;background:#f1f3fc;color:var(--navy);font-weight:700;padding:13px 18px;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;}
+  .legal-content tbody td{padding:14px 18px;border-top:1px solid var(--line-2);color:var(--body);vertical-align:top;line-height:1.5;}
+  .legal-content tbody td:first-child{color:var(--navy);font-weight:700;}
+  .legal-content tbody td .price{display:inline-block;font-weight:700;color:var(--navy);white-space:nowrap;}
+
+  /* Note / flag callout */
+  .flag{background:#fffbe6;border:1px solid #f0e4a8;border-radius:var(--radius-sm);padding:16px 18px;margin-top:18px;display:flex;gap:13px;align-items:flex-start;}
+  .flag svg{flex:none;width:20px;height:20px;color:#a9881a;margin-top:1px;}
+  .flag p{font-size:14px;color:#7a6512;line-height:1.55;}
+  .flag strong{color:#5e4e0c;}
+
+  /* Contact card */
+  .contact-card{background:var(--navy);color:#fff;border-radius:var(--radius);padding:30px 32px;margin-top:18px;}
+  .contact-card h3{color:#fff;margin:0 0 10px;font-size:18px;}
+  .contact-card p{color:#b9c2e0;font-size:15px;line-height:1.7;}
+  .contact-card a{color:var(--lime);font-weight:600;}
+
+  /* Footer */
+  footer{background:var(--navy);color:#fff;padding:66px 0 36px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:48px;}
+  .foot-brand .brand{color:#fff;}
+  .foot-brand p{color:#9aa6cc;font-size:14.5px;margin-top:16px;max-width:30ch;}
+  .foot-col h4{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:18px;}
+  .foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .foot-col a{color:#9aa6cc;font-size:14.5px;transition:color .15s ease;}
+  .foot-col a:hover{color:var(--lime);}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);color:#7e8ab0;font-size:13.5px;flex-wrap:wrap;gap:10px;}
+
+  @media (max-width:920px){
+    .legal-grid{grid-template-columns:1fr;gap:8px;}
+    .toc{display:none;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  }
+  @media (max-width:1024px){
+    
+    .legal-hero{padding:104px 0 48px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:1025px){
+    
+  }
+  /* Language switch */
+  .lang-switch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff;}
+  .lang-switch a{font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--muted);padding:5px 10px;border-radius:999px;line-height:1;transition:color .15s ease, background .15s ease;}
+  .lang-switch a.on{background:var(--navy);color:#fff;}
+  .lang-switch a:not(.on):hover{color:var(--navy);}
+  /* Responsive nav / burger */
+  .nav{position:relative;}
+  .nav-links{flex:0 0 auto;white-space:nowrap;}
+  header.nav-collapsed .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-end;gap:2px;background:rgba(242,243,252,.98);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line);border-radius:0 0 18px 18px;box-shadow:var(--shadow-md);padding:10px 0 14px;display:flex;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .26s ease, transform .3s cubic-bezier(.22,.61,.36,1), visibility .26s;}
+  header.nav-collapsed.menu-open .nav-links{opacity:1;visibility:visible;transform:none;}
+  header.nav-collapsed .nav-links a:not(.nav-mobile-cta){position:relative;text-align:right;margin:0 14px;padding:13px 18px;border-radius:12px;font-size:16px;color:var(--body);transition:background .18s ease, color .18s ease, padding-right .22s cubic-bezier(.22,.61,.36,1), box-shadow .18s ease;}
+  header.nav-collapsed .nav-links a:not(.nav-mobile-cta):hover{background:#fff;color:var(--navy);padding-right:28px;box-shadow:inset -3px 0 0 0 var(--navy), 0 1px 2px rgba(8,39,93,.06);}
+  header.nav-collapsed .nav-links a.active:not(.nav-mobile-cta){background:#fff;color:var(--navy);box-shadow:inset -3px 0 0 0 var(--navy);}
+  header.nav-collapsed.menu-open .nav-links > *{animation:navItemIn .34s cubic-bezier(.22,.61,.36,1) both;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(1){animation-delay:.03s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(2){animation-delay:.07s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(3){animation-delay:.11s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(4){animation-delay:.15s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(5){animation-delay:.19s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(6){animation-delay:.23s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(7){animation-delay:.27s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(8){animation-delay:.31s;}
+  @keyframes navItemIn{from{opacity:0;transform:translateX(14px);}to{opacity:1;transform:none;}}
+  /* Burger -> X */
+  .menu-toggle .burger{display:block;width:22px;height:16px;position:relative;}
+  .menu-toggle .burger i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transform-box:border-box;transform-origin:center;transition:transform .3s cubic-bezier(.22,.61,.36,1), opacity .2s ease;}
+  .menu-toggle .burger i:nth-child(1){top:0;}
+  .menu-toggle .burger i:nth-child(2){top:7px;}
+  .menu-toggle .burger i:nth-child(3){top:14px;}
+  header.menu-open .menu-toggle .burger i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  header.menu-open .menu-toggle .burger i:nth-child(2){opacity:0;}
+  header.menu-open .menu-toggle .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (prefers-reduced-motion:reduce){
+    header.nav-collapsed .nav-links{transition:opacity .2s ease;transform:none;}
+    header.nav-collapsed.menu-open .nav-links > *{animation:none;}
+    .menu-toggle svg line{transition:none;}
+  }
+  .menu-toggle{display:none;}
+  header.nav-collapsed .menu-toggle{display:block;}
+  /* Collapsed: main CTA moves into the menu */
+  .nav-mobile-cta{display:none;}
+  header.nav-collapsed .nav-cta > a.btn-primary{display:none;}
+  header.nav-collapsed .nav-links .nav-mobile-cta{display:inline-flex;align-self:flex-end;justify-content:center;margin:12px 14px 6px;}
+  header.nav-collapsed .nav-links .nav-mobile-cta span:first-child{font-size:15px;font-weight:400;color:#ffffff;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html#hero" class="brand"><img src="../assets/briefly-logo.svg" alt="Briefly" /></a>
+    <nav class="nav-links">
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#who-is-this-for">Who it's for</a>
+      <a href="index.html#whats-included">What's included</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="index.html#start" class="btn btn-primary nav-mobile-cta"><span>Start your project</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-switch" aria-label="Language">
+        <a href="../terms.html" class="lang">PT</a>
+        <a href="terms.html" class="lang on">EN</a>
+      </div>
+      <a href="index.html#start" class="btn btn-primary"><span>Start your project</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <button class="menu-toggle" aria-label="Menu">
+        <span class="burger"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: 9 June 2026</p>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="legal-body">
+  <div class="wrap">
+    <div class="legal-grid">
+
+      <!-- TOC -->
+      <aside class="toc" aria-label="Table of contents">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#ordering">Ordering process</a></li>
+          <li><a href="#pricing">Pricing &amp; payment</a></li>
+          <li><a href="#delivery">Delivery</a></li>
+          <li><a href="#revisions">Revisions</a></li>
+          <li><a href="#support">Monthly support</a></li>
+          <li><a href="#ip">Intellectual property</a></li>
+          <li><a href="#confidentiality">Confidentiality</a></li>
+          <li><a href="#cancellations">Cancellations &amp; refunds</a></li>
+          <li><a href="#liability">Limitation of liability</a></li>
+          <li><a href="#data">Data &amp; privacy</a></li>
+          <li><a href="#law">Governing law</a></li>
+          <li><a href="#changes">Changes to these Terms</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </aside>
+
+      <!-- CONTENT -->
+      <div class="legal-content">
+
+        <section class="intro" id="intro">
+          <p>Welcome to Briefly. These Terms of Service set out the rules for ordering and using our productized web design service. Please read them carefully — by submitting a project brief or making a purchase, you agree to be bound by them.</p>
+        </section>
+
+        <div class="flag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          <p>This page reflects the terms you provided and is presented for convenience. It is <strong>not a substitute for review by a qualified lawyer</strong> in your jurisdiction before publishing.</p>
+        </div>
+
+        <section id="introduction">
+          <h2><span class="n">01</span>Introduction</h2>
+          <p>These Terms of Service ("Terms") govern your use of Briefly's web design services, accessible at <a class="inline" href="index.html">briefly.pt</a> ("the Service"). By submitting a project brief or making a purchase, you agree to be bound by these Terms.</p>
+          <p>Briefly is a productized web design service operated by David Cruz, a sole trader based in Portugal ("we", "us", "our"). Our contact email is <a class="inline" href="mailto:hello@briefly.pt">hello@briefly.pt</a>.</p>
+          <p>If you do not agree to these Terms, please do not place an order.</p>
+        </section>
+
+        <section id="services">
+          <h2><span class="n">02</span>Services</h2>
+          <p>Briefly provides custom website design and development services. All websites are built from scratch — we do not use templates, page builders, or no-code tools such as Webflow, Framer, or Squarespace.</p>
+
+          <h3>2.1 Core service</h3>
+          <p>The core deliverable is a custom-designed, custom-built HTML landing page. Unless otherwise agreed in writing, each project includes:</p>
+          <ul>
+            <li>A single landing page, custom designed and built</li>
+            <li>Responsive layout (desktop, tablet, and mobile)</li>
+            <li>WCAG AA accessibility compliance</li>
+            <li>Basic on-page SEO (meta tags, semantic structure, Open Graph)</li>
+            <li>Performance optimization for Core Web Vitals</li>
+            <li>One round of revisions (see Section 6)</li>
+            <li>Delivery as a clean, ready-to-publish HTML file</li>
+          </ul>
+
+          <h3>2.2 What is not included</h3>
+          <p>Unless explicitly purchased as an add-on, the following are outside the scope of the core service:</p>
+          <ul>
+            <li>Additional pages beyond the landing page</li>
+            <li>Domain registration or DNS configuration</li>
+            <li>Hosting setup or server configuration</li>
+            <li>CMS, back-office, or dynamic web application functionality</li>
+            <li>Ongoing maintenance, updates, or technical support</li>
+            <li>Copywriting or content creation</li>
+            <li>Photography, illustration, or third-party asset licensing</li>
+          </ul>
+
+          <h3>2.3 Add-on services</h3>
+          <p>The following add-ons may be purchased alongside the core service:</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Add-on</th><th>Price</th><th>Notes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Extra pages</td><td><span class="price">€149 / page</span></td><td>Up to 3 additional pages; +24h delivery per page</td></tr>
+                <tr><td>Domain &amp; hosting setup</td><td><span class="price">€89 one-time</span></td><td>Configuration only; hosting costs are the client's responsibility</td></tr>
+                <tr><td>Monthly support</td><td><span class="price">€49 / month</span></td><td>Updates and minor content changes; see Section 7</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:16px;">Add-ons must be selected at the time of ordering. Adding an extra page after delivery has begun may incur additional charges and extend the delivery timeline.</p>
+        </section>
+
+        <section id="ordering">
+          <h2><span class="n">03</span>Ordering process</h2>
+
+          <h3>3.1 How to place an order</h3>
+          <p>Orders are placed by completing the project brief form on our website. By submitting the form, you are making a non-binding enquiry. A binding contract is formed only when we confirm your order in writing (via email) and payment has been received.</p>
+
+          <h3>3.2 Brief acceptance</h3>
+          <p>We reserve the right to decline any project at our sole discretion, including but not limited to projects that:</p>
+          <ul>
+            <li>Are incomplete or insufficiently described</li>
+            <li>Require work outside the scope of our services</li>
+            <li>Involve unlawful, harmful, or misleading content</li>
+            <li>Conflict with our values or existing client relationships</li>
+          </ul>
+          <p>If we decline your project, any payment made will be refunded in full within 5 business days.</p>
+
+          <h3>3.3 Your responsibilities</h3>
+          <p>To enable timely delivery, you agree to:</p>
+          <ul>
+            <li>Provide a complete and accurate project brief</li>
+            <li>Supply all required content (text, images, logos, brand assets) before work begins or within 24 hours of our request</li>
+            <li>Be available to respond to clarification questions during the project</li>
+            <li>Provide revision feedback within 3 business days of receiving the draft</li>
+          </ul>
+          <p>Delays caused by late or incomplete content submission will extend the delivery timeline accordingly. Briefly is not liable for delays attributable to the client.</p>
+        </section>
+
+        <section id="pricing">
+          <h2><span class="n">04</span>Pricing and payment</h2>
+
+          <h3>4.1 Prices</h3>
+          <p>All prices are quoted in Euros (€) and are exclusive of VAT unless stated otherwise. VAT will be applied where required by applicable law. The current pricing is:</p>
+          <ul>
+            <li><strong>Landing page:</strong> €497 (one-time)</li>
+            <li><strong>Extra pages:</strong> €149 per page</li>
+            <li><strong>Domain &amp; hosting setup:</strong> €89 (one-time)</li>
+            <li><strong>Monthly support:</strong> €49/month</li>
+          </ul>
+          <p>Prices are subject to change. The price applicable to your order is the one confirmed at the time of booking.</p>
+
+          <h3>4.2 Payment terms</h3>
+          <p>Full payment is required before work begins. We do not offer payment on delivery or installment plans unless explicitly agreed in writing. Accepted payment methods are listed on our website and may vary from time to time.</p>
+
+          <h3>4.3 Invoicing</h3>
+          <p>An invoice will be issued upon receipt of payment. If you require a specific invoicing format or purchase order number, please inform us before payment.</p>
+        </section>
+
+        <section id="delivery">
+          <h2><span class="n">05</span>Delivery</h2>
+
+          <h3>5.1 Delivery timeline</h3>
+          <p>We aim to deliver the first draft of your website within one business day of receiving confirmed payment and a complete brief with all required content.</p>
+          <p>"One business day" means within 24 hours, counting only Monday to Friday, excluding Portuguese public holidays. Orders confirmed after 5:00 PM (GMT+1) are considered received the following business day.</p>
+
+          <h3>5.2 Delivery format</h3>
+          <p>Unless otherwise agreed, the deliverable is a standalone HTML file, ready to upload to any web server or hosting provider. Assets (images, fonts, icons) referenced by the file are packaged alongside it.</p>
+          <p>We do not guarantee compatibility with specific third-party platforms (e.g., cPanel, Shopify, WordPress). If you require deployment to a specific platform, please inform us before ordering so we can assess feasibility.</p>
+
+          <h3>5.3 Delays</h3>
+          <p>We will inform you promptly if a delay is anticipated. Delays caused by factors outside our control (e.g., late content, force majeure) do not give rise to a right of refund.</p>
+        </section>
+
+        <section id="revisions">
+          <h2><span class="n">06</span>Revisions</h2>
+
+          <h3>6.1 What is included</h3>
+          <p>Each project includes one round of revisions. A "round" means a single set of consolidated feedback, submitted by email in one message, to which we respond with an updated deliverable. Revisions covered in the included round are limited to:</p>
+          <ul>
+            <li>Adjustments to layout, spacing, or visual hierarchy</li>
+            <li>Copy edits or text changes</li>
+            <li>Color or typography adjustments</li>
+            <li>Minor content additions or removals consistent with the original brief</li>
+          </ul>
+
+          <h3>6.2 What is not a revision</h3>
+          <p>The following are considered out of scope for the included revision round:</p>
+          <ul>
+            <li>Changes that significantly alter the brief, concept, or structure</li>
+            <li>Addition of new sections or pages</li>
+            <li>Changes to functionality not originally requested</li>
+            <li>Revisions requested after the project has been marked as complete</li>
+          </ul>
+          <p>Requests outside this scope will be quoted separately.</p>
+
+          <h3>6.3 Revision deadline</h3>
+          <p>Revision requests must be submitted within 7 calendar days of receiving the first draft. After this period, the project is considered complete and the revision entitlement lapses.</p>
+
+          <h3>6.4 Additional revisions</h3>
+          <p>Additional revision rounds may be purchased at €79 per round. Additional rounds must be requested and paid for before work begins on the revision.</p>
+        </section>
+
+        <section id="support">
+          <h2><span class="n">07</span>Monthly support subscription</h2>
+
+          <h3>7.1 What is included</h3>
+          <p>The monthly support subscription (€49/month) covers:</p>
+          <ul>
+            <li>Minor content updates (text changes, image replacements, adding/removing sections)</li>
+            <li>Minor layout adjustments</li>
+            <li>Up to 2 hours of work per calendar month</li>
+          </ul>
+          <p>Work requests beyond 2 hours in a given month will be quoted separately.</p>
+
+          <h3>7.2 What is not included</h3>
+          <p>The subscription does not cover:</p>
+          <ul>
+            <li>Structural redesigns or new pages</li>
+            <li>New features or functionality</li>
+            <li>SEO campaigns or marketing work</li>
+            <li>Third-party integrations not previously present</li>
+          </ul>
+
+          <h3>7.3 Billing and cancellation</h3>
+          <p>The subscription is billed monthly from the date of first payment. It renews automatically unless cancelled. You may cancel at any time by emailing <a class="inline" href="mailto:hello@briefly.pt">hello@briefly.pt</a>. Cancellation takes effect at the end of the current billing period. No refunds are issued for partial months.</p>
+        </section>
+
+        <section id="ip">
+          <h2><span class="n">08</span>Intellectual property</h2>
+
+          <h3>8.1 Ownership after payment</h3>
+          <p>Upon receipt of full payment and delivery of the final files, you own the deliverable outright. This includes all source files provided to you. You may use, modify, publish, and redistribute the website without restriction.</p>
+
+          <h3>8.2 Our rights</h3>
+          <p>We retain the right to display the project in our portfolio and for promotional purposes (website, social media, case studies), unless you explicitly request otherwise in writing before the project begins.</p>
+
+          <h3>8.3 Third-party assets</h3>
+          <p>You are responsible for ensuring you have the right to use any content you provide (text, images, logos, fonts). We will incorporate client-supplied assets in good faith but accept no liability for third-party intellectual property claims arising from content you provided.</p>
+          <p>Any stock images, icons, or fonts we source on your behalf and include in the deliverable are either royalty-free, properly licensed, or open-source. We will note any attribution requirements where applicable.</p>
+
+          <h3>8.4 Code and tools</h3>
+          <p>All websites are built from scratch. We do not transfer proprietary internal tools, templates, or processes. The delivered HTML/CSS/JS files are yours; any internal build tooling we use is not part of the deliverable.</p>
+        </section>
+
+        <section id="confidentiality">
+          <h2><span class="n">09</span>Confidentiality</h2>
+          <p>Both parties agree to keep confidential any non-public information shared during the project. This includes business information, brand strategies, unreleased products, or personal data shared in the brief.</p>
+          <p>This obligation does not apply to information that is publicly known, independently developed, or required to be disclosed by law.</p>
+        </section>
+
+        <section id="cancellations">
+          <h2><span class="n">10</span>Cancellations and refunds</h2>
+
+          <h3>10.1 Before work begins</h3>
+          <p>If you cancel after payment but before we have started work, you are entitled to a full refund, less any payment processing fees already incurred.</p>
+
+          <h3>10.2 After work has begun</h3>
+          <p>Once work has started (typically within a few hours of your order being confirmed), we will have already invested significant time in your project. In this case:</p>
+          <ul>
+            <li>If you cancel <strong>before</strong> receiving the first draft, a 50% refund will be issued</li>
+            <li>If you cancel <strong>after</strong> receiving the first draft, no refund will be issued</li>
+          </ul>
+
+          <h3>10.3 Our right to cancel</h3>
+          <p>We reserve the right to cancel any project at any time. If we cancel before delivery, we will issue a full refund. If we cancel after delivery, no refund is due.</p>
+
+          <h3>10.4 Refund processing</h3>
+          <p>Approved refunds will be processed within 5 business days via the original payment method.</p>
+        </section>
+
+        <section id="liability">
+          <h2><span class="n">11</span>Limitation of liability</h2>
+
+          <h3>11.1 No warranties</h3>
+          <p>The service is provided "as is." We make no warranties, express or implied, regarding the service, including but not limited to fitness for a particular purpose, uninterrupted availability, or error-free operation.</p>
+
+          <h3>11.2 Limitation of damages</h3>
+          <p>To the maximum extent permitted by applicable law, our total liability to you for any claim arising from or related to these Terms or the service shall not exceed the total amount paid by you for the specific project giving rise to the claim.</p>
+          <p>We are not liable for any indirect, incidental, consequential, or punitive damages, including but not limited to loss of profits, data, goodwill, or business opportunities.</p>
+
+          <h3>11.3 Business results</h3>
+          <p>We make no guarantees regarding the business or commercial outcomes of your website, including search engine rankings, conversion rates, or revenue generated.</p>
+        </section>
+
+        <section id="data">
+          <h2><span class="n">12</span>Data and privacy</h2>
+          <p>We collect and process personal data as described in our <a class="inline" href="privacy.html">Privacy Policy</a>. By using our services, you consent to that processing.</p>
+          <p>We handle all client data in compliance with the General Data Protection Regulation (GDPR) and applicable Portuguese data protection law.</p>
+        </section>
+
+        <section id="law">
+          <h2><span class="n">13</span>Governing law and disputes</h2>
+          <p>These Terms are governed by the laws of Portugal. Any disputes shall be subject to the exclusive jurisdiction of the courts of Portugal.</p>
+          <p>If a dispute arises, we encourage you to contact us at <a class="inline" href="mailto:hello@briefly.pt">hello@briefly.pt</a> first. We will make every reasonable effort to resolve the issue amicably before any formal proceedings are initiated.</p>
+        </section>
+
+        <section id="changes">
+          <h2><span class="n">14</span>Changes to these Terms</h2>
+          <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date at the top of this document.</p>
+          <p>Continued use of our services after a change constitutes acceptance of the updated Terms. We recommend reviewing this page periodically.</p>
+        </section>
+
+        <section id="contact">
+          <h2><span class="n">15</span>Contact</h2>
+          <p>For questions about these Terms or any aspect of our service, please get in touch:</p>
+          <div class="contact-card">
+            <h3>Briefly</h3>
+            <p>Email: <a href="mailto:hello@briefly.pt">hello@briefly.pt</a><br />Website: <a href="index.html">briefly.pt</a><br />Operated by David Cruz, a sole trader registered in Portugal.</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html#hero" class="brand"><img src="../assets/briefly-logo.svg" alt="Briefly" /></a>
+        <p>A professional website. Ready tomorrow.</p>
+      </div>
+      <div class="foot-col"><h4>Pages</h4>
+        <ul>
+          <li><a href="index.html#how-it-works">How it works</a></li>
+          <li><a href="index.html#whats-included">What's included</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#work">Recent work</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#start">Start a project</a></li>
+        </ul>
+      </div>
+      <div class="foot-col"><h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="foot-col"><h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@briefly.pt">hello@briefly.pt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Briefly. All rights reserved.</span>
+      <span>Built with care.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ---- Responsive nav: collapse to a burger menu when items don't fit ----
+  (function(){
+    const nav = header.querySelector('.nav');
+    const toggle = header.querySelector('.menu-toggle');
+    const links = header.querySelector('.nav-links');
+    if(!nav || !toggle || !links) return;
+    function measure(){
+      header.classList.remove('nav-collapsed');
+      header.classList.remove('menu-open');
+      if(nav.scrollWidth > nav.clientWidth - 64) header.classList.add('nav-collapsed');
+    }
+    toggle.addEventListener('click', (e)=>{ e.stopPropagation(); header.classList.toggle('menu-open'); });
+    links.addEventListener('click', (e)=>{ if(e.target.closest('a')) header.classList.remove('menu-open'); });
+    document.addEventListener('click', (e)=>{ if(header.classList.contains('menu-open') && !header.contains(e.target)) header.classList.remove('menu-open'); });
+    let rt; window.addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(measure, 120); }, {passive:true});
+    if(document.readyState === 'complete') measure(); else window.addEventListener('load', measure);
+    measure();
+  })();
+
+
+  // TOC scroll-spy
+  const tocLinks = [...document.querySelectorAll('.toc a')];
+  const sections = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if(sections.length){
+    const spy = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const id = e.target.id;
+          tocLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#'+id));
+        }
+      });
+    }, {rootMargin:'-20% 0px -70% 0px', threshold:0});
+    sections.forEach(s=>spy.observe(s));
+  }
+</script>
+</body>
+</html>
