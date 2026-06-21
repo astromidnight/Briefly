@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Briefly — A professional website. Ready tomorrow.</title>
-<meta name="description" content="Choose what you need, answer a few questions, and receive your custom-built website in one business day. No meetings. No complexity. Built in Portugal by David Cruz." />
+<title>Briefly — Um site profissional. Pronto amanhã.</title>
+<meta name="description" content="Escolha o que precisa, responda a algumas perguntas e receba o seu site personalizado num dia útil. Sem reuniões. Sem complicações. Feito em Portugal por David Cruz." />
 <link rel="canonical" href="https://briefly.pt/" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="author" content="David Cruz" />
 <meta name="theme-color" content="#08275D" />
+<link rel="alternate" hreflang="pt-PT" href="https://briefly.pt/" />
+<link rel="alternate" hreflang="en" href="https://briefly.pt/en/" />
+<link rel="alternate" hreflang="x-default" href="https://briefly.pt/" />
 
 <!-- Geo targeting -->
 <meta name="geo.region" content="PT" />
@@ -18,19 +21,19 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Briefly" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="pt_PT" />
 <meta property="og:url" content="https://briefly.pt/" />
-<meta property="og:title" content="Briefly — A professional website. Ready tomorrow." />
-<meta property="og:description" content="Choose what you need, answer a few questions, and receive your custom-built website in one business day. No meetings. No complexity." />
+<meta property="og:title" content="Briefly — Um site profissional. Pronto amanhã." />
+<meta property="og:description" content="Escolha o que precisa, responda a algumas perguntas e receba o seu site personalizado num dia útil. Sem reuniões. Sem complicações." />
 <meta property="og:image" content="https://briefly.pt/assets/share-thumb.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Briefly — A professional website. Ready tomorrow." />
+<meta property="og:image:alt" content="Briefly — Um site profissional. Pronto amanhã." />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Briefly — A professional website. Ready tomorrow." />
-<meta name="twitter:description" content="Choose what you need, answer a few questions, and receive your custom-built website in one business day." />
+<meta name="twitter:title" content="Briefly — Um site profissional. Pronto amanhã." />
+<meta name="twitter:description" content="Escolha o que precisa, responda a algumas perguntas e receba o seu site personalizado num dia útil." />
 <meta name="twitter:image" content="https://briefly.pt/assets/share-thumb.png" />
 
 <!-- Structured data -->
@@ -45,11 +48,19 @@
       "url": "https://briefly.pt/",
       "image": "https://briefly.pt/assets/share-thumb.png",
       "logo": "https://briefly.pt/assets/briefly-logo.svg",
-      "description": "Productized web design service. Choose what you need, answer a few questions, and receive your custom-built website in one business day.",
+      "description": "Serviço de web design produtizado. Escolha o que precisa, responda a algumas perguntas e receba o seu site personalizado num dia útil.",
+      "slogan": "Um site profissional. Pronto amanhã.",
       "email": "hello@briefly.pt",
       "priceRange": "€€",
+      "currenciesAccepted": "EUR",
       "vatID": "PT205254128",
-      "founder": { "@type": "Person", "name": "David Cruz" },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://briefly.pt/#person",
+        "name": "David Cruz",
+        "url": "https://www.davidcruz.pt",
+        "jobTitle": "Designer digital"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Aristides de Sousa Mendes N.º 16",
@@ -58,15 +69,125 @@
         "addressCountry": "PT"
       },
       "areaServed": "Worldwide",
-      "serviceType": "Web design"
+      "serviceType": "Web design",
+      "knowsAbout": [
+        "Web design",
+        "Landing pages",
+        "SEO",
+        "Acessibilidade web",
+        "HTML",
+        "Core Web Vitals"
+      ],
+      "sameAs": [
+        "https://www.davidcruz.pt"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://briefly.pt/#website",
       "url": "https://briefly.pt/",
       "name": "Briefly",
-      "publisher": { "@id": "https://briefly.pt/#business" },
-      "inLanguage": "en"
+      "publisher": {
+        "@id": "https://briefly.pt/#business"
+      },
+      "inLanguage": "pt-PT"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://briefly.pt/#service",
+      "name": "Design de landing page",
+      "serviceType": "Web design",
+      "provider": {
+        "@id": "https://briefly.pt/#business"
+      },
+      "areaServed": "Worldwide",
+      "description": "Uma landing page personalizada, responsiva, acessível e otimizada para SEO, entregue num dia útil.",
+      "offers": {
+        "@type": "Offer",
+        "price": "497",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "description": "Landing page personalizada, entregue num dia útil"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://briefly.pt/#faq",
+      "inLanguage": "pt-PT",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como conseguem entregar um site em apenas 24 horas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O nosso processo é assistido por IA de ponta a ponta. Para sites simples de uma página, conseguimos desenhar e construir tudo de forma autónoma, sem uma equipa grande, sem gargalos de agendamento e sem reuniões intermináveis. Isso permite-nos avançar muito mais depressa e manter o preço fixo, enquanto continuamos a cuidar de cada detalhe à mão."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do que precisam de mim para começar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apenas o briefing — e quanto mais contexto, melhor. Diga-nos para que serve o site, quem é o seu público, os seus objetivos, além de textos, logótipo, cores da marca e referências de que goste. Quanto mais rico o briefing, maior a probabilidade de acertarmos à primeira. E uma ronda de feedback está sempre incluída, para ajustarmos o design se necessário."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se não gostar do resultado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quanto mais contexto nos der à partida, mais provável é acertarmos à primeira. Ainda assim, cada projeto inclui uma ronda de revisões, para afinarmos o design até ficar como deve ser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Recebo mesmo o ficheiro de origem? Posso alojá-lo onde quiser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, absolutamente. Recebe um ficheiro HTML limpo e pronto a publicar, seu para alojar onde quiser. O código é de qualidade artesanal: responsivo, acessível (WCAG AA), otimizado para SEO e para os Core Web Vitals. Sem plataforma proprietária, sem dependências."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que não está incluído?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para mantermos tudo rápido e focado, não trabalhamos com templates nem construtores de páginas (sem Webflow, Framer ou Squarespace), e não fazemos back-offices de CMS, aplicações web dinâmicas nem manutenção contínua — exceto se adicionar um plano de suporte mensal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o pagamento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Assim que o seu briefing for validado, entramos em contacto por email para combinar o pagamento. Logo que o pagamento esteja confirmado, começamos a construir e o seu site é entregue num dia útil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Conseguem construir mais do que uma página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. As páginas extra estão disponíveis como extra a 149 € por página (até 3), acrescentando cada página cerca de 24h à entrega."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Oferecem suporte contínuo após a entrega?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Se quiser que mantenhamos o seu site atualizado e façamos ajustes ao longo do tempo, pode adicionar o nosso plano de suporte mensal por 49 €/mês."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Não tenho domínio nem servidor — podem ajudar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A configuração de domínio e alojamento está disponível como extra, para que possa passar do briefing a um site online sem ter de lidar com a parte técnica."
+          }
+        }
+      ]
     }
   ]
 }
@@ -273,7 +394,7 @@
   .addon .meta{color:var(--body);font-size:13px;margin-top:6px;}
 
   /* Work */
-  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;z-index:2;}
+  .work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;justify-content:center;position:relative;z-index:2;}
   .work-card{border:1px solid var(--line-2);border-radius:var(--radius);overflow:hidden;background:var(--card);transition:transform .2s ease, box-shadow .2s ease;cursor:pointer;}
   .work-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
   .work-thumb{aspect-ratio:4/3;position:relative;display:flex;flex-direction:column;padding:16px;gap:10px;overflow:hidden;}
@@ -422,7 +543,7 @@
     .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
   }
   @media (max-width:1024px){
-    .nav-links{display:none;}
+    
     .section{padding:74px 0;}
     .foot-grid{grid-template-columns:1fr 1fr;}
     .trust .sep{display:none;}
@@ -433,9 +554,53 @@
     .who-grid{grid-template-columns:1fr;}
   }
   @media (min-width:720px){
-    .nav-links{display:flex;}
+    
     .hero::after{background:linear-gradient(90deg, rgba(230,231,255,.82) 0%, rgba(230,231,255,.6) 40%, rgba(230,231,255,.15) 65%, rgba(230,231,255,0) 100%);}
   }
+  /* Language switch */
+  .lang-switch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff;}
+  .lang-switch a{font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--muted);padding:5px 10px;border-radius:999px;line-height:1;transition:color .15s ease, background .15s ease;}
+  .lang-switch a.on{background:var(--navy);color:#fff;}
+  .lang-switch a:not(.on):hover{color:var(--navy);}
+  /* Responsive nav / burger */
+  .nav{position:relative;}
+  .nav-links{flex:0 0 auto;white-space:nowrap;}
+  header.nav-collapsed .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-end;gap:2px;background:rgba(242,243,252,.98);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line);border-radius:0 0 18px 18px;box-shadow:var(--shadow-md);padding:10px 0 14px;display:flex;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .26s ease, transform .3s cubic-bezier(.22,.61,.36,1), visibility .26s;}
+  header.nav-collapsed.menu-open .nav-links{opacity:1;visibility:visible;transform:none;}
+  header.nav-collapsed .nav-links a:not(.nav-mobile-cta){position:relative;text-align:right;margin:0 14px;padding:13px 18px;border-radius:12px;font-size:16px;color:var(--body);transition:background .18s ease, color .18s ease, padding-right .22s cubic-bezier(.22,.61,.36,1), box-shadow .18s ease;}
+  header.nav-collapsed .nav-links a:not(.nav-mobile-cta):hover{background:#fff;color:var(--navy);padding-right:28px;box-shadow:inset -3px 0 0 0 var(--navy), 0 1px 2px rgba(8,39,93,.06);}
+  header.nav-collapsed .nav-links a.active:not(.nav-mobile-cta){background:#fff;color:var(--navy);box-shadow:inset -3px 0 0 0 var(--navy);}
+  header.nav-collapsed.menu-open .nav-links > *{animation:navItemIn .34s cubic-bezier(.22,.61,.36,1) both;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(1){animation-delay:.03s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(2){animation-delay:.07s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(3){animation-delay:.11s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(4){animation-delay:.15s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(5){animation-delay:.19s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(6){animation-delay:.23s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(7){animation-delay:.27s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(8){animation-delay:.31s;}
+  @keyframes navItemIn{from{opacity:0;transform:translateX(14px);}to{opacity:1;transform:none;}}
+  /* Burger -> X */
+  .menu-toggle .burger{display:block;width:22px;height:16px;position:relative;}
+  .menu-toggle .burger i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transform-box:border-box;transform-origin:center;transition:transform .3s cubic-bezier(.22,.61,.36,1), opacity .2s ease;}
+  .menu-toggle .burger i:nth-child(1){top:0;}
+  .menu-toggle .burger i:nth-child(2){top:7px;}
+  .menu-toggle .burger i:nth-child(3){top:14px;}
+  header.menu-open .menu-toggle .burger i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  header.menu-open .menu-toggle .burger i:nth-child(2){opacity:0;}
+  header.menu-open .menu-toggle .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (prefers-reduced-motion:reduce){
+    header.nav-collapsed .nav-links{transition:opacity .2s ease;transform:none;}
+    header.nav-collapsed.menu-open .nav-links > *{animation:none;}
+    .menu-toggle svg line{transition:none;}
+  }
+  .menu-toggle{display:none;}
+  header.nav-collapsed .menu-toggle{display:block;}
+  /* Collapsed: main CTA moves into the menu */
+  .nav-mobile-cta{display:none;}
+  header.nav-collapsed .nav-cta > a.btn-primary{display:none;}
+  header.nav-collapsed .nav-links .nav-mobile-cta{display:inline-flex;align-self:flex-end;justify-content:center;margin:12px 14px 6px;}
+  header.nav-collapsed .nav-links .nav-mobile-cta span:first-child{font-size:15px;font-weight:400;color:#ffffff;}
 </style>
 </head>
 <body>
@@ -445,22 +610,36 @@
   <div class="wrap nav">
     <a href="#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
     <nav class="nav-links">
-      <a href="#how-it-works">How it works</a>
-      <a href="#who-is-this-for">Who it's for</a>
-      <a href="#whats-included">What's included</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#work">Work</a>
+      <a href="#how-it-works">Como funciona</a>
+      <a href="#who-is-this-for">Para quem é</a>
+      <a href="#whats-included">O que está incluído</a>
+      <a href="#pricing">Preços</a>
+      <a href="#work">Trabalhos</a>
       <a href="#faq">FAQ</a>
+      <a href="about.html">Sobre</a>
+      <a href="#start" class="btn btn-primary nav-mobile-cta"><span>Começar o seu projeto</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </nav>
     <div class="nav-cta">
-      <a href="#start" class="btn btn-primary"><span>Start your project</span>
+      <div class="lang-switch" aria-label="Idioma">
+        <a href="index.html" class="lang on">PT</a>
+        <a href="en/index.html" class="lang">EN</a>
+      </div>
+      <a href="#start" class="btn btn-primary"><span>Começar o seu projeto</span>
         <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       <button class="menu-toggle" aria-label="Menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span class="burger"><i></i><i></i><i></i></span>
       </button>
     </div>
   </div>
 </header>
+<script>
+  /* Collapse nav to burger BEFORE first paint to avoid a menu flash on load */
+  (function(){
+    var h=document.getElementById('header');
+    if(h) h.classList.add('nav-collapsed');
+  })();
+</script>
 
 <!-- HERO -->
 <section id="hero" class="hero">
@@ -468,18 +647,18 @@
     <source src="assets/hero-bg.mp4" type="video/mp4" />
   </video>
   <div class="wrap inner">
-    <span class="eyebrow" style="color: rgb(8, 39, 93)">Web design · Delivered in 24h</span>
-    <h1>A professional landing page. Ready tomorrow.</h1>
-    <p class="lead">Tell us about your project, answer a few questions, and receive a custom  website in one business day. No meetings. No complexity.</p>
+    <span class="eyebrow" style="color: rgb(8, 39, 93)">WEBSITE · ENTREGUE EM 24H</span>
+    <h1>Um website profissional. Pronto amanhã.</h1>
+    <p class="lead">Conte-nos sobre o seu projeto, responda a algumas perguntas e receba um site personalizado num dia útil. Sem reuniões. Sem complicações.</p>
     <div class="hero-cta">
-      <a href="#start" class="btn btn-primary"><span>Start your project</span>
+      <a href="#start" class="btn btn-primary"><span>Começar o seu projeto</span>
         <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+      <a href="#how-it-works" class="btn btn-ghost">Ver como funciona</a>
     </div>
     <div class="trust">
-      <span>Custom landing page</span><i class="sep"></i>
-      <span>Delivered in 24 hours</span><i class="sep"></i>
-      <span>Fixed price, no surprises</span>
+      <span>Landing page personalizada</span><i class="sep"></i>
+      <span>Entregue em 24 horas</span><i class="sep"></i>
+      <span>Preço fixo, sem surpresas</span>
     </div>
   </div>
 </section>
@@ -488,9 +667,9 @@
 <section id="how-it-works" class="section">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" style="color: rgb(8, 39, 93)">How it works</span>
-      <h2>Three steps. <span class="soft">One business day.</span></h2>
-      <p>No back-and-forth. No delays. Just a clear, simple process.</p>
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">Como funciona</span>
+      <h2>Três passos. <span class="soft">Um dia útil.</span></h2>
+      <p>Sem idas e voltas. Sem atrasos. Apenas um processo claro e simples.</p>
     </div>
     <div class="steps" data-stagger data-variant="rv-up">
       <div class="step reveal">
@@ -498,24 +677,24 @@
           <span class="num">01</span>
           <span class="stepicon"><img src="assets/icon-brief.png" alt="" /></span>
         </div>
-        <h3>Send the brief</h3>
-        <p>Choose your package, describe your project, and share any references. It takes less than 5 minutes.</p>
+        <h3>Envie o briefing</h3>
+        <p>Escolha o pacote, descreva o seu projeto e partilhe referências. Demora menos de 5 minutos.</p>
       </div>
       <div class="step reveal">
         <div class="top">
           <span class="num">02</span>
           <span class="stepicon"><img src="assets/icon-build.png" alt="" /></span>
         </div>
-        <h3>We build it</h3>
-        <p>We design and build your website from scratch based on your context. No templates. No shortcuts. Pure craft.</p>
+        <h3>Nós construímos</h3>
+        <p>Desenhamos e construímos o seu site de raiz com base no seu contexto. Sem templates. Sem atalhos. Puro artesanato.</p>
       </div>
       <div class="step reveal">
         <div class="top">
           <span class="num">03</span>
           <span class="stepicon"><img src="assets/icon-launch.png" alt="" /></span>
         </div>
-        <h3>You receive it</h3>
-        <p>Within one business day, you get a responsive, accessible, SEO-ready website — ready to publish.</p>
+        <h3>Você recebe</h3>
+        <p>Num dia útil, recebe um site responsivo, acessível e otimizado para SEO — pronto a publicar.</p>
       </div>
     </div>
   </div>
@@ -525,9 +704,9 @@
 <section id="who-is-this-for" class="section who">
   <span class="who-deco" aria-hidden="true"></span>
   <div class="wrap">
-    <span class="eyebrow reveal">Who is this for</span>
-    <h2 class="who-headline reveal" style="--rd:.06s"><span class="who-lead">Built for</span><span class="who-target" id="whoTarget">Freelancers</span><span class="who-dot">.</span></h2>
-    <p class="who-sub reveal" id="whoSub" style="--rd:.12s">Land clients with a site that looks the part — without disappearing into a months-long build.</p>
+    <span class="eyebrow reveal">Para quem é</span>
+    <h2 class="who-headline reveal" style="--rd:.06s"><span class="who-lead">Feito para </span><span class="who-target" id="whoTarget">Freelancers</span><span class="who-dot">.</span></h2>
+    <p class="who-sub reveal" id="whoSub" style="--rd:.12s">Conquiste clientes com um site à altura — sem desaparecer numa construção de meses.</p>
     <div class="who-marquee reveal" aria-hidden="true" style="--rd:.18s">
       <div class="layer base">
         <div class="mq-track" id="mqBase"></div>
@@ -543,30 +722,30 @@
 <section id="whats-included" class="section band">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" style="color: rgb(8, 39, 93)">What's included</span>
-      <h2>Everything you need. <span class="soft">Nothing you don't.</span></h2>
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">O que está incluído</span>
+      <h2>Tudo o que precisa. <span class="soft">Nada que não precise.</span></h2>
     </div>
     <div class="two-col">
       <div class="panel yes reveal rv-left">
-        <h3>What's included</h3>
+        <h3>O que está incluído</h3>
         <ul>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Custom designed HTML file</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Responsive</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Accessible (WCAG AA)</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>SEO-ready</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Fast — optimized for Core Web Vitals</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>One revision round included</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Delivered as a clean, ready-to-publish file</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Landing page em HTML desenhado à medida</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Responsivo</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Acessível (WCAG AA)</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Otimizado para SEO</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Rápido — otimizado para Core Web Vitals</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Uma ronda de revisões incluída</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Entregue como ficheiro limpo, pronto a publicar</li>
         </ul>
       </div>
       <div class="panel no reveal rv-right">
-        <h3>What we don't do</h3>
+        <h3>O que não fazemos</h3>
         <ul>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No templates or page builders</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No Webflow, Framer, or Squarespace</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No CMS or back-office</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No dynamic web apps</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No ongoing maintenance (unless subscribed)</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Sem templates nem construtores de páginas</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Sem Webflow, Framer ou Squarespace</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Sem CMS nem back-office</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Sem aplicações web dinâmicas</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Sem manutenção contínua (exceto se subscrita)</li>
         </ul>
       </div>
     </div>
@@ -577,43 +756,43 @@
 <section id="pricing" class="section">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" style="color: rgb(8, 39, 93)">Pricing</span>
-      <h2>Clear pricing. <span class="soft">No surprises.</span></h2>
-      <p>Pay for what you need. Add what makes sense.</p>
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">Preços</span>
+      <h2>Preços claros. <span class="soft">Sem surpresas.</span></h2>
+      <p>Pague pelo que precisa. Acrescente o que fizer sentido.</p>
     </div>
     <div class="price-grid">
       <div class="price-main reveal">
         <div class="price-tags">
-          <span class="pill pop">Most popular</span>
+          <span class="pill pop">Mais popular</span>
         </div>
         <h3>Landing page</h3>
-        <p class="sub">Custom-built · Delivered in 24h</p>
-        <div class="price-amt"><span class="amt">€497</span><span class="per">/ one-time</span></div>
+        <p class="sub">Feita à medida · Entregue em 24h</p>
+        <div class="price-amt"><span class="amt">€497</span><span class="per">/ pagamento único</span></div>
         <ul>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Custom landing page</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Responsive &amp; accessible</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>SEO-ready</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>One revision round</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Delivered as a ready-to-publish file</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Landing page personalizada</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Responsiva e acessível</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Otimizado para SEO</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Uma ronda de revisões</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Entregue como ficheiro pronto a publicar</li>
         </ul>
-        <a href="#start" class="btn btn-primary btn-block"><span>Start your project</span>
+        <a href="#start" class="btn btn-primary btn-block"><span>Começar o seu projeto</span>
           <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     <div class="addons" data-stagger data-variant="rv-up">
         <div class="addon reveal">
-          <span class="label">Add-on</span>
-          <div class="addon-row"><h4>Extra pages</h4><span class="plus">+€149</span></div>
-          <p class="meta">per page (up to 3) · +24h each</p>
+          <span class="label">Extra</span>
+          <div class="addon-row"><h4>Páginas extra</h4><span class="plus">+€149</span></div>
+          <p class="meta">por página (até 3) · +24h cada</p>
         </div>
         <div class="addon reveal">
-          <span class="label">Add-on</span>
-          <div class="addon-row"><h4>Domain &amp; hosting setup</h4><span class="plus">+€89</span></div>
-          <p class="meta">one-time</p>
+          <span class="label">Extra</span>
+          <div class="addon-row"><h4>Configuração de domínio e alojamento</h4><span class="plus">+€89</span></div>
+          <p class="meta">pagamento único</p>
         </div>
         <div class="addon reveal">
-          <span class="label">Add-on</span>
-          <div class="addon-row"><h4>Monthly support</h4><span class="plus">€49</span></div>
-          <p class="meta">/month · updates &amp; tweaks</p>
+          <span class="label">Extra</span>
+          <div class="addon-row"><h4>Suporte mensal</h4><span class="plus">€49</span></div>
+          <p class="meta">/mês · atualizações e ajustes</p>
         </div>
       </div>
     </div>
@@ -624,8 +803,8 @@
 <section id="work" class="section band">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" style="color: rgb(8, 39, 93)">Recent work</span>
-      <h2>A few examples of what we build.</h2>
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">Trabalhos recentes</span>
+      <h2>Alguns exemplos do que construímos.</h2>
     </div>
     <div class="work-grid" data-stagger data-variant="rv-up">
       <a href="https://astromidnight.pt/eclipse2026" target="_blank" rel="noopener" class="work-card reveal">
@@ -635,14 +814,6 @@
         <div class="work-meta"><div><div class="t">Astromidnight Eclipse Simulator</div><div class="c">Webapp</div></div>
           <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
       </a>
-      <a href="#" class="work-card reveal">
-        <div class="work-thumb g2"><span class="tbeam"></span>
-          <div class="browser"><div class="bar"><i></i><i></i><i></i></div>
-            <div class="body"><div class="l title"></div><div class="l w70"></div><div class="l w50"></div><div class="l lime"></div></div></div>
-        </div>
-        <div class="work-meta"><div><div class="t">Nordhaus</div><div class="c">Local business</div></div>
-          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
-      </a>
       <a href="https://astromidnight.github.io/portia/" target="_blank" rel="noopener" class="work-card reveal">
         <div class="work-thumb" style="padding:0;">
           <img src="assets/work-portia.jpg" alt="Portia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
@@ -650,19 +821,26 @@
         <div class="work-meta"><div><div class="t">Portia</div><div class="c">Startup / MVP</div></div>
           <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
       </a>
+      <a href="https://astromidnight.pt/" target="_blank" rel="noopener" class="work-card reveal">
+        <div class="work-thumb" style="padding:0;">
+          <img src="assets/work-astromidnight.png" alt="Astromidnight website" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="work-meta"><div><div class="t">Astromidnight website</div><div class="c">Photography</div></div>
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+      </a>
     </div>
     <div class="cta-banner reveal" style="margin-top:48px;">
       <span class="cbeam"></span><span class="csphere parallax" data-pspeed="0.12"></span>
       <div class="ctext">
-        <h3>Ready to launch your website?</h3>
+        <h3>Pronto para lançar o seu site?</h3>
         <ul>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Professional website</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Ready tomorrow</li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>No meetings. No complexity.</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Site profissional</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Pronto amanhã</li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Sem reuniões. Sem complicações.</li>
         </ul>
       </div>
       <div class="cact">
-        <a href="#start" class="btn btn-lime"><span>Start your project</span>
+        <a href="#start" class="btn btn-lime"><span>Começar o seu projeto</span>
           <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
@@ -674,72 +852,72 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow" style="color: rgb(8, 39, 93)">FAQ</span>
-      <h2>Questions, <span class="soft">answered.</span></h2>
-      <p>Everything you might want to know before sending your brief.</p>
+      <h2>Perguntas, <span class="soft">respondidas.</span></h2>
+      <p>Tudo o que pode querer saber antes de enviar o seu briefing.</p>
     </div>
     <div class="faq-list" data-stagger data-variant="rv-up">
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>How can you deliver a website in just 24 hours?</span>
+          <span>Como conseguem entregar um site em apenas 24 horas?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Our process is AI-assisted from end to end. For simple, single-page websites we can design and build everything autonomously, with no large team, no scheduling bottlenecks, and no endless meetings. That lets us move far faster and keep the price fixed, while still hand-crafting every detail.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">O nosso processo é assistido por IA de ponta a ponta. Para sites simples de uma página, conseguimos desenhar e construir tudo de forma autónoma, sem uma equipa grande, sem gargalos de agendamento e sem reuniões intermináveis. Isso permite-nos avançar muito mais depressa e manter o preço fixo, enquanto continuamos a cuidar de cada detalhe à mão.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>What do you need from me to get started?</span>
+          <span>Do que precisam de mim para começar?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Just the brief, and the more context the better. Tell us what the site is for, who your audience is, your goals, plus any copy, logo, brand colours and references you like. The richer the brief, the higher the chance we nail it on the first try. And a round of feedback is always included, so we can adjust the design if needed.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Apenas o briefing — e quanto mais contexto, melhor. Diga-nos para que serve o site, quem é o seu público, os seus objetivos, além de textos, logótipo, cores da marca e referências de que goste. Quanto mais rico o briefing, maior a probabilidade de acertarmos à primeira. E uma ronda de feedback está sempre incluída, para ajustarmos o design se necessário.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>What if I don't like the result?</span>
+          <span>E se não gostar do resultado?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">The more context you give us up front, the more likely we are to hit the mark first time. Even so, every project includes one round of revisions, so we can fine-tune the design until it feels right.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Quanto mais contexto nos der à partida, mais provável é acertarmos à primeira. Ainda assim, cada projeto inclui uma ronda de revisões, para afinarmos o design até ficar como deve ser.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>Do I really get the source file? Can I host it anywhere?</span>
+          <span>Recebo mesmo o ficheiro de origem? Posso alojá-lo onde quiser?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Yes, absolutely. You receive a clean, ready-to-publish HTML file that's yours to host anywhere. The code is hand-quality: responsive, accessible (WCAG AA), SEO-ready and optimised for Core Web Vitals. No proprietary platform, no lock-in.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim, absolutamente. Recebe um ficheiro HTML limpo e pronto a publicar, seu para alojar onde quiser. O código é de qualidade artesanal: responsivo, acessível (WCAG AA), otimizado para SEO e para os Core Web Vitals. Sem plataforma proprietária, sem dependências.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>What's not included?</span>
+          <span>O que não está incluído?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">To keep things fast and focused, we don't build on templates or page builders (no Webflow, Framer or Squarespace), and we don't do CMS back-offices, dynamic web apps, or ongoing maintenance, unless you add a monthly support plan.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Para mantermos tudo rápido e focado, não trabalhamos com templates nem construtores de páginas (sem Webflow, Framer ou Squarespace), e não fazemos back-offices de CMS, aplicações web dinâmicas nem manutenção contínua — exceto se adicionar um plano de suporte mensal.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>How does payment work?</span>
+          <span>Como funciona o pagamento?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Once your brief is validated, we'll reach out by email to arrange payment. As soon as the payment is confirmed, we start building, and your site is delivered within one business day.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Assim que o seu briefing for validado, entramos em contacto por email para combinar o pagamento. Logo que o pagamento esteja confirmado, começamos a construir e o seu site é entregue num dia útil.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>Can you build more than one page?</span>
+          <span>Conseguem construir mais do que uma página?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Extra pages are available as an add-on at €149 per page (up to 3), with each page adding roughly 24h to delivery.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim. As páginas extra estão disponíveis como extra a 149 € por página (até 3), acrescentando cada página cerca de 24h à entrega.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>Do you offer ongoing support after delivery?</span>
+          <span>Oferecem suporte contínuo após a entrega?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Yes. If you'd like us to keep your site updated and make tweaks over time, you can add our monthly support plan for €49/month.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Se quiser que mantenhamos o seu site atualizado e façamos ajustes ao longo do tempo, pode adicionar o nosso plano de suporte mensal por 49 €/mês.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" aria-expanded="false">
-          <span>I don't have a domain or server — can you help?</span>
+          <span>Não tenho domínio nem servidor — podem ajudar?</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Yes. Domain and hosting setup is available as an add-on, so you can go from brief to a live site without dealing with the technical setup yourself.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Sim. A configuração de domínio e alojamento está disponível como extra, para que possa passar do briefing a um site online sem ter de lidar com a parte técnica.</div></div>
       </div>
     </div>
   </div>
@@ -749,48 +927,48 @@
 <section id="start" class="section band">
   <div class="wrap">
     <div class="section-head reveal" style="margin-bottom:48px;">
-      <span class="eyebrow" style="color: rgb(8, 39, 93)">Start your project</span>
-      <h2>Tell us about your project.</h2>
-      <p>Fill in the form and we'll get back to you within a few hours.</p>
+      <span class="eyebrow" style="color: rgb(8, 39, 93)">Começar o seu projeto</span>
+      <h2>Conte-nos sobre o seu projeto.</h2>
+      <p>Preencha o formulário e respondemos dentro de algumas horas.</p>
     </div>
     <div class="start-grid">
       <div class="form-card reveal">
         <form id="briefForm">
-          <div class="field"><label for="name">Your name</label>
-            <input type="text" id="name" name="name" placeholder="Jane Doe" required /></div>
-          <div class="field hp" aria-hidden="true"><label for="company">Company</label>
+          <div class="field"><label for="name">O seu nome</label>
+            <input type="text" id="name" name="name" placeholder="Maria Silva" required /></div>
+          <div class="field hp" aria-hidden="true"><label for="company">Empresa</label>
             <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" /></div>
-          <div class="field"><label for="email">Your email</label>
-            <input type="email" id="email" name="email" placeholder="jane@company.com" required /></div>
-          <div class="field"><label for="type">What do you need?</label>
+          <div class="field"><label for="email">O seu email</label>
+            <input type="email" id="email" name="email" placeholder="maria@empresa.com" required /></div>
+          <div class="field"><label for="type">Do que precisa?</label>
             <select id="type" name="type" required>
-              <option value="" disabled selected>Select a type…</option>
+              <option value="" disabled selected>Selecione um tipo…</option>
               <option>Landing page</option>
-              <option>Startup / MVP page</option>
-              <option>Portfolio or personal website</option>
-              <option>Local business website</option>
-              <option>Product or campaign page</option>
-              <option>Short-term rental page</option>
-              <option>Other</option>
+              <option>Página de startup / MVP</option>
+              <option>Portefólio ou site pessoal</option>
+              <option>Site de negócio local</option>
+              <option>Página de produto ou campanha</option>
+              <option>Página de alojamento local</option>
+              <option>Outro</option>
             </select></div>
-          <div class="field"><label for="desc">Describe your project</label>
-            <textarea id="desc" name="desc" placeholder="Tell us what the website is for, who your audience is, and any references you have in mind…"></textarea></div>
-          <div class="field"><label>Any add-ons you're interested in?</label>
+          <div class="field"><label for="desc">Descreva o seu projeto</label>
+            <textarea id="desc" name="desc" placeholder="Diga-nos para que serve o site, quem é o seu público e quaisquer referências que tenha em mente…"></textarea></div>
+          <div class="field"><label>Algum extra que lhe interesse?</label>
             <div class="addon-chips">
-              <label class="chip"><input type="checkbox" value="Extra pages" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Extra pages</span></label>
-              <label class="chip"><input type="checkbox" value="Domain & hosting" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Domain &amp; hosting</span></label>
-              <label class="chip"><input type="checkbox" value="Monthly support" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Monthly support</span></label>
+              <label class="chip"><input type="checkbox" value="Extra pages" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Páginas extra</span></label>
+              <label class="chip"><input type="checkbox" value="Domain & hosting" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Domínio e alojamento</span></label>
+              <label class="chip"><input type="checkbox" value="Monthly support" /><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><path d="M5 13l4 4L19 7"/></svg></span><span class="chip-label">Suporte mensal</span></label>
             </div></div>
-          <button type="submit" class="btn btn-primary btn-block"><span>Send brief</span>
+          <button type="submit" class="btn btn-primary btn-block"><span>Enviar briefing</span>
             <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
-          <p class="form-note">We reply within a few hours, Monday to Friday.</p>
-          <p class="form-consent">By submitting, you agree to your details being processed in line with our <a href="privacy.html">Privacy Policy</a>.</p>
+          <p class="form-note">Respondemos dentro de algumas horas, de segunda a sexta.</p>
+          <p class="form-consent">Ao enviar, concorda que os seus dados sejam tratados de acordo com a nossa <a href="privacy.html">Política de Privacidade</a>.</p>
           <p class="form-error" id="formError"></p>
         </form>
         <div class="form-success" id="formSuccess">
           <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>
-          <h3>Brief received!</h3>
-          <p>Thanks — we've got your project details and we'll be in touch within a few hours.</p>
+          <h3>Briefing recebido!</h3>
+          <p>Obrigado — recebemos os detalhes do seu projeto e entraremos em contacto dentro de algumas horas.</p>
         </div>
       </div>
     </div>
@@ -803,34 +981,34 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
-        <p>A professional website. Ready tomorrow.</p>
+        <p>Um website profissional. Pronto amanhã.</p>
       </div>
-      <div class="foot-col"><h4>Pages</h4>
+      <div class="foot-col"><h4>Páginas</h4>
         <ul>
-          <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#whats-included">What's included</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#work">Recent work</a></li>
+          <li><a href="#how-it-works">Como funciona</a></li>
+          <li><a href="#whats-included">O que está incluído</a></li>
+          <li><a href="#pricing">Preços</a></li>
+          <li><a href="#work">Trabalhos recentes</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#start">Start a project</a></li>
+          <li><a href="#start">Começar projeto</a></li>
         </ul>
       </div>
-      <div class="foot-col"><h4>Company</h4>
+      <div class="foot-col"><h4>Empresa</h4>
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="privacy.html">Política de privacidade</a></li>
+          <li><a href="terms.html">Termos de serviço</a></li>
         </ul>
       </div>
-      <div class="foot-col"><h4>Contact</h4>
+      <div class="foot-col"><h4>Contacto</h4>
         <ul>
           <li><a href="mailto:hello@briefly.pt">hello@briefly.pt</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2025 Briefly. All rights reserved.</span>
-      <span>Built with care.</span>
+      <span>© 2026 Briefly. Todos os direitos reservados.</span>
+      <span>Feito com cuidado.</span>
     </div>
   </div>
 </footer>
@@ -838,10 +1016,10 @@
 <!-- COOKIE CONSENT -->
 <div class="cookie-card" id="cookieCard" role="dialog" aria-live="polite" aria-label="Cookie consent">
   <h4>Cookies</h4>
-  <p>We use cookies to improve your experience and analyse site traffic. You can accept or reject non-essential cookies.</p>
+  <p>Utilizamos cookies para melhorar a sua experiência e analisar o tráfego do site. Pode aceitar ou rejeitar cookies não essenciais.</p>
   <div class="cookie-actions">
-    <button class="cookie-btn reject" id="cookieReject" type="button">Reject</button>
-    <button class="cookie-btn accept" id="cookieAccept" type="button">Accept</button>
+    <button class="cookie-btn reject" id="cookieReject" type="button">Rejeitar</button>
+    <button class="cookie-btn accept" id="cookieAccept" type="button">Aceitar</button>
   </div>
 </div>
 
@@ -849,6 +1027,20 @@
   const header = document.getElementById('header');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ---- Responsive nav: collapse to a burger menu when items don't fit ----
+  (function(){
+    const nav = header.querySelector('.nav');
+    const toggle = header.querySelector('.menu-toggle');
+    const links = header.querySelector('.nav-links');
+    if(!nav || !toggle || !links) return;
+    /* Always use the burger menu (original design); set immediately, no measuring = no flash */
+    header.classList.add('nav-collapsed');
+    toggle.addEventListener('click', (e)=>{ e.stopPropagation(); header.classList.toggle('menu-open'); });
+    links.addEventListener('click', (e)=>{ if(e.target.closest('a')) header.classList.remove('menu-open'); });
+    document.addEventListener('click', (e)=>{ if(header.classList.contains('menu-open') && !header.contains(e.target)) header.classList.remove('menu-open'); });
+  })();
+
 
   // ---- Scroll reveal: variants + staggered groups ----
   // Assign directional/scaled variant + cascade delay to children of [data-stagger] groups
@@ -903,15 +1095,15 @@
     const sub = document.getElementById('whoSub');
     if(!target || !sub) return;
     const items = [
-      {w:'Freelancers',      s:'Land clients with a site that looks the part — without disappearing into a months-long build.'},
-      {w:'Founders',         s:'Put a real landing page live tomorrow to validate, pitch, or launch — not next quarter.'},
-      {w:'Local businesses', s:'Look established online and get found — without page-builder bloat or agency budgets.'},
-      {w:'Creatives',        s:'Show your work on something as crafted as what you make — built to the last pixel.'},
+      {w:'Freelancers',      s:'Conquiste clientes com um site à altura — sem desaparecer numa construção de meses.'},
+      {w:'Fundadores',       s:'Ponha uma landing page real online amanhã para validar, apresentar ou lançar — não no próximo trimestre.'},
+      {w:'Negócios locais',  s:'Transmita solidez online e seja encontrado — sem o peso dos construtores de páginas nem orçamentos de agência.'},
+      {w:'Criativos',        s:'Mostre o seu trabalho num site tão bem feito como aquilo que cria — cuidado ao último pixel.'},
     ];
     const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
 
     // Build the verb marquee (duplicated for a seamless -50% loop)
-    const verbs = ['Launch','Pitch','Sell','Grow','Showcase'];
+    const verbs = ['Lançar','Apresentar','Vender','Crescer','Mostrar'];
     function buildTrack(el){
       const make = ()=> verbs.map(v=>`<span class="v">${v}</span><span class="sep"></span>`).join('');
       el.innerHTML = make() + make(); // two copies → seamless loop
@@ -1017,20 +1209,20 @@
     const addons = [...form.querySelectorAll('.chip input:checked')].map(i=>i.value);
     const payload = {
       access_key: WEB3FORMS_KEY,
-      subject: `New brief from ${form.name.value.trim()} — ${form.type.value}`,
+      subject: `Novo briefing de ${form.name.value.trim()} — ${form.type.value}`,
       from_name: 'Briefly website',
       replyto: form.email.value.trim(),
       name: form.name.value.trim(),
       email: form.email.value.trim(),
-      'Project type': form.type.value,
-      'Add-ons': addons.length ? addons.join(', ') : 'None',
-      'Description': form.desc.value.trim() || '—',
+      'Tipo de projeto': form.type.value,
+      'Extras': addons.length ? addons.join(', ') : 'Nenhum',
+      'Descrição': form.desc.value.trim() || '—',
     };
 
     btn.disabled = true;
     const label = btn.querySelector('span:not(.badge)');
     const original = label ? label.textContent : '';
-    if (label) label.textContent = 'Sending…';
+    if (label) label.textContent = 'A enviar…';
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -1039,7 +1231,7 @@
         body: JSON.stringify(payload),
       });
       const data = await res.json().catch(()=>({}));
-      if (!res.ok || !data.success) throw new Error(data.message || 'Something went wrong. Please try again.');
+      if (!res.ok || !data.success) throw new Error(data.message || 'Algo correu mal. Tente novamente.');
       form.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'flex';
     } catch (err) {

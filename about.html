@@ -1,35 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About — Briefly</title>
-<meta name="description" content="Briefly is a personal project by David Cruz — a digital designer with 16 years of experience who got tired of the old way of building websites." />
+<title>Sobre — Briefly</title>
+<meta name="description" content="A Briefly é um projeto pessoal de David Cruz — um designer digital com 16 anos de experiência que se cansou da velha forma de construir sites." />
 <link rel="canonical" href="https://briefly.pt/about.html" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="author" content="David Cruz" />
 <meta name="theme-color" content="#08275D" />
+<link rel="alternate" hreflang="pt-PT" href="https://briefly.pt/about.html" />
+<link rel="alternate" hreflang="en" href="https://briefly.pt/en/about.html" />
+<link rel="alternate" hreflang="x-default" href="https://briefly.pt/about.html" />
 <meta name="geo.region" content="PT" />
 <meta name="geo.placename" content="Loures, Portugal" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Briefly" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="pt_PT" />
 <meta property="og:url" content="https://briefly.pt/about.html" />
-<meta property="og:title" content="About — Briefly" />
-<meta property="og:description" content="A personal project by David Cruz — a digital designer with 16 years of experience who got tired of the old way of building websites." />
+<meta property="og:title" content="Sobre — Briefly" />
+<meta property="og:description" content="Um projeto pessoal de David Cruz — um designer digital com 16 anos de experiência que se cansou da velha forma de construir sites." />
 <meta property="og:image" content="https://briefly.pt/assets/share-thumb.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="About Briefly — One person. Sixteen years. Zero complexity." />
+<meta property="og:image:alt" content="Sobre a Briefly — Uma pessoa. Dezasseis anos. Zero complicações." />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="About — Briefly" />
-<meta name="twitter:description" content="A personal project by David Cruz — a digital designer who got tired of the old way of building websites." />
+<meta name="twitter:title" content="Sobre — Briefly" />
+<meta name="twitter:description" content="Um projeto pessoal de David Cruz — um designer digital que se cansou da velha forma de construir sites." />
 <meta name="twitter:image" content="https://briefly.pt/assets/share-thumb.png" />
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://briefly.pt/about.html#aboutpage",
+      "url": "https://briefly.pt/about.html",
+      "name": "Sobre — Briefly",
+      "inLanguage": "pt-PT",
+      "isPartOf": {
+        "@id": "https://briefly.pt/#website"
+      },
+      "about": {
+        "@id": "https://briefly.pt/#person"
+      },
+      "mainEntity": {
+        "@id": "https://briefly.pt/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://briefly.pt/#person",
+      "name": "David Cruz",
+      "jobTitle": "Designer digital",
+      "description": "Designer digital com 16 anos de experiência e fundador da Briefly.",
+      "url": "https://www.davidcruz.pt",
+      "image": "https://briefly.pt/assets/david-cruz.jpg",
+      "worksFor": {
+        "@id": "https://briefly.pt/#business"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Loures",
+        "addressCountry": "PT"
+      },
+      "knowsAbout": [
+        "Web design",
+        "Landing pages",
+        "SEO",
+        "Acessibilidade web",
+        "HTML"
+      ],
+      "sameAs": [
+        "https://www.davidcruz.pt"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://briefly.pt/#business",
+      "name": "Briefly",
+      "url": "https://briefly.pt/"
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
 <style>
@@ -206,14 +266,58 @@
     .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
   }
   @media (max-width:1024px){
-    .nav-links{display:none;}
+    
     .section{padding:78px 0;}
     .about-hero{padding:120px 0 72px;}
     .foot-grid{grid-template-columns:1fr 1fr;}
   }
   @media (min-width:1025px){
-    .nav-links{display:flex;}
+    
   }
+  /* Language switch */
+  .lang-switch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff;}
+  .lang-switch a{font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--muted);padding:5px 10px;border-radius:999px;line-height:1;transition:color .15s ease, background .15s ease;}
+  .lang-switch a.on{background:var(--navy);color:#fff;}
+  .lang-switch a:not(.on):hover{color:var(--navy);}
+  /* Responsive nav / burger */
+  .nav{position:relative;}
+  .nav-links{flex:0 0 auto;white-space:nowrap;}
+  header.nav-collapsed .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-end;gap:2px;background:rgba(242,243,252,.98);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line);border-radius:0 0 18px 18px;box-shadow:var(--shadow-md);padding:10px 0 14px;display:flex;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .26s ease, transform .3s cubic-bezier(.22,.61,.36,1), visibility .26s;}
+  header.nav-collapsed.menu-open .nav-links{opacity:1;visibility:visible;transform:none;}
+  header.nav-collapsed .nav-links a:not(.nav-mobile-cta){position:relative;text-align:right;margin:0 14px;padding:13px 18px;border-radius:12px;font-size:16px;color:var(--body);transition:background .18s ease, color .18s ease, padding-right .22s cubic-bezier(.22,.61,.36,1), box-shadow .18s ease;}
+  header.nav-collapsed .nav-links a:not(.nav-mobile-cta):hover{background:#fff;color:var(--navy);padding-right:28px;box-shadow:inset -3px 0 0 0 var(--navy), 0 1px 2px rgba(8,39,93,.06);}
+  header.nav-collapsed .nav-links a.active:not(.nav-mobile-cta){background:#fff;color:var(--navy);box-shadow:inset -3px 0 0 0 var(--navy);}
+  header.nav-collapsed.menu-open .nav-links > *{animation:navItemIn .34s cubic-bezier(.22,.61,.36,1) both;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(1){animation-delay:.03s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(2){animation-delay:.07s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(3){animation-delay:.11s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(4){animation-delay:.15s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(5){animation-delay:.19s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(6){animation-delay:.23s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(7){animation-delay:.27s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(8){animation-delay:.31s;}
+  @keyframes navItemIn{from{opacity:0;transform:translateX(14px);}to{opacity:1;transform:none;}}
+  /* Burger -> X */
+  .menu-toggle .burger{display:block;width:22px;height:16px;position:relative;}
+  .menu-toggle .burger i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transform-box:border-box;transform-origin:center;transition:transform .3s cubic-bezier(.22,.61,.36,1), opacity .2s ease;}
+  .menu-toggle .burger i:nth-child(1){top:0;}
+  .menu-toggle .burger i:nth-child(2){top:7px;}
+  .menu-toggle .burger i:nth-child(3){top:14px;}
+  header.menu-open .menu-toggle .burger i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  header.menu-open .menu-toggle .burger i:nth-child(2){opacity:0;}
+  header.menu-open .menu-toggle .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (prefers-reduced-motion:reduce){
+    header.nav-collapsed .nav-links{transition:opacity .2s ease;transform:none;}
+    header.nav-collapsed.menu-open .nav-links > *{animation:none;}
+    .menu-toggle svg line{transition:none;}
+  }
+  .menu-toggle{display:none;}
+  header.nav-collapsed .menu-toggle{display:block;}
+  /* Collapsed: main CTA moves into the menu */
+  .nav-mobile-cta{display:none;}
+  header.nav-collapsed .nav-cta > a.btn-primary{display:none;}
+  header.nav-collapsed .nav-links .nav-mobile-cta{display:inline-flex;align-self:flex-end;justify-content:center;margin:12px 14px 6px;}
+  header.nav-collapsed .nav-links .nav-mobile-cta span:first-child{font-size:15px;font-weight:400;color:#ffffff;}
 </style>
 </head>
 <body>
@@ -223,18 +327,25 @@
   <div class="wrap nav">
     <a href="index.html#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
     <nav class="nav-links">
-      <a href="index.html#how-it-works">How it works</a>
-      <a href="index.html#who-is-this-for">Who it's for</a>
-      <a href="index.html#whats-included">What's included</a>
-      <a href="index.html#pricing">Pricing</a>
-      <a href="index.html#work">Work</a>
+      <a href="index.html#how-it-works">Como funciona</a>
+      <a href="index.html#who-is-this-for">Para quem é</a>
+      <a href="index.html#whats-included">O que está incluído</a>
+      <a href="index.html#pricing">Preços</a>
+      <a href="index.html#work">Trabalhos</a>
       <a href="index.html#faq">FAQ</a>
+      <a href="about.html" class="active">Sobre</a>
+      <a href="index.html#start" class="btn btn-primary nav-mobile-cta"><span>Começar o seu projeto</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </nav>
     <div class="nav-cta">
-      <a href="index.html#start" class="btn btn-primary"><span>Start your project</span>
+      <div class="lang-switch" aria-label="Idioma">
+        <a href="about.html" class="lang on">PT</a>
+        <a href="en/about.html" class="lang">EN</a>
+      </div>
+      <a href="index.html#start" class="btn btn-primary"><span>Começar o seu projeto</span>
         <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       <button class="menu-toggle" aria-label="Menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span class="burger"><i></i><i></i><i></i></span>
       </button>
     </div>
   </div>
@@ -244,10 +355,10 @@
 <section class="about-hero">
   <span class="deco" aria-hidden="true"></span>
   <div class="wrap inner">
-    <span class="eyebrow reveal">About Briefly</span>
-    <h1 class="reveal" style="--rd:.08s">One person.
-Zero complexity.</h1>
-    <p class="lead reveal" style="--rd:.16s">Briefly is a personal project by David Cruz — a digital designer with 16 years of experience who got tired of the old way of building websites.</p>
+    <span class="eyebrow reveal">Sobre a Briefly</span>
+    <h1 class="reveal" style="--rd:.08s">Uma pessoa.
+Zero complicações.</h1>
+    <p class="lead reveal" style="--rd:.16s">A Briefly é um projeto pessoal de David Cruz — um designer digital com 16 anos de experiência que se cansou da velha forma de construir sites.</p>
   </div>
 </section>
 
@@ -256,30 +367,30 @@ Zero complexity.</h1>
   <span class="deco" aria-hidden="true"></span>
   <div class="wrap">
     <div class="prose" style="text-align:center;margin-bottom:58px;">
-      <span class="eyebrow reveal">The old model</span>
-      <h2 class="reveal" style="--rd:.06s">The agency model is broken for most projects.</h2>
-      <p class="reveal" style="--rd:.12s">Too slow, too expensive, too many people for a job that doesn't need any of that. So I built the alternative.</p>
+      <span class="eyebrow reveal">O modelo antigo</span>
+      <h2 class="reveal" style="--rd:.06s">O modelo de agência está furado para a maioria dos projetos.</h2>
+      <p class="reveal" style="--rd:.12s">Demasiado lento, demasiado caro, demasiada gente para um trabalho que não precisa de nada disso. Por isso construí a alternativa.</p>
     </div>
     <div class="vs-wrap">
       <span class="vs-badge reveal" aria-hidden="true">vs</span>
       <div class="vs-panel vs-old reveal rv-left">
-        <h3><span class="vs-dot"></span>The old way</h3>
+        <h3><span class="vs-dot"></span>O método antigo</h3>
         <ul data-stagger>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Three discovery calls</span></li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Four weeks of waiting</span></li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">A proposal at 2× your budget</span></li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">A whole team for one page</span></li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Meetings, handoffs, delays</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Três reuniões de descoberta</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Quatro semanas de espera</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Uma proposta a 2× o seu orçamento</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Uma equipa inteira para uma página</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="txt">Reuniões, transições, atrasos</span></li>
         </ul>
       </div>
       <div class="vs-panel vs-new reveal rv-right">
-        <h3><span class="vs-dot"></span>The Briefly way</h3>
+        <h3><span class="vs-dot"></span>O método Briefly</h3>
         <ul data-stagger>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">One simple brief</span></li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Built by one person — me</span></li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Delivered the next business day</span></li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Custom-built, never a template</span></li>
-          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Fixed price. No meetings.</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Um briefing simples</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Construído por uma pessoa — eu</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Entregue no dia útil seguinte</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Feito à medida, nunca um template</span></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="txt">Preço fixo. Sem reuniões.</span></li>
         </ul>
       </div>
     </div>
@@ -295,13 +406,13 @@ Zero complexity.</h1>
         <span class="tag">David Cruz · Portugal</span>
       </div>
       <div class="bio-body reveal rv-right">
-        <span class="eyebrow" style="color: rgb(8, 39, 93)">Who's behind it</span>
-        <h2>Who's behind it.</h2>
-        <p>I'm David Cruz — digital designer based in Portugal, with 16 years of experience working on digital products and websites for clients ranging from early-stage startups to established brands.</p>
-        <p>Briefly started because I kept seeing the same problem: people needed a clean, professional landing page and had nowhere to go that was fast, affordable, and didn't involve three months and a junior account manager.</p>
-        <p>So I built a service that does exactly that.</p>
+        <span class="eyebrow" style="color: rgb(8, 39, 93)">Quem está por trás</span>
+        <h2>Quem está por trás.</h2>
+        <p>Sou o David Cruz — designer digital baseado em Portugal, com 16 anos de experiência em produtos digitais e sites para clientes que vão desde startups em fase inicial a marcas consolidadas.</p>
+        <p>A Briefly nasceu porque eu via sempre o mesmo problema: as pessoas precisavam de uma landing page limpa e profissional e não tinham para onde ir que fosse rápido, acessível e não envolvesse três meses e um gestor de conta júnior.</p>
+        <p>Por isso criei um serviço que faz exatamente isso.</p>
         <a class="more-link" href="https://www.davidcruz.pt" target="_blank" rel="noopener">
-          <span>More of my work at davidcruz.pt</span>
+          <span>Mais do meu trabalho em davidcruz.pt</span>
           <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
@@ -313,19 +424,19 @@ Zero complexity.</h1>
 <section class="section band" style="padding-bottom:96px;">
   <div class="wrap">
     <div class="prose" style="margin-bottom:56px;">
-      <span class="eyebrow reveal" style="color: rgb(8, 39, 93)">One person. Full accountability.</span>
-      <h2 class="reveal" style="--rd:.06s">One person means accountability.</h2>
-      <p class="reveal" style="--rd:.12s">When you work with Briefly, you're working with me directly. I read your brief. I design your website. I build it. If something needs to change, you talk to me.</p>
-      <p class="reveal" style="--rd:.16s">No miscommunication. No version 7 of the brief. No surprises on delivery day.</p>
+      <span class="eyebrow reveal" style="color: rgb(8, 39, 93)">Uma pessoa. Responsabilidade total.</span>
+      <h2 class="reveal" style="--rd:.06s">Uma pessoa significa responsabilidade.</h2>
+      <p class="reveal" style="--rd:.12s">Quando trabalha com a Briefly, está a trabalhar diretamente comigo. Eu leio o seu briefing. Eu desenho o seu site. Eu construo-o. Se algo tiver de mudar, fala comigo.</p>
+      <p class="reveal" style="--rd:.16s">Sem falhas de comunicação. Sem versão 7 do briefing. Sem surpresas no dia da entrega.</p>
     </div>
     <div class="cta-banner reveal">
       <span class="cbeam"></span><span class="csphere parallax" data-pspeed="0.12"></span>
       <div class="ctext">
-        <h3>Ready to start?</h3>
-        <p>Fill the brief and I'll get back to you within a few hours.</p>
+        <h3>Pronto para começar?</h3>
+        <p>Preencha o briefing e respondo-lhe dentro de algumas horas.</p>
       </div>
       <div class="cact">
-        <a href="index.html#start" class="btn btn-lime"><span>Start your project</span>
+        <a href="index.html#start" class="btn btn-lime"><span>Começar o seu projeto</span>
           <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
@@ -338,34 +449,34 @@ Zero complexity.</h1>
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="index.html#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
-        <p>A professional website. Ready tomorrow.</p>
+        <p>Um site profissional. Pronto amanhã.</p>
       </div>
-      <div class="foot-col"><h4>Pages</h4>
+      <div class="foot-col"><h4>Páginas</h4>
         <ul>
-          <li><a href="index.html#how-it-works">How it works</a></li>
-          <li><a href="index.html#whats-included">What's included</a></li>
-          <li><a href="index.html#pricing">Pricing</a></li>
-          <li><a href="index.html#work">Recent work</a></li>
+          <li><a href="index.html#how-it-works">Como funciona</a></li>
+          <li><a href="index.html#whats-included">O que está incluído</a></li>
+          <li><a href="index.html#pricing">Preços</a></li>
+          <li><a href="index.html#work">Trabalhos recentes</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="index.html#start">Start a project</a></li>
+          <li><a href="index.html#start">Começar projeto</a></li>
         </ul>
       </div>
-      <div class="foot-col"><h4>Company</h4>
+      <div class="foot-col"><h4>Empresa</h4>
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="privacy.html">Política de privacidade</a></li>
+          <li><a href="terms.html">Termos de serviço</a></li>
         </ul>
       </div>
-      <div class="foot-col"><h4>Contact</h4>
+      <div class="foot-col"><h4>Contacto</h4>
         <ul>
           <li><a href="mailto:hello@briefly.pt">hello@briefly.pt</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2025 Briefly. All rights reserved.</span>
-      <span>Built with care.</span>
+      <span>© 2025 Briefly. Todos os direitos reservados.</span>
+      <span>Feito com cuidado.</span>
     </div>
   </div>
 </footer>
@@ -374,6 +485,26 @@ Zero complexity.</h1>
   const header = document.getElementById('header');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ---- Responsive nav: collapse to a burger menu when items don't fit ----
+  (function(){
+    const nav = header.querySelector('.nav');
+    const toggle = header.querySelector('.menu-toggle');
+    const links = header.querySelector('.nav-links');
+    if(!nav || !toggle || !links) return;
+    function measure(){
+      header.classList.remove('nav-collapsed');
+      header.classList.remove('menu-open');
+      if(nav.scrollWidth > nav.clientWidth - 64) header.classList.add('nav-collapsed');
+    }
+    toggle.addEventListener('click', (e)=>{ e.stopPropagation(); header.classList.toggle('menu-open'); });
+    links.addEventListener('click', (e)=>{ if(e.target.closest('a')) header.classList.remove('menu-open'); });
+    document.addEventListener('click', (e)=>{ if(header.classList.contains('menu-open') && !header.contains(e.target)) header.classList.remove('menu-open'); });
+    let rt; window.addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(measure, 120); }, {passive:true});
+    if(document.readyState === 'complete') measure(); else window.addEventListener('load', measure);
+    measure();
+  })();
+
 
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });

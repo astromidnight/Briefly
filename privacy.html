@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Privacy Policy — Briefly</title>
-<meta name="description" content="How Briefly collects, uses, and protects your personal data — in line with the EU General Data Protection Regulation (GDPR)." />
+<title>Política de Privacidade — Briefly</title>
+<meta name="description" content="Como a Briefly recolhe, usa e protege os seus dados pessoais — em conformidade com o Regulamento Geral sobre a Proteção de Dados da UE (RGPD)." />
 <link rel="canonical" href="https://briefly.pt/privacy.html" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="David Cruz" />
 <meta name="theme-color" content="#08275D" />
+<link rel="alternate" hreflang="pt-PT" href="https://briefly.pt/privacy.html" />
+<link rel="alternate" hreflang="en" href="https://briefly.pt/en/privacy.html" />
+<link rel="alternate" hreflang="x-default" href="https://briefly.pt/privacy.html" />
 <meta name="geo.region" content="PT" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Briefly" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="pt_PT" />
 <meta property="og:url" content="https://briefly.pt/privacy.html" />
-<meta property="og:title" content="Privacy Policy — Briefly" />
-<meta property="og:description" content="How Briefly collects, uses, and protects your personal data — in line with the EU General Data Protection Regulation (GDPR)." />
+<meta property="og:title" content="Política de Privacidade — Briefly" />
+<meta property="og:description" content="Como a Briefly recolhe, usa e protege os seus dados pessoais — em conformidade com o Regulamento Geral sobre a Proteção de Dados da UE (RGPD)." />
 <meta property="og:image" content="https://briefly.pt/assets/share-thumb.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Privacy Policy — Briefly" />
-<meta name="twitter:description" content="How Briefly collects, uses, and protects your personal data — in line with the GDPR." />
+<meta name="twitter:title" content="Política de Privacidade — Briefly" />
+<meta name="twitter:description" content="Como a Briefly recolhe, usa e protege os seus dados pessoais — em conformidade com o RGPD." />
 <meta name="twitter:image" content="https://briefly.pt/assets/share-thumb.png" />
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
@@ -174,13 +177,57 @@
     .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
   }
   @media (max-width:1024px){
-    .nav-links{display:none;}
+    
     .legal-hero{padding:104px 0 48px;}
     .foot-grid{grid-template-columns:1fr 1fr;}
   }
   @media (min-width:1025px){
-    .nav-links{display:flex;}
+    
   }
+  /* Language switch */
+  .lang-switch{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff;}
+  .lang-switch a{font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--muted);padding:5px 10px;border-radius:999px;line-height:1;transition:color .15s ease, background .15s ease;}
+  .lang-switch a.on{background:var(--navy);color:#fff;}
+  .lang-switch a:not(.on):hover{color:var(--navy);}
+  /* Responsive nav / burger */
+  .nav{position:relative;}
+  .nav-links{flex:0 0 auto;white-space:nowrap;}
+  header.nav-collapsed .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-end;gap:2px;background:rgba(242,243,252,.98);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line);border-radius:0 0 18px 18px;box-shadow:var(--shadow-md);padding:10px 0 14px;display:flex;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .26s ease, transform .3s cubic-bezier(.22,.61,.36,1), visibility .26s;}
+  header.nav-collapsed.menu-open .nav-links{opacity:1;visibility:visible;transform:none;}
+  header.nav-collapsed .nav-links a:not(.nav-mobile-cta){position:relative;text-align:right;margin:0 14px;padding:13px 18px;border-radius:12px;font-size:16px;color:var(--body);transition:background .18s ease, color .18s ease, padding-right .22s cubic-bezier(.22,.61,.36,1), box-shadow .18s ease;}
+  header.nav-collapsed .nav-links a:not(.nav-mobile-cta):hover{background:#fff;color:var(--navy);padding-right:28px;box-shadow:inset -3px 0 0 0 var(--navy), 0 1px 2px rgba(8,39,93,.06);}
+  header.nav-collapsed .nav-links a.active:not(.nav-mobile-cta){background:#fff;color:var(--navy);box-shadow:inset -3px 0 0 0 var(--navy);}
+  header.nav-collapsed.menu-open .nav-links > *{animation:navItemIn .34s cubic-bezier(.22,.61,.36,1) both;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(1){animation-delay:.03s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(2){animation-delay:.07s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(3){animation-delay:.11s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(4){animation-delay:.15s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(5){animation-delay:.19s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(6){animation-delay:.23s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(7){animation-delay:.27s;}
+  header.nav-collapsed.menu-open .nav-links > *:nth-child(8){animation-delay:.31s;}
+  @keyframes navItemIn{from{opacity:0;transform:translateX(14px);}to{opacity:1;transform:none;}}
+  /* Burger -> X */
+  .menu-toggle .burger{display:block;width:22px;height:16px;position:relative;}
+  .menu-toggle .burger i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transform-box:border-box;transform-origin:center;transition:transform .3s cubic-bezier(.22,.61,.36,1), opacity .2s ease;}
+  .menu-toggle .burger i:nth-child(1){top:0;}
+  .menu-toggle .burger i:nth-child(2){top:7px;}
+  .menu-toggle .burger i:nth-child(3){top:14px;}
+  header.menu-open .menu-toggle .burger i:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  header.menu-open .menu-toggle .burger i:nth-child(2){opacity:0;}
+  header.menu-open .menu-toggle .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media (prefers-reduced-motion:reduce){
+    header.nav-collapsed .nav-links{transition:opacity .2s ease;transform:none;}
+    header.nav-collapsed.menu-open .nav-links > *{animation:none;}
+    .menu-toggle svg line{transition:none;}
+  }
+  .menu-toggle{display:none;}
+  header.nav-collapsed .menu-toggle{display:block;}
+  /* Collapsed: main CTA moves into the menu */
+  .nav-mobile-cta{display:none;}
+  header.nav-collapsed .nav-cta > a.btn-primary{display:none;}
+  header.nav-collapsed .nav-links .nav-mobile-cta{display:inline-flex;align-self:flex-end;justify-content:center;margin:12px 14px 6px;}
+  header.nav-collapsed .nav-links .nav-mobile-cta span:first-child{font-size:15px;font-weight:400;color:#ffffff;}
 </style>
 </head>
 <body>
@@ -190,18 +237,25 @@
   <div class="wrap nav">
     <a href="index.html#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
     <nav class="nav-links">
-      <a href="index.html#how-it-works">How it works</a>
-      <a href="index.html#who-is-this-for">Who it's for</a>
-      <a href="index.html#whats-included">What's included</a>
-      <a href="index.html#pricing">Pricing</a>
-      <a href="index.html#work">Work</a>
+      <a href="index.html#how-it-works">Como funciona</a>
+      <a href="index.html#who-is-this-for">Para quem é</a>
+      <a href="index.html#whats-included">O que está incluído</a>
+      <a href="index.html#pricing">Preços</a>
+      <a href="index.html#work">Trabalhos</a>
       <a href="index.html#faq">FAQ</a>
+      <a href="about.html">Sobre</a>
+      <a href="index.html#start" class="btn btn-primary nav-mobile-cta"><span>Começar o seu projeto</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </nav>
     <div class="nav-cta">
-      <a href="index.html#start" class="btn btn-primary"><span>Start your project</span>
+      <div class="lang-switch" aria-label="Idioma">
+        <a href="privacy.html" class="lang on">PT</a>
+        <a href="en/privacy.html" class="lang">EN</a>
+      </div>
+      <a href="index.html#start" class="btn btn-primary"><span>Começar o seu projeto</span>
         <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       <button class="menu-toggle" aria-label="Menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span class="burger"><i></i><i></i><i></i></span>
       </button>
     </div>
   </div>
@@ -211,8 +265,8 @@
 <section class="legal-hero">
   <div class="wrap">
     <span class="eyebrow">Legal</span>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 9 June 2026</p>
+    <h1>Política de Privacidade</h1>
+    <p class="updated">Última atualização: 9 de junho de 2026</p>
   </div>
 </section>
 
@@ -223,21 +277,21 @@
 
       <!-- TOC -->
       <aside class="toc" aria-label="Table of contents">
-        <h4>On this page</h4>
+        <h4>Nesta página</h4>
         <ol>
-          <li><a href="#who-we-are">Who we are</a></li>
-          <li><a href="#data-we-collect">Data we collect</a></li>
-          <li><a href="#how-we-use">How we use your data</a></li>
-          <li><a href="#legal-basis">Legal basis</a></li>
+          <li><a href="#who-we-are">Quem somos</a></li>
+          <li><a href="#data-we-collect">Dados que recolhemos</a></li>
+          <li><a href="#how-we-use">Como usamos os seus dados</a></li>
+          <li><a href="#legal-basis">Base legal</a></li>
           <li><a href="#cookies">Cookies</a></li>
-          <li><a href="#sharing">Sharing &amp; processors</a></li>
-          <li><a href="#transfers">International transfers</a></li>
-          <li><a href="#retention">Data retention</a></li>
-          <li><a href="#security">Security</a></li>
-          <li><a href="#your-rights">Your rights</a></li>
-          <li><a href="#children">Children</a></li>
-          <li><a href="#changes">Changes</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#sharing">Partilha e subcontratantes</a></li>
+          <li><a href="#transfers">Transferências internacionais</a></li>
+          <li><a href="#retention">Retenção de dados</a></li>
+          <li><a href="#security">Segurança</a></li>
+          <li><a href="#your-rights">Os seus direitos</a></li>
+          <li><a href="#children">Crianças</a></li>
+          <li><a href="#changes">Alterações</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ol>
       </aside>
 
@@ -245,143 +299,143 @@
       <div class="legal-content">
 
         <section class="intro" id="intro">
-          <p>This Privacy Policy explains how <strong>Briefly</strong> ("Briefly", "we", "us", or "our") collects, uses, stores, and protects your personal data when you visit our website or submit a project brief. We are committed to handling your information transparently and in compliance with the EU General Data Protection Regulation (Regulation (EU) 2016/679, "GDPR") and applicable Portuguese data-protection law.</p>
+          <p>Esta Política de Privacidade explica como a <strong>Briefly</strong> («Briefly», «nós» ou «nosso») recolhe, usa, armazena e protege os seus dados pessoais quando visita o nosso site ou envia um briefing de projeto. Comprometemo-nos a tratar a sua informação de forma transparente e em conformidade com o Regulamento Geral sobre a Proteção de Dados da UE (Regulamento (UE) 2016/679, «RGPD») e a legislação portuguesa de proteção de dados aplicável.</p>
         </section>
 
         <div class="flag">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
-          <p>This document is a thorough, GDPR-aligned starting point tailored to Briefly's setup. It is provided for convenience and is <strong>not a substitute for review by a qualified lawyer</strong> in your jurisdiction before publishing.</p>
+          <p>Este documento é um ponto de partida completo e alinhado com o RGPD, adaptado à realidade da Briefly. É disponibilizado por conveniência e <strong>não substitui a revisão por um advogado qualificado</strong> na sua jurisdição antes de publicar.</p>
         </div>
 
         <section id="who-we-are">
-          <h2><span class="n">01</span>Who we are</h2>
-          <p>Briefly is a personal web-design service operated by <strong>David Cruz</strong>, a digital designer based in Portugal. For the purposes of the GDPR, the data controller responsible for your personal data is:</p>
+          <h2><span class="n">01</span>Quem somos</h2>
+          <p>A Briefly é um serviço pessoal de web design operado por <strong>David Cruz</strong>, designer digital baseado em Portugal. Para efeitos do RGPD, o responsável pelo tratamento dos seus dados pessoais é:</p>
           <ul>
-            <li><strong>Controller:</strong> David Bernardo da Cruz</li>
-            <li><strong>Registered address:</strong> Rua Aristides de Sousa Mendes N.º 16, 2670-545 Loures, Portugal</li>
-            <li><strong>Tax number (NIF):</strong> 205254128</li>
-            <li><strong>Contact email:</strong> <a class="inline" href="mailto:hello@briefly.pt">hello@briefly.pt</a></li>
+            <li><strong>Responsável pelo tratamento:</strong> David Bernardo da Cruz</li>
+            <li><strong>Morada:</strong> Rua Aristides de Sousa Mendes N.º 16, 2670-545 Loures, Portugal</li>
+            <li><strong>NIF:</strong> 205254128</li>
+            <li><strong>Email de contacto:</strong> <a class="inline" href="mailto:hello@briefly.pt">hello@briefly.pt</a></li>
           </ul>
-          <p>If you have any questions about this policy or how your data is handled, you can reach us at the email above.</p>
+          <p>Se tiver questões sobre esta política ou sobre como os seus dados são tratados, pode contactar-nos através do email acima.</p>
         </section>
 
         <section id="data-we-collect">
-          <h2><span class="n">02</span>Data we collect</h2>
-          <p>We only collect the data we need to respond to your enquiry, deliver our service, and keep the website working. We do not sell your data, and we do not build advertising profiles about you.</p>
+          <h2><span class="n">02</span>Dados que recolhemos</h2>
+          <p>Recolhemos apenas os dados necessários para responder ao seu pedido, prestar o nosso serviço e manter o site a funcionar. Não vendemos os seus dados nem criamos perfis publicitários sobre si.</p>
 
           <div class="data-card">
-            <h3>Information you give us through the brief form</h3>
-            <p>When you submit a project brief, we collect your <strong>name</strong>, <strong>email address</strong>, the <strong>type of project</strong> you select, your <strong>project description</strong>, and any <strong>add-ons</strong> you express interest in. Anything you choose to write in the free-text field is also stored as part of your brief.</p>
-            <span class="basis">Used to respond to and deliver your project</span>
+            <h3>Informação que nos dá através do formulário de briefing</h3>
+            <p>Quando envia um briefing de projeto, recolhemos o seu <strong>nome</strong>, <strong>endereço de email</strong>, o <strong>tipo de projeto</strong> que seleciona, a <strong>descrição do projeto</strong> e quaisquer <strong>extras</strong> em que demonstre interesse. Tudo o que escrever no campo de texto livre é também guardado como parte do seu briefing.</p>
+            <span class="basis">Usado para responder e entregar o seu projeto</span>
           </div>
 
           <div class="data-card">
-            <h3>Information sent when you email us</h3>
-            <p>If you contact us by email, we receive your email address, your message, and any information you choose to include.</p>
-            <span class="basis">Used to handle your request</span>
+            <h3>Informação enviada quando nos contacta por email</h3>
+            <p>Se nos contactar por email, recebemos o seu endereço de email, a sua mensagem e qualquer informação que decida incluir.</p>
+            <span class="basis">Usado para tratar o seu pedido</span>
           </div>
 
           <div class="data-card">
-            <h3>Technical &amp; usage data</h3>
-            <p>Like most websites, our hosting and analytics tools may automatically receive limited technical information such as your IP address, browser type, device, and the pages you visit. This is used in aggregate to keep the site secure and understand how it is used.</p>
-            <span class="basis">Used for security and analytics</span>
+            <h3>Dados técnicos e de utilização</h3>
+            <p>Como a maioria dos sites, as nossas ferramentas de alojamento e análise podem receber automaticamente informação técnica limitada, como o seu endereço IP, tipo de navegador, dispositivo e as páginas que visita. Esta informação é usada de forma agregada para manter o site seguro e perceber como é utilizado.</p>
+            <span class="basis">Usado para segurança e análise</span>
           </div>
 
-          <p style="margin-top:18px;">We do <strong>not</strong> intentionally collect special categories of data (such as health, political opinions, or biometric data). Please do not include sensitive information of this kind in your brief.</p>
+          <p style="margin-top:18px;">Não recolhemos <strong>intencionalmente</strong> categorias especiais de dados (como saúde, opiniões políticas ou dados biométricos). Por favor, não inclua informação sensível deste tipo no seu briefing.</p>
         </section>
 
         <section id="how-we-use">
-          <h2><span class="n">03</span>How we use your data</h2>
-          <p>We use the personal data we collect for the following purposes:</p>
+          <h2><span class="n">03</span>Como usamos os seus dados</h2>
+          <p>Usamos os dados pessoais que recolhemos para as seguintes finalidades:</p>
           <ul>
-            <li><strong>To respond to your brief or enquiry</strong> — reading your request, replying to you, and discussing your project.</li>
-            <li><strong>To deliver the service</strong> — designing and building your website, arranging payment, and providing your finished files.</li>
-            <li><strong>To provide support</strong> — handling revisions, questions, and any optional ongoing support you subscribe to.</li>
-            <li><strong>To improve the website</strong> — understanding aggregate usage so we can make the site faster and clearer.</li>
-            <li><strong>To meet legal obligations</strong> — keeping records required for accounting, tax, and other legal purposes.</li>
+            <li><strong>Responder ao seu briefing ou pedido</strong> — ler o seu pedido, responder-lhe e discutir o seu projeto.</li>
+            <li><strong>Prestar o serviço</strong> — desenhar e construir o seu site, combinar o pagamento e entregar os ficheiros finais.</li>
+            <li><strong>Prestar suporte</strong> — tratar de revisões, questões e qualquer suporte contínuo opcional que subscreva.</li>
+            <li><strong>Melhorar o site</strong> — perceber a utilização agregada para tornar o site mais rápido e claro.</li>
+            <li><strong>Cumprir obrigações legais</strong> — manter os registos exigidos para fins contabilísticos, fiscais e outros fins legais.</li>
           </ul>
         </section>
 
         <section id="legal-basis">
-          <h2><span class="n">04</span>Legal basis for processing</h2>
-          <p>Under the GDPR, we rely on the following legal bases to process your personal data:</p>
+          <h2><span class="n">04</span>Base legal para o tratamento</h2>
+          <p>Ao abrigo do RGPD, baseamo-nos nas seguintes bases legais para tratar os seus dados pessoais:</p>
           <ul>
-            <li><strong>Performance of a contract</strong> — to respond to your brief, take pre-contractual steps at your request, and deliver a project you have engaged us for.</li>
-            <li><strong>Legitimate interests</strong> — to keep our website secure, prevent abuse of our forms, and understand aggregate usage, balanced against your rights and freedoms.</li>
-            <li><strong>Consent</strong> — for non-essential cookies and analytics, where you have given it. You can withdraw consent at any time.</li>
-            <li><strong>Legal obligation</strong> — where we must retain certain records to comply with accounting and tax law.</li>
+            <li><strong>Execução de um contrato</strong> — para responder ao seu briefing, tomar diligências pré-contratuais a seu pedido e entregar um projeto que nos tenha contratado.</li>
+            <li><strong>Interesses legítimos</strong> — para manter o nosso site seguro, prevenir o abuso dos formulários e perceber a utilização agregada, ponderados face aos seus direitos e liberdades.</li>
+            <li><strong>Consentimento</strong> — para cookies não essenciais e análise, quando o tiver dado. Pode retirar o consentimento a qualquer momento.</li>
+            <li><strong>Obrigação legal</strong> — quando temos de conservar determinados registos para cumprir a legislação contabilística e fiscal.</li>
           </ul>
         </section>
 
         <section id="cookies">
-          <h2><span class="n">05</span>Cookies &amp; similar technologies</h2>
-          <p>Our website uses a small number of cookies and similar technologies. <strong>Essential cookies</strong> are needed for the site to function and to remember your cookie choice. <strong>Analytics cookies</strong> help us understand, in aggregate, how visitors use the site so we can improve it.</p>
-          <p>When you first visit, a banner lets you <strong>accept or reject</strong> non-essential cookies, and your choice is stored locally in your browser. You can change your decision at any time by clearing your browser storage and reloading the site. Most browsers also let you block or delete cookies through their settings.</p>
+          <h2><span class="n">05</span>Cookies e tecnologias semelhantes</h2>
+          <p>O nosso site utiliza um pequeno número de cookies e tecnologias semelhantes. Os <strong>cookies essenciais</strong> são necessários para o site funcionar e para recordar a sua escolha sobre cookies. Os <strong>cookies de análise</strong> ajudam-nos a perceber, de forma agregada, como os visitantes usam o site para o podermos melhorar.</p>
+          <p>Na primeira visita, um banner permite-lhe <strong>aceitar ou rejeitar</strong> cookies não essenciais, e a sua escolha é guardada localmente no seu navegador. Pode alterar a sua decisão a qualquer momento, limpando o armazenamento do navegador e recarregando o site. A maioria dos navegadores também lhe permite bloquear ou eliminar cookies nas respetivas definições.</p>
         </section>
 
         <section id="sharing">
-          <h2><span class="n">06</span>Sharing &amp; third-party processors</h2>
-          <p>We never sell your personal data. We share it only with trusted service providers ("processors") who help us run Briefly, and only to the extent necessary. The providers we currently rely on are:</p>
+          <h2><span class="n">06</span>Partilha e subcontratantes terceiros</h2>
+          <p>Nunca vendemos os seus dados pessoais. Partilhamo-los apenas com prestadores de serviços de confiança («subcontratantes») que nos ajudam a operar a Briefly, e apenas na medida do necessário. Os prestadores em que atualmente nos apoiamos são:</p>
           <ul>
-            <li><strong>Web3Forms</strong> — processes and delivers your brief submission to us. Receives the data you enter in the form.</li>
-            <li><strong>Google Workspace (Gmail)</strong> — the email service through which we receive, store, and reply to your brief and correspondence.</li>
-            <li><strong>GitHub Pages</strong> — hosts and serves this website to your browser.</li>
-            <li><strong>Google Analytics</strong> — provides aggregate statistics about how visitors use the website. May set analytics cookies and process limited technical data such as your IP address.</li>
+            <li><strong>Web3Forms</strong> — processa e entrega-nos o envio do seu briefing. Recebe os dados que introduz no formulário.</li>
+            <li><strong>Google Workspace (Gmail)</strong> — o serviço de email através do qual recebemos, armazenamos e respondemos ao seu briefing e correspondência.</li>
+            <li><strong>GitHub Pages</strong> — aloja e serve este site ao seu navegador.</li>
+            <li><strong>Google Analytics</strong> — fornece estatísticas agregadas sobre como os visitantes usam o site. Pode definir cookies de análise e tratar dados técnicos limitados, como o seu endereço IP.</li>
           </ul>
-          <p>Each provider is bound by its own privacy and data-processing terms and may only use your data on our instructions. Payment is arranged directly with you (for example by bank transfer) once you engage our service. We may also disclose data where required by law or to protect our legal rights.</p>
+          <p>Cada prestador está vinculado às suas próprias condições de privacidade e tratamento de dados e só pode usar os seus dados segundo as nossas instruções. O pagamento é combinado diretamente consigo (por exemplo, por transferência bancária) quando contrata o nosso serviço. Podemos ainda divulgar dados quando exigido por lei ou para proteger os nossos direitos legais.</p>
         </section>
 
         <section id="transfers">
-          <h2><span class="n">07</span>International data transfers</h2>
-          <p>Briefly is based in Portugal and we aim to keep your data within the European Economic Area (EEA) where possible. However, some of our providers — in particular <strong>Google</strong> (Google Workspace and Google Analytics) — are based in the United States and may process data outside the EEA. Where this happens, the transfer is protected by appropriate safeguards required under the GDPR, such as the <strong>EU–U.S. Data Privacy Framework</strong> and/or the European Commission's <strong>Standard Contractual Clauses</strong>.</p>
+          <h2><span class="n">07</span>Transferências internacionais de dados</h2>
+          <p>A Briefly está sediada em Portugal e procuramos manter os seus dados dentro do Espaço Económico Europeu (EEE) sempre que possível. No entanto, alguns dos nossos prestadores — em particular a <strong>Google</strong> (Google Workspace e Google Analytics) — estão sediados nos Estados Unidos e podem tratar dados fora do EEE. Quando tal acontece, a transferência é protegida por salvaguardas adequadas exigidas pelo RGPD, como o <strong>Data Privacy Framework UE–EUA</strong> e/ou as <strong>Cláusulas Contratuais-Tipo</strong> da Comissão Europeia.</p>
         </section>
 
         <section id="retention">
-          <h2><span class="n">08</span>How long we keep your data</h2>
-          <p>We keep personal data only for as long as necessary for the purposes described in this policy:</p>
+          <h2><span class="n">08</span>Durante quanto tempo guardamos os seus dados</h2>
+          <p>Conservamos os dados pessoais apenas durante o tempo necessário para as finalidades descritas nesta política:</p>
           <ul>
-            <li><strong>Brief &amp; enquiry data</strong> — retained while we handle your request and for a reasonable period afterwards in case you return; deleted on request where we have no legal reason to keep it.</li>
-            <li><strong>Client &amp; project records</strong> — retained for the duration of the project and for as long as required by accounting and tax law.</li>
-            <li><strong>Analytics data</strong> — retained in aggregate or for the limited period set by our analytics tool.</li>
+            <li><strong>Dados de briefing e pedidos</strong> — conservados enquanto tratamos do seu pedido e durante um período razoável depois, caso regresse; eliminados a pedido, quando não tenhamos motivo legal para os manter.</li>
+            <li><strong>Registos de clientes e projetos</strong> — conservados durante o projeto e pelo período exigido pela legislação contabilística e fiscal.</li>
+            <li><strong>Dados de análise</strong> — conservados de forma agregada ou pelo período limitado definido pela nossa ferramenta de análise.</li>
           </ul>
         </section>
 
         <section id="security">
-          <h2><span class="n">09</span>How we protect your data</h2>
-          <p>We use appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, or misuse — including encrypted connections (HTTPS) and access controls on the tools we use. No method of transmission or storage is ever completely secure, but we take your privacy seriously and continually review our practices.</p>
+          <h2><span class="n">09</span>Como protegemos os seus dados</h2>
+          <p>Usamos medidas técnicas e organizativas adequadas para proteger os seus dados pessoais contra acesso não autorizado, perda ou utilização indevida — incluindo ligações encriptadas (HTTPS) e controlos de acesso nas ferramentas que utilizamos. Nenhum método de transmissão ou armazenamento é totalmente seguro, mas levamos a sua privacidade a sério e revemos continuamente as nossas práticas.</p>
         </section>
 
         <section id="your-rights">
-          <h2><span class="n">10</span>Your rights</h2>
-          <p>Under the GDPR, you have the following rights over your personal data. To exercise any of them, contact us at <a class="inline" href="mailto:hello@briefly.pt">hello@briefly.pt</a> and we will respond within the timeframes required by law.</p>
+          <h2><span class="n">10</span>Os seus direitos</h2>
+          <p>Ao abrigo do RGPD, tem os seguintes direitos sobre os seus dados pessoais. Para exercer qualquer um deles, contacte-nos em <a class="inline" href="mailto:hello@briefly.pt">hello@briefly.pt</a> e responderemos dentro dos prazos exigidos por lei.</p>
           <div class="rights">
-            <div class="right"><h4>Access</h4><p>Request a copy of the personal data we hold about you.</p></div>
-            <div class="right"><h4>Rectification</h4><p>Ask us to correct inaccurate or incomplete data.</p></div>
-            <div class="right"><h4>Erasure</h4><p>Ask us to delete your data where there is no overriding reason to keep it.</p></div>
-            <div class="right"><h4>Restriction</h4><p>Ask us to limit how we process your data in certain cases.</p></div>
-            <div class="right"><h4>Portability</h4><p>Receive your data in a portable, machine-readable format.</p></div>
-            <div class="right"><h4>Objection</h4><p>Object to processing based on our legitimate interests.</p></div>
-            <div class="right"><h4>Withdraw consent</h4><p>Withdraw consent for analytics or cookies at any time.</p></div>
-            <div class="right"><h4>Complain</h4><p>Lodge a complaint with a supervisory authority.</p></div>
+            <div class="right"><h4>Acesso</h4><p>Solicitar uma cópia dos dados pessoais que temos sobre si.</p></div>
+            <div class="right"><h4>Retificação</h4><p>Pedir-nos que corrijamos dados incorretos ou incompletos.</p></div>
+            <div class="right"><h4>Apagamento</h4><p>Pedir-nos que eliminemos os seus dados quando não exista motivo prevalecente para os manter.</p></div>
+            <div class="right"><h4>Limitação</h4><p>Pedir-nos que limitemos o tratamento dos seus dados em certos casos.</p></div>
+            <div class="right"><h4>Portabilidade</h4><p>Receber os seus dados num formato portável e legível por máquina.</p></div>
+            <div class="right"><h4>Oposição</h4><p>Opor-se ao tratamento baseado nos nossos interesses legítimos.</p></div>
+            <div class="right"><h4>Retirar consentimento</h4><p>Retirar o consentimento para análise ou cookies a qualquer momento.</p></div>
+            <div class="right"><h4>Reclamar</h4><p>Apresentar uma reclamação junto de uma autoridade de controlo.</p></div>
           </div>
-          <p style="margin-top:18px;">In Portugal, the supervisory authority is the <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong> — you can find their contact details at <a class="inline" href="https://www.cnpd.pt" target="_blank" rel="noopener">cnpd.pt</a>.</p>
+          <p style="margin-top:18px;">Em Portugal, a autoridade de controlo é a <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong> — pode encontrar os contactos em <a class="inline" href="https://www.cnpd.pt" target="_blank" rel="noopener">cnpd.pt</a>.</p>
         </section>
 
         <section id="children">
-          <h2><span class="n">11</span>Children's privacy</h2>
-          <p>Briefly is a service aimed at businesses and professionals and is not directed at children. We do not knowingly collect personal data from anyone under the age of 16. If you believe a child has provided us with personal data, please contact us and we will delete it.</p>
+          <h2><span class="n">11</span>Privacidade das crianças</h2>
+          <p>A Briefly é um serviço dirigido a empresas e profissionais e não se destina a crianças. Não recolhemos conscientemente dados pessoais de menores de 16 anos. Se acredita que uma criança nos forneceu dados pessoais, contacte-nos e iremos eliminá-los.</p>
         </section>
 
         <section id="changes">
-          <h2><span class="n">12</span>Changes to this policy</h2>
-          <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we do, we will revise the "Last updated" date at the top of this page. We encourage you to review this page periodically.</p>
+          <h2><span class="n">12</span>Alterações a esta política</h2>
+          <p>Podemos atualizar esta Política de Privacidade periodicamente para refletir alterações nas nossas práticas ou requisitos legais. Quando o fizermos, atualizaremos a data de «Última atualização» no topo desta página. Recomendamos que reveja esta página com regularidade.</p>
         </section>
 
         <section id="contact">
-          <h2><span class="n">13</span>Contact us</h2>
-          <p>If you have any questions, requests, or concerns about this Privacy Policy or your personal data, please get in touch:</p>
+          <h2><span class="n">13</span>Contacte-nos</h2>
+          <p>Se tiver questões, pedidos ou preocupações sobre esta Política de Privacidade ou sobre os seus dados pessoais, entre em contacto:</p>
           <div class="contact-card">
-            <h3>Briefly — Data Protection</h3>
+            <h3>Briefly — Proteção de Dados</h3>
             <p>David Cruz · Portugal<br />Email: <a href="mailto:hello@briefly.pt">hello@briefly.pt</a></p>
           </div>
         </section>
@@ -397,34 +451,34 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="index.html#hero" class="brand"><img src="assets/briefly-logo.svg" alt="Briefly" /></a>
-        <p>A professional website. Ready tomorrow.</p>
+        <p>Um site profissional. Pronto amanhã.</p>
       </div>
-      <div class="foot-col"><h4>Pages</h4>
+      <div class="foot-col"><h4>Páginas</h4>
         <ul>
-          <li><a href="index.html#how-it-works">How it works</a></li>
-          <li><a href="index.html#whats-included">What's included</a></li>
-          <li><a href="index.html#pricing">Pricing</a></li>
-          <li><a href="index.html#work">Recent work</a></li>
+          <li><a href="index.html#how-it-works">Como funciona</a></li>
+          <li><a href="index.html#whats-included">O que está incluído</a></li>
+          <li><a href="index.html#pricing">Preços</a></li>
+          <li><a href="index.html#work">Trabalhos recentes</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="index.html#start">Start a project</a></li>
+          <li><a href="index.html#start">Começar projeto</a></li>
         </ul>
       </div>
-      <div class="foot-col"><h4>Company</h4>
+      <div class="foot-col"><h4>Empresa</h4>
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="privacy.html">Política de privacidade</a></li>
+          <li><a href="terms.html">Termos de serviço</a></li>
         </ul>
       </div>
-      <div class="foot-col"><h4>Contact</h4>
+      <div class="foot-col"><h4>Contacto</h4>
         <ul>
           <li><a href="mailto:hello@briefly.pt">hello@briefly.pt</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2025 Briefly. All rights reserved.</span>
-      <span>Built with care.</span>
+      <span>© 2025 Briefly. Todos os direitos reservados.</span>
+      <span>Feito com cuidado.</span>
     </div>
   </div>
 </footer>
@@ -433,6 +487,26 @@
   const header = document.getElementById('header');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ---- Responsive nav: collapse to a burger menu when items don't fit ----
+  (function(){
+    const nav = header.querySelector('.nav');
+    const toggle = header.querySelector('.menu-toggle');
+    const links = header.querySelector('.nav-links');
+    if(!nav || !toggle || !links) return;
+    function measure(){
+      header.classList.remove('nav-collapsed');
+      header.classList.remove('menu-open');
+      if(nav.scrollWidth > nav.clientWidth - 64) header.classList.add('nav-collapsed');
+    }
+    toggle.addEventListener('click', (e)=>{ e.stopPropagation(); header.classList.toggle('menu-open'); });
+    links.addEventListener('click', (e)=>{ if(e.target.closest('a')) header.classList.remove('menu-open'); });
+    document.addEventListener('click', (e)=>{ if(header.classList.contains('menu-open') && !header.contains(e.target)) header.classList.remove('menu-open'); });
+    let rt; window.addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(measure, 120); }, {passive:true});
+    if(document.readyState === 'complete') measure(); else window.addEventListener('load', measure);
+    measure();
+  })();
+
 
   // TOC scroll-spy
   const tocLinks = [...document.querySelectorAll('.toc a')];

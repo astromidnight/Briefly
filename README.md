@@ -1,26 +1,24 @@
-# Briefly — site (GitHub Pages)
+# Briefly — landing page
 
-Static site for **briefly.pt**. No build step.
+The brief form sends each submission to your inbox using
+[Web3Forms](https://web3forms.com) — a simple form-to-email service. No backend,
+no server, no deploy configuration needed.
 
-## Files
-- `index.html`, `about.html`, `privacy.html`, `terms.html` — pages
-- `assets/` — logo, favicon, share image (1200×630)
-- `robots.txt`, `sitemap.xml` — SEO
-- `CNAME` — custom domain (briefly.pt). **Keep this file.**
-- `.nojekyll` — disables Jekyll processing on GitHub Pages
+## How the form works
+- The form posts to `https://api.web3forms.com/submit` with your **public access
+  key** (already wired into `index.html`).
+- Web3Forms emails the brief to the address registered to that key.
+- Your real email address is **not** in the page — only the public access key is,
+  which is safe to expose.
+- A hidden honeypot field (`company`) silently drops spam bots.
 
-## Deploy to GitHub Pages
-1. Put **all these files in the root** of the repo (not in a subfolder),
-   or use the `/docs` folder and point Pages at it.
-2. Repo → **Settings → Pages** → Source: `Deploy from a branch`,
-   branch `main`, folder `/ (root)`.
-3. Under **Custom domain**, confirm it shows `briefly.pt` (the CNAME file sets this).
-4. At your domain registrar, point DNS to GitHub Pages:
-   - 4 `A` records on the apex (`briefly.pt`) → `185.199.108.153`,
-     `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - optional `CNAME` for `www` → `<your-user>.github.io`
-5. Enable **Enforce HTTPS** once the certificate is issued.
+## To change where briefs are delivered
+Update the email on your Web3Forms account, or generate a new access key at
+https://web3forms.com and replace `WEB3FORMS_KEY` near the bottom of
+`index.html`.
 
-## After it's live
-- Submit `https://briefly.pt/sitemap.xml` in Google Search Console.
-- Validate share image at developers.facebook.com/tools/debug (Scrape Again).
+## Notes
+- The form works from any hosted URL **and** from localhost — you can test it
+  right away.
+- If submissions stop arriving, check your spam folder and confirm the access
+  key is still active on web3forms.com.
