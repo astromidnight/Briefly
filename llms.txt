@@ -1,17 +1,17 @@
 # Briefly
 
-> Briefly is a productized web design service run by David Cruz. You choose what you need, answer a short brief, and receive a custom-built, professional website in one business day — no meetings, no templates, no agency overhead. Fixed price.
+> Briefly is a productized web design service run by David Cruz. You choose what you need, answer a short brief, and receive a custom-built, professional website in one business day: no meetings, no templates, no agency overhead. Fixed price.
 
 ## About
 - A one-person studio by David Cruz, a digital designer with 16 years of experience, based in Loures, Portugal.
 - Works with clients worldwide (PT and EN).
-- You work directly with David from brief to delivery — full accountability, no account managers.
+- You work directly with David from brief to delivery: full accountability, no account managers.
 
 ## What Briefly does
 - Custom landing page design and build, delivered in one business day.
 - Hand-coded HTML: responsive, accessible (WCAG AA), SEO-optimised and fast (Core Web Vitals).
 - One round of revisions included.
-- Delivered as a clean, ready-to-publish file that you own and can host anywhere — no lock-in.
+- Delivered as a clean, ready-to-publish file that you own and can host anywhere, no lock-in.
 
 ## What Briefly does NOT do
 - No templates or page builders (no Webflow, Framer, Squarespace).
@@ -26,7 +26,7 @@
 
 ## Process
 1. Send the brief (under 5 minutes): pick the package, describe the project, share references.
-2. Briefly designs and builds the site from scratch — no templates.
+2. Briefly designs and builds the site from scratch, no templates.
 3. Delivered the next business day, ready to publish.
 
 ## Links
