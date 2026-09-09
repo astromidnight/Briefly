@@ -1176,7 +1176,8 @@
 
   // ---- FAQ accordion (one open at a time, animated height) ----
   (function(){
-    const items = [...document.querySelectorAll('.faq-item')];
+    const scope = document.currentScript.closest('.lang-section') || document;
+    const items = [...scope.querySelectorAll('.faq-item')];
     items.forEach(item=>{
       const q = item.querySelector('.faq-q');
       const a = item.querySelector('.faq-a');
@@ -1201,7 +1202,7 @@
       });
     });
     window.addEventListener('resize', ()=>{
-      document.querySelectorAll('.faq-item.open .faq-a').forEach(a=>{ a.style.height = a.scrollHeight + 'px'; });
+      scope.querySelectorAll('.faq-item.open .faq-a').forEach(a=>{ a.style.height = a.scrollHeight + 'px'; });
     }, {passive:true});
   })();
 
@@ -1839,7 +1840,8 @@
 
   // ---- FAQ accordion (one open at a time, animated height) ----
   (function(){
-    const items = [...document.querySelectorAll('.faq-item')];
+    const scope = document.currentScript.closest('.lang-section') || document;
+    const items = [...scope.querySelectorAll('.faq-item')];
     items.forEach(item=>{
       const q = item.querySelector('.faq-q');
       const a = item.querySelector('.faq-a');
@@ -1864,7 +1866,7 @@
       });
     });
     window.addEventListener('resize', ()=>{
-      document.querySelectorAll('.faq-item.open .faq-a').forEach(a=>{ a.style.height = a.scrollHeight + 'px'; });
+      scope.querySelectorAll('.faq-item.open .faq-a').forEach(a=>{ a.style.height = a.scrollHeight + 'px'; });
     }, {passive:true});
   })();
 
